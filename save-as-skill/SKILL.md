@@ -107,6 +107,22 @@ Create the following fields from the conversation:
 
 6. Keep `SKILL.md` under about 500 lines. Move long reference material into `references/` and point to it from the skill.
 
+### Phase 5A: Check Template Compliance
+Before returning the generated skill, compare it against the chosen template tier.
+
+- Frontmatter: `name` is present, `description` is present, and the description is quoted when it contains colons.
+- SIMPLE requires these level-2 sections in order: `Who`, `What`, `When`, `Where`, `Why`, `How`, `One More Thing`.
+- COMPLICATED requires these level-2 sections in order: `Who`, `What`, `When`, `Where`, `Why`, `Inputs`, `Output`, `Constraints`, `One More Thing`, `How`.
+- COMPLEX requires these level-2 sections in order: `Who`, `What`, `When`, `Where`, `Why`, `Inputs`, `Output`, `Constraints`, `One More Thing`, `How`, `Resources`, `Validation`.
+- `One More Thing` must explicitly tell the next agent to stop and ask when something is unclear, missing, or conflicting.
+- If `scripts/validate_skill.py` exists in the current package, run:
+
+   ```bash
+   python <skill-root>/scripts/validate_skill.py <generated-skill-path> --tier <simple|complicated|complex>
+   ```
+
+- Fix validation failures before returning the generated skill.
+
 ### Phase 6: Test the Skill
 1. Draft 2 or 3 realistic prompts that should trigger the new skill.
 2. If the user wants a review loop, save them in `<skill-name>-workspace/evals.json`.
@@ -132,12 +148,14 @@ Create the following fields from the conversation:
 4. Tell the user where the file belongs and what, if anything, still needs manual follow-up.
 
 ## Resources
-- `scripts/` for helper programs extracted from the source conversation.
+- `scripts/generate_review.py` to review generated outputs.
+- `scripts/validate_skill.py` to check generated skills against the SIMPLE, COMPLICATED, or COMPLEX template tiers.
 - `references/` for long docs, checklists, or background material.
 - `assets/` for templates, configs, or boilerplate files.
 
 ## Validation
 1. Verify the frontmatter is valid and `name` matches the skill folder.
-2. Verify the section layout matches the chosen template tier.
-3. Verify the examples, commands, and file paths come from the conversation or the current workspace.
-4. Verify the skill includes the stop-and-ask rule before returning it to the user.
+2. Run the manual template checklist, and run `scripts/validate_skill.py` when it is available.
+3. Verify the section layout matches the chosen template tier.
+4. Verify the examples, commands, and file paths come from the conversation or the current workspace.
+5. Verify the skill includes the stop-and-ask rule before returning it to the user.

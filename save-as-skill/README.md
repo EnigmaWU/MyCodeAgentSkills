@@ -9,7 +9,7 @@ When a long AI conversation solves a hard problem, the knowledge typically evapo
 The system has three layers that work together:
 
 | Layer | Copilot | Cline | Continue | Claude Code |
-|-------|---------|-------|----------|-------------|
+| ----- | ------- | ----- | -------- | ----------- |
 | **Manual trigger** | [`.github/prompts/save-as-skill.prompt.md`](../../prompts/save-as-skill.prompt.md) | `.clinerules` rule | `.continue/prompts/save-as-skill.prompt` | `.claude/commands/save-as-skill.md` |
 | **Auto-invocable** | [`.github/skills/save-as-skill/SKILL.md`](SKILL.md) | `.cline/skills/save-as-skill/SKILL.md` | `.continue/prompts/save-as-skill.prompt` | `.claude/skills/save-as-skill/SKILL.md` |
 | **Always-on nudge** | [`.github/instructions/save-as-skill-nudge.instructions.md`](../../instructions/save-as-skill-nudge.instructions.md) | `.clinerules` rule | `.continue/config.yaml` system message | `CLAUDE.md` rule |
@@ -17,8 +17,9 @@ The system has three layers that work together:
 Plus a bundled test/review tool:
 
 | File | Purpose |
-|------|---------|
+| ---- | ------- |
 | [`scripts/generate_review.py`](scripts/generate_review.py) | Zero-dependency Python review viewer for testing generated skills |
+| [`scripts/validate_skill.py`](scripts/validate_skill.py) | Zero-dependency Python validator for checking generated `SKILL.md` files against the SIMPLE, COMPLICATED, or COMPLEX template tiers |
 
 ## Why Three Layers
 
@@ -52,7 +53,7 @@ The user explicitly asks to save a skill (slash command or keyword).
 
 **Cline** — add to `.clinerules`:
 
-```
+```text
 # .clinerules
 When the user asks to "save as skill", "capture this as a skill", or "turn this into a skill",
 read and follow .github/skills/save-as-skill/SKILL.md
@@ -115,7 +116,7 @@ At the end of qualifying conversations, the agent suggests saving as a skill.
 
 **Cline** — append to `.clinerules`:
 
-```
+```text
 # Skill-saving nudge
 At the end of a conversation, if ALL of these are true:
 1. More than ~10 back-and-forth exchanges
@@ -147,11 +148,21 @@ Then follow .claude/skills/save-as-skill/SKILL.md
 
 ### In Copilot Chat
 
-```
+```text
 /save-as-skill
 ```
 
 The agent reviews the conversation, extracts a skill, and generates `SKILL.md`.
+
+### Validate a Generated Skill
+
+```bash
+python .github/skills/save-as-skill/scripts/validate_skill.py \
+  .github/skills/my-skill/SKILL.md \
+  --tier complicated
+```
+
+Use the tier that `save-as-skill` selected for the generated skill. If you are not sure, use `--tier auto` to infer the closest matching template.
 
 ### Test a Generated Skill
 

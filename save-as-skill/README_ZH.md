@@ -9,7 +9,7 @@
 系统由三层协同工作：
 
 | 层级 | Copilot | Cline | Continue | Claude Code |
-|------|---------|-------|----------|-------------|
+| ---- | ------- | ----- | -------- | ----------- |
 | **手动触发** | [`.github/prompts/save-as-skill.prompt.md`](../../prompts/save-as-skill.prompt.md) | `.clinerules` 规则 | `.continue/prompts/save-as-skill.prompt` | `.claude/commands/save-as-skill.md` |
 | **自动调用** | [`.github/skills/save-as-skill/SKILL.md`](SKILL.md) | `.cline/skills/save-as-skill/SKILL.md` | `.continue/prompts/save-as-skill.prompt` | `.claude/skills/save-as-skill/SKILL.md` |
 | **常驻提醒** | [`.github/instructions/save-as-skill-nudge.instructions.md`](../../instructions/save-as-skill-nudge.instructions.md) | `.clinerules` 规则 | `.continue/config.yaml` 系统消息 | `CLAUDE.md` 规则 |
@@ -17,8 +17,9 @@
 附带测试/评审工具：
 
 | 文件 | 用途 |
-|------|------|
+| ---- | ---- |
 | [`scripts/generate_review.py`](scripts/generate_review.py) | 零依赖 Python 评审查看器，用于测试生成的技能 |
+| [`scripts/validate_skill.py`](scripts/validate_skill.py) | 零依赖 Python 校验器，用于检查生成的 `SKILL.md` 是否符合 SIMPLE、COMPLICATED 或 COMPLEX 模板层级 |
 
 ## 为什么需要三层
 
@@ -52,7 +53,7 @@ Anthropic 开源的 [skill-creator](https://github.com/anthropics/skill-creator)
 
 **Cline** — 添加到 `.clinerules`：
 
-```
+```text
 # .clinerules
 When the user asks to "save as skill", "capture this as a skill", or "turn this into a skill",
 read and follow .github/skills/save-as-skill/SKILL.md
@@ -115,7 +116,7 @@ Claude Code 自动发现 `.claude/skills/` 中的 `SKILL.md` 文件。
 
 **Cline** — 追加到 `.clinerules`：
 
-```
+```text
 # 技能保存提醒
 At the end of a conversation, if ALL of these are true:
 1. More than ~10 back-and-forth exchanges
@@ -147,11 +148,21 @@ Then follow .claude/skills/save-as-skill/SKILL.md
 
 ### 在 Copilot Chat 中
 
-```
+```text
 /save-as-skill
 ```
 
 智能体会回顾对话、提取技能并生成 `SKILL.md`。
+
+### 校验生成的技能
+
+```bash
+python .github/skills/save-as-skill/scripts/validate_skill.py \
+  .github/skills/my-skill/SKILL.md \
+  --tier complicated
+```
+
+使用 `save-as-skill` 为生成技能选择的层级。如果你不确定，可以使用 `--tier auto` 自动推断最接近的模板。
 
 ### 测试生成的技能
 
