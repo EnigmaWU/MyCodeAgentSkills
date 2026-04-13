@@ -1,4 +1,4 @@
-# convert-to-CaTDD
+# UnitTesting-convert2CaTDD
 
 Convert existing or legacy test files into CaTDD (Comment-alive Test-Driven Development) format, making tests self-documenting design artifacts that humans and LLMs can collaborate on.
 

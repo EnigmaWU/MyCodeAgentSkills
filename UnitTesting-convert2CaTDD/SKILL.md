@@ -1,5 +1,5 @@
 ---
-name: convert-to-CaTDD
+name: UnitTesting-convert2CaTDD
 description: 'Use when: the user says "convert to CaTDD", "refactor tests to CaTDD", "apply CaTDD", "make tests comment-alive", or asks to restructure existing tests with US/AC/TC format. Helps with: converting legacy or unstructured tests into CaTDD (Comment-alive Test-Driven Development) format with structured verification design. Applies to: existing test files in any language that lack structured US/AC/TC comments.'
 ---
 
