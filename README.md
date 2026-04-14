@@ -42,3 +42,37 @@ Then commit the updated submodule reference in your repository:
 git add .github/skills
 git commit -m "chore: update MyCodeAgentSkills submodule"
 ```
+
+## 📦 Custom Skills Directory (VS Code Agent Mode)
+
+By default, Copilot agent mode discovers skills in the following locations:
+
+| Scope | Path |
+|-------|------|
+| Repository | `.github/skills/` |
+| Repository | `.claude/skills/` |
+| Repository | `.agents/skills/` |
+| User | `~/.copilot/skills/` |
+
+### Adding a custom skills directory
+
+To load skills from an additional directory (for example `MySkills/`), add the `chat.agentSkillsLocations` setting to your `.vscode/settings.json` or VS Code user settings.
+
+> **Note:** This setting **replaces** the default search paths, so include every directory you want Copilot to scan.
+
+```jsonc
+{
+  "chat.agentSkillsLocations": [
+    "${workspaceFolder}/.github/skills",
+    "${workspaceFolder}/MySkills",
+    "~/.copilot/skills"
+  ]
+}
+```
+
+Copilot will load skills from all listed directories when running in agent mode.
+
+### Further reading
+
+- [VS Code — Agent mode](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode)
+- [GitHub Copilot documentation](https://docs.github.com/en/copilot)
