@@ -1,0 +1,46 @@
+{
+  "demoName": "{{DEMO_NAME}}",
+  "status": "Draft",
+  "purpose": "{{PURPOSE}}",
+  "sourceDocuments": [
+    "{{USER_GUIDE_FILE}}",
+    "{{USER_STORIES_FILE}}"
+  ],
+  "userGuideRefs": [
+    {
+      "file": "{{USER_GUIDE_FILE}}",
+      "section": "{{SECTION_OR_HEADING}}",
+      "requirement": "{{REQUIREMENT_SUMMARY}}"
+    }
+  ],
+  "acceptanceCriteria": [
+    "{{AC_ID_OR_DESCRIPTION}}"
+  ],
+  "userStoryRefs": [
+    {
+      "file": "{{USER_STORIES_FILE}}",
+      "storyId": "{{US_ID}}",
+      "acceptanceCriteria": [
+        "{{AC_ID}}"
+      ],
+      "requirement": "{{USER_STORY_SUMMARY}}"
+    }
+  ],
+  "scripts": {
+    "setup": "SETUP.sh",
+    "run": "RUN.sh",
+    "cleanup": "CLEANUP.sh"
+  },
+  "manualInstruction": "ManualInstruction.md",
+  "fixtures": [
+    "fixtures/"
+  ],
+  "expectedArtifacts": [
+    "expected/"
+  ],
+  "generatedArtifacts": [
+    "outputs/"
+  ],
+  "lastValidated": null,
+  "validationCommand": "{{VALIDATION_COMMAND}}"
+}
