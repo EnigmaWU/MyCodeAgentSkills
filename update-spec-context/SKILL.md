@@ -13,13 +13,14 @@ Update the repository's spec context after a conversation produces new requireme
 
 ## When
 - A conversation resolves an ambiguity, bug, edge case, or design choice that future work should remember.
-- The user says "update the spec", "update context", "write this down", "sync the plan", "record this decision", or "keep spec-kit context current".
+- The user says "update the spec", "update context", "write this down", "sync the plan", "record this decision", or "keep Spec Kit context current".
 - A completed coding step changes task status, implementation plan, acceptance criteria, constraints, or known risks.
 - Use `save-as-skill` instead when the reusable output is a new workflow or slash-command-like skill.
 - Do not use this skill for trivial comments, transient brainstorming, or facts that should remain only in chat.
 
 ## Where
 - Spec Kit-style feature folders such as `specs/<feature>/spec.md`, `plan.md`, `tasks.md`, `research.md`, `data-model.md`, or `contracts/`.
+- CaTDD SpecFlow-style artifacts such as `projectContext.md`, `pendingNews/`, `todoUS/`, `doingUS/`, `doneUS/`, module design docs, or `WorkingProcessLog.md`.
 - Repository planning or product docs such as `docs/`, `README.md`, issue bodies, ADRs, backlog files, or user-story markdown.
 - The current conversation, recent diffs, test output, and validation logs that explain what changed and why.
 
@@ -33,7 +34,7 @@ Update the repository's spec context after a conversation produces new requireme
 - The relevant conversation segment, including the solved problem, final decision, and any discarded alternatives.
 - Existing spec-context artifacts or the location where the user expects context to live.
 - Current implementation state, changed files, test results, or task progress when available.
-- Optional reference model such as GitHub Spec Kit's specify/plan/tasks/implement workflow.
+- Optional reference model such as GitHub Spec Kit's specify/plan/tasks/implement workflow or CaTDD `Px SpecFlow`.
 
 ## Output
 - A short plan shown to the user before editing, listing the artifacts to update and the reason each update is needed.
@@ -71,6 +72,9 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
    - `plan.md` for architecture, approach, dependencies, sequencing, and risks.
    - `tasks.md` for actionable work items and status changes.
    - `research.md`, ADRs, or decision logs for tradeoffs and rationale.
+   - `projectContext.md` for stable project facts, constraints, conventions, and confirmed decisions.
+   - `pendingNews/`, `todoUS/`, `doingUS/`, and `doneUS/` for CaTDD SpecFlow work-item lifecycle status.
+   - `WorkingProcessLog.md` for optional traces of command transitions, review decisions, and unresolved questions.
    - `README.md` or docs only when they are the repository's actual source of project context.
 3. If no suitable file exists, propose the smallest new artifact and explain why it is needed.
 
@@ -112,6 +116,7 @@ Ask for confirmation when the target files, scope, or facts are ambiguous.
 - GitHub Spec Kit: https://github.com/github/spec-kit
 - GitHub Blog, "Spec-driven development with AI: Get started with a new open source toolkit": https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/
 - Microsoft Developer Blog, "Diving Into Spec-Driven Development With GitHub Spec Kit": https://developer.microsoft.com/blog/spec-driven-development-spec-kit
+- EnigmaWU MyCaTDD `Px SpecFlow`: https://github.com/EnigmaWU/MyCaTDD/blob/main/slashCommands/flows/Px-SpecFlow.md
 - `save-as-skill/SKILL.md` for turning a solved workflow into a reusable skill instead of a project-context update.
 - `improve-existing-skill/SKILL.md` for folding lessons back into an existing skill.
 
