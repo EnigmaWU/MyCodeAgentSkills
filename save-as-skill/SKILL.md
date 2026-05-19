@@ -69,7 +69,14 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 1. Mine the conversation for tools and commands used.
 2. Capture the order of steps, including corrections, pivots, and failed attempts that taught something useful.
 3. Capture input/output formats, key prompts, and helper scripts or templates that future users would need.
-4. Summarize what you extracted and ask the user to confirm gaps before generating the skill.
+4. Classify why each non-obvious step was needed using these failure-pattern categories (from Ctx2Skill):
+   - **Content gap** — required information existed but wasn't surfaced at first.
+   - **Format/structure error** — the response had the wrong shape or organization.
+   - **Constraint violation** — a limit, count, or exact requirement was missed.
+   - **Reasoning error** — incorrect logic or calculation required a correction.
+   - **Task misunderstanding** — the initial interpretation of the request was wrong.
+   - **System prompt non-compliance** — a behavioral rule (persona, tone, forbidden content) was ignored.
+5. Summarize what you extracted and ask the user to confirm gaps before generating the skill.
 
 ### Phase 3: Choose the Template Tier
 - Choose SIMPLE for a short, straight-line workflow with one main output and no bundled resources.
@@ -95,7 +102,13 @@ Create the following fields from the conversation:
 2. Keep the sections explicit so the next agent can scan the skill quickly.
 3. Use imperative instructions, but explain why each step matters.
 4. Add real commands, code, configs, or file patterns from the conversation instead of abstract placeholders whenever possible.
-5. If the conversation produced reusable helpers, recommend a structure like:
+5. Apply these Ctx2Skill-inspired quality standards before finalizing the skill:
+   - **Actionable, not abstract**: Every instruction must be a concrete step, checklist item, or procedure. Replace vague guidance ("be careful with X") with specific actions ("before committing, run Y and verify Z").
+   - **Concise**: Every sentence competes for the model's attention. Challenge each one: "Does this add actionable value?" Remove filler.
+   - **Structured for reuse**: Where appropriate, include a pre-answer checklist (what to verify before starting), a response procedure (ordered steps), and self-verification steps (what to check after drafting).
+   - **Generalizable**: Write the skill so it applies to similar future problems, not only the exact conversation that produced it. Avoid embedding one-off details that won't transfer.
+   - **Complementary**: Before creating a new skill, check whether an existing skill already covers similar ground. If so, propose edits to that skill rather than creating a duplicate.
+6. If the conversation produced reusable helpers, recommend a structure like:
 
    ```text
    <skill-name>/
@@ -105,7 +118,7 @@ Create the following fields from the conversation:
      assets/
    ```
 
-6. Keep `SKILL.md` under about 500 lines. Move long reference material into `references/` and point to it from the skill.
+7. Keep `SKILL.md` under about 500 lines. Move long reference material into `references/` and point to it from the skill.
 
 ### Phase 5A: Check Template Compliance
 Before returning the generated skill, compare it against the chosen template tier.
@@ -123,23 +136,35 @@ Before returning the generated skill, compare it against the chosen template tie
 
 - Fix validation failures before returning the generated skill.
 
+Also check against these Ctx2Skill anti-patterns and fix any that apply:
+- **Vague skills**: Does the skill say things like "be more careful" or "pay attention"? Replace with concrete procedures.
+- **Narrow skills**: Is the skill written only for this exact conversation? Broaden it so similar future cases benefit too.
+- **Duplicate skills**: Does the skill repeat guidance already present in an existing skill in the workspace? Merge or reference instead of repeating.
+
 ### Phase 6: Test the Skill
 1. Draft 2 or 3 realistic prompts that should trigger the new skill.
-2. If the user wants a review loop, save them in `<skill-name>-workspace/evals.json`.
-3. For each test prompt, create a directory that contains `eval_metadata.json` and an `outputs/` folder with the generated result.
-4. If the bundled review tool exists in the current skill package, launch it with:
+2. For each test prompt, design rubrics using these Ctx2Skill-inspired types to make pass/fail assessment clear:
+   - **Content inclusion** (~25%): "The response should include [specific element]."
+   - **Content exclusion** (~20%): "The response should not include [specific thing]."
+   - **Format/structure** (~15%): "The response should [format requirement, e.g., use numbered steps]."
+   - **Accuracy** (~15%): "The response should correctly state [specific fact from the skill]."
+   - **Constraint compliance** (~10%): "The response should [meet exact constraint, e.g., stay under 500 lines]."
+   - **Remaining** (~15%): sequence/ordering, tone/style, or domain-specific logic as appropriate.
+3. If the user wants a review loop, save them in `<skill-name>-workspace/evals.json`.
+4. For each test prompt, create a directory that contains `eval_metadata.json` and an `outputs/` folder with the generated result.
+5. If the bundled review tool exists in the current skill package, launch it with:
 
    ```bash
    python <skill-root>/scripts/generate_review.py <skill-name>-workspace/ --skill-name "my-skill"
    ```
 
-5. For environments without a browser, write a static review file with:
+6. For environments without a browser, write a static review file with:
 
    ```bash
    python <skill-root>/scripts/generate_review.py <skill-name>-workspace/ --skill-name "my-skill" --static /tmp/review.html
    ```
 
-6. If static mode downloads feedback locally instead of writing it back to the workspace, copy that file into `<skill-name>-workspace/feedback.json` before the next iteration.
+7. If static mode downloads feedback locally instead of writing it back to the workspace, copy that file into `<skill-name>-workspace/feedback.json` before the next iteration.
 
 ### Phase 7: Iterate and Save
 1. Read `feedback.json` after review when it exists. Empty feedback usually means the output was acceptable.
@@ -152,6 +177,7 @@ Before returning the generated skill, compare it against the chosen template tie
 - `scripts/validate_skill.py` to check generated skills against the SIMPLE, COMPLICATED, or COMPLEX template tiers.
 - `references/` for long docs, checklists, or background material.
 - `assets/` for templates, configs, or boilerplate files.
+- [Ctx2Skill paper](https://arxiv.org/abs/2604.27660) — the self-evolving skill-discovery framework whose quality principles (actionable, concise, generalizable, complementary) and failure-pattern taxonomy inform Phase 2 and Phase 5 of this skill.
 
 ## Validation
 1. Verify the frontmatter is valid and `name` matches the skill folder.
