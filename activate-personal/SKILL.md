@@ -21,8 +21,8 @@ Activate the user's personal working profile before doing the main task, then ke
 
 ## Where
 - The current conversation and any already-available user-scoped memory.
-- The deployed skill folder, especially `activate-personal/personal-profile.md` when that file exists and is intended to hold reusable profile details.
-- The companion template at `activate-personal/references/personal-profile-template.md` when a profile file needs to be created.
+- The deployed skill folder, especially `activate-personal/personal-profile.md` when that file exists and is intended to hold reusable profile details such as expertise, teamwork defaults, terminology mappings, and engineering preferences.
+- The companion template at `activate-personal/references/personal-profile-template.md` when a profile file needs to be created or restructured.
 
 ## Why
 - The user wants their personal context activated automatically instead of being re-explained in every session.
@@ -33,7 +33,7 @@ Activate the user's personal working profile before doing the main task, then ke
 ## Inputs
 - The user's current request.
 - Existing personal profile data from memory or `activate-personal/personal-profile.md` when available.
-- New expertise, preferences, corrections, or boundaries declared during the conversation.
+- New expertise, preferences, teamwork defaults, terminology mappings, corrections, or boundaries declared during the conversation.
 - Optional confirmation from the user when a statement might be temporary, private, or ambiguous.
 
 ## Output
@@ -64,15 +64,20 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 ### Phase 2: Activate It for the Current Task
 1. Extract only the profile items that matter for the current request, such as:
    - durable expertise,
+   - preferred problem-solving method,
+   - preferred teamwork framing or virtual team roles,
    - preferred working style,
    - preferred output style,
+   - terminology mappings or translation rules,
    - recurring boundaries or defaults.
 2. State the activation briefly before continuing, for example:
 
    ```text
    Activated personal profile:
    - Expertise: ...
+   - Teamwork: ...
    - Preferences: ...
+   - Terminology: ...
    - Boundaries: ...
    ```
 
@@ -82,6 +87,8 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 1. Watch for durable declarations such as:
    - "I am an expert in ..."
    - "My expertise is ..."
+   - "Treat Agent as ..."
+   - "Use this term as ..."
    - "Remember that I prefer ..."
    - "Next time, use ..."
 2. Rewrite the declaration into a short, reusable fact without changing its meaning.
@@ -99,6 +106,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 4. If no durable profile change occurred, say so instead of forcing an update.
 
 ## Resources
+- `activate-personal/personal-profile.md` — a concrete personal profile that can be activated directly when deployed with this skill set.
 - `activate-personal/references/personal-profile-template.md` — starter structure for a reusable personal profile file.
 - `save-as-skill/SKILL.md` — use when the conversation produced a brand-new reusable workflow instead of a personal profile update.
 - `improve-existing-skill/SKILL.md` — use when another existing skill needs to absorb lessons learned from the conversation.
@@ -106,7 +114,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 ## Validation
 1. Verify the frontmatter `name` matches the folder name.
 2. Verify the section layout matches the COMPLEX template.
-3. Verify the workflow both activates existing personal context and updates it when the user declares new durable expertise or preferences.
+3. Verify the workflow both activates existing personal context and updates it when the user declares new durable expertise, terminology, or preferences.
 4. Verify the skill tells the agent to stop and ask when profile updates are ambiguous or unsafe.
 5. Run:
 
