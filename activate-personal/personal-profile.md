@@ -21,7 +21,7 @@ Use this file to activate EnigmaWU's durable personal context in future sessions
 
 ## Preferences
 - Always use "Code Style and Comments" from the in-context source code first.
-- If the source code does not establish a style, prefer CamelCase next.
+- If the source code does not establish a style, prefer CaseCamel next.
 - Use Markdown format for answers when a clear structure is needed.
 
 ## Terminology
