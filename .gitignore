@@ -1,4 +1,1 @@
-__pycache__
-*.pdf
-.DS_Store
-**/.DS_Store
+TMP/**
