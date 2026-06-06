@@ -13,7 +13,7 @@ Analyze source code annotations, package structures, and tests; configure single
 
 ## When
 - Triggered by requests like: "create a living glossary from these packages...", "automate system diagrams using PlantUML from source...", "design a reconciliation test for this specification...", "extract living specifications from BDD feature files...", or "generate architecture codex from class annotations...".
-- Do not use for writing manual documents, wikis, or PDFs, or documenting legacy systems in place without first checking the [document-legacy-codebase](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/document-legacy-codebase) skill.
+- Do not use for writing manual documents, wikis, or PDFs, or documenting legacy systems in place without first checking the [document-legacy-codebase](../document-legacy-codebase) skill.
 
 ## Where
 Applies to source code directories (Java, Python, C#, etc.), AST parsing scripts, build workflows, and test files in the workspace.
@@ -26,9 +26,9 @@ Applies to source code directories (Java, Python, C#, etc.), AST parsing scripts
 ## Inputs
 - **Codebase Source Path** (required): The folder containing classes, types, and annotations to be documented.
 - **Extraction Target** (required): The type of living document to create (e.g., glossary, system diagram, decision log, or contract specifications).
-- **Reconciliation Checklists Reference** (required): Located at [reconciliation-checklists.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/create-living-documentation/details/reconciliation-checklists.md).
-- **Code Examples Reference** (required): Located at [code-examples.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/create-living-documentation/details/code-examples.md).
-- **Textbook PDF**: Cyrille Martraire's *Living Documentation* book located at [ Living Documentation.pdf](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/TMP/%20Living%20Documentation.pdf).
+- **Reconciliation Checklists Reference** (required): Located at [reconciliation-checklists.md](details/reconciliation-checklists.md).
+- **Code Examples Reference** (required): Located at [code-examples.md](details/code-examples.md).
+- **Textbook PDF**: Cyrille Martraire's *Living Documentation* book located at [ Living Documentation.pdf](../TMP/%20Living%20Documentation.pdf).
 
 ## Output
 - **Living Glossary/Specification**: Dynamically generated Markdown files documenting system terms, roles, and rules.
@@ -49,25 +49,25 @@ If target annotations, package names, or document output directories are ambiguo
 
 ### Phase 1: Curation & Curation Scoping (Chapter 5)
 1. **Identify the Core**: Determine what parts of the system represent the core domain knowledge (e.g., domain models, business policies, external API contracts). Do not waste time extracting boilerplate (e.g., getters/setters, frameworks).
-2. **Define Conventions and Annotations**: Select or create clear annotations (e.g., `@Concept`, `@DomainService`, or specific Python decorators) to mark authoritative knowledge in source code. Refer to [reconciliation-checklists.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/create-living-documentation/details/reconciliation-checklists.md#section-1-knowledge-curation-checklists) for details.
+2. **Define Conventions and Annotations**: Select or create clear annotations (e.g., `@Concept`, `@DomainService`, or specific Python decorators) to mark authoritative knowledge in source code. Refer to [reconciliation-checklists.md](details/reconciliation-checklists.md#section-1-knowledge-curation-checklists) for details.
 3. **Plan Guided Tours**: Map out structural entry points (sightseeing maps) to guide new developers through the codebase.
 
 ### Phase 2: Automation & Documentation Generation (Chapter 6)
 1. **Build a Single-Source Publisher**: Set up code extraction scripts using Python's `ast` module or Java's custom Doclet/annotation processors.
 2. **Generate Living Glossaries**: Extract terms, descriptions, and types from docstrings and custom annotations. Format the output as a readable Markdown table or document.
-3. **Generate Living Diagrams**: Parse dependency paths, classes, and packages to output PlantUML (`.puml`) or Graphviz (`.dot`) diagrams. Integrate these generations into the build or pre-commit workflow. Refer to templates in [code-examples.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/create-living-documentation/details/code-examples.md#section-2-living-diagram-generator-examples).
+3. **Generate Living Diagrams**: Parse dependency paths, classes, and packages to output PlantUML (`.puml`) or Graphviz (`.dot`) diagrams. Integrate these generations into the build or pre-commit workflow. Refer to templates in [code-examples.md](details/code-examples.md#section-2-living-diagram-generator-examples).
 
 ### Phase 3: Reconciliation & Continuous Verification (Chapter 3)
 1. **Implement Reconciliation Tests**: Write unit tests that dynamically parse both the source code and the generated documentation files to assert that every marked entity is documented, and that no outdated entries exist.
-2. **Write Published Contract Checks**: For external APIs or database schemas, write verification tests comparing code-declared DTOs/models against the active specification schema. Refer to templates in [code-examples.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/create-living-documentation/details/code-examples.md#section-3-reconciliation-test-examples).
+2. **Write Published Contract Checks**: For external APIs or database schemas, write verification tests comparing code-declared DTOs/models against the active specification schema. Refer to templates in [code-examples.md](details/code-examples.md#section-3-reconciliation-test-examples).
 3. **Establish Red Flags Checks**: Verify that compilation or test runs fail if any part of the extracted specs deviates from the code.
 
 ---
 
 ## Resources
-- [reconciliation-checklists.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/create-living-documentation/details/reconciliation-checklists.md) - Checklists for glossaries, BDD specifications, and diagrams.
-- [code-examples.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/create-living-documentation/details/code-examples.md) - Parse code scripts, PlantUML templates, and reconciliation test samples.
-- [ Living Documentation.pdf](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/TMP/%20Living%20Documentation.pdf) - Original textbook.
+- [reconciliation-checklists.md](details/reconciliation-checklists.md) - Checklists for glossaries, BDD specifications, and diagrams.
+- [code-examples.md](details/code-examples.md) - Parse code scripts, PlantUML templates, and reconciliation test samples.
+- [ Living Documentation.pdf](../TMP/%20Living%20Documentation.pdf) - Original textbook.
 
 ---
 

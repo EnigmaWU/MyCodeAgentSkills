@@ -13,7 +13,7 @@ Perform software archaeology to extract mental models and data flows; define cle
 
 ## When
 - Triggered by requests like: "document this legacy codebase to map its structures...", "establish a bubble context around this module...", "apply a strangler pattern boundary for migration...", "superimpose a metadata structure on this legacy code...", or "perform software archaeology on this brownfield module...".
-- Do not use for documenting brand-new architectures, or greenfield codebases where you should directly apply the [create-living-documentation](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/create-living-documentation) skill.
+- Do not use for documenting brand-new architectures, or greenfield codebases where you should directly apply the [create-living-documentation](../create-living-documentation) skill.
 
 ## Where
 Applies to legacy directories, brownfield code files, integration APIs, database structures, and boundary adapters in the workspace.
@@ -26,9 +26,9 @@ Applies to legacy directories, brownfield code files, integration APIs, database
 ## Inputs
 - **Legacy Source Path** (required): The folder containing legacy/brownfield classes and modules to analyze.
 - **Migration Strategy** (optional): The target replacement goal (e.g., Strangler pattern, complete retirement, or bubble context integration).
-- **Legacy Checklists Reference** (required): Located at [legacy-checklists.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/document-legacy-codebase/details/legacy-checklists.md).
-- **Code Examples Reference** (required): Located at [code-examples.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/document-legacy-codebase/details/code-examples.md).
-- **Textbook PDF**: Cyrille Martraire's *Living Documentation* book located at [ Living Documentation.pdf](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/TMP/%20Living%20Documentation.pdf).
+- **Legacy Checklists Reference** (required): Located at [legacy-checklists.md](details/legacy-checklists.md).
+- **Code Examples Reference** (required): Located at [code-examples.md](details/code-examples.md).
+- **Textbook PDF**: Cyrille Martraire's *Living Documentation* book located at [ Living Documentation.pdf](../TMP/%20Living%20Documentation.pdf).
 
 ## Output
 - **Software Archaeology Assessment**: Documentation mapping data flows, critical legacy classes, and known risks.
@@ -50,25 +50,25 @@ If the legacy codebase has zero unit tests, or if its original domain terms are 
 
 ### Phase 1: Software Archaeology & Discovery (Chapter 14)
 1. **Audit Fossilized Knowledge**: Scan import graphs, commit logs, and database schemas. Seek out classes that change together frequently.
-2. **Document via Investigation Questions**: Answer the key archaeology questions (Who owns this? What APIs are active? What database tables are touched?). Refer to [legacy-checklists.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/document-legacy-codebase/details/legacy-checklists.md#section-1-software-archaeology-checklists) for the full checklist.
+2. **Document via Investigation Questions**: Answer the key archaeology questions (Who owns this? What APIs are active? What database tables are touched?). Refer to [legacy-checklists.md](details/legacy-checklists.md#section-1-software-archaeology-checklists) for the full checklist.
 3. **Draft a Superimposed Structure**: If the legacy code cannot be modified, create external documentation maps (sidecar YAML files or database tables) that classify legacy functions.
 
 ### Phase 2: Context Boundaries & Superimposed Structures (Chapter 14)
 1. **Define a Bubble Context**: Establish an adapter module that acts as an Anticorruption Layer. Translate the legacy structures into modern domain models.
-2. **Decorate with Superimposed Metadata**: For python/javascript codebases, use decorators to wrap legacy classes, adding telemetry, documentation links, or validation checks without modifying original internals. Refer to [code-examples.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/document-legacy-codebase/details/code-examples.md#section-1-superimposed-metadata-decorators) for decorator examples.
+2. **Decorate with Superimposed Metadata**: For python/javascript codebases, use decorators to wrap legacy classes, adding telemetry, documentation links, or validation checks without modifying original internals. Refer to [code-examples.md](details/code-examples.md#section-1-superimposed-metadata-decorators) for decorator examples.
 3. **Map the Superimposed Structures**: Combine the code references with the external registry so the runtime maps legacy actions to modern domain concepts.
 
 ### Phase 3: Biodegradable Transformation & Strangler Pattern (Chapter 14)
 1. **Apply Strangler Pattern**: Route incoming system requests through a proxy. For implemented modern endpoints, route to the new bubble. For legacy features, route to the old system.
-2. **Apply Biodegradable Annotations**: Annotate deprecated components with clear deadlines, replacement class targets, and owners. Refer to checklists in [legacy-checklists.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/document-legacy-codebase/details/legacy-checklists.md#section-3-biodegradable-transformation-checklists).
-3. **Enforce Legacy Rules**: Add architectural check tests (e.g. using ArchUnit or python custom import assertions) to verify that new code does not import directly from legacy files, violating the bubble. Refer to [code-examples.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/document-legacy-codebase/details/code-examples.md#section-2-dependency-validation-tests) for test implementations.
+2. **Apply Biodegradable Annotations**: Annotate deprecated components with clear deadlines, replacement class targets, and owners. Refer to checklists in [legacy-checklists.md](details/legacy-checklists.md#section-3-biodegradable-transformation-checklists).
+3. **Enforce Legacy Rules**: Add architectural check tests (e.g. using ArchUnit or python custom import assertions) to verify that new code does not import directly from legacy files, violating the bubble. Refer to [code-examples.md](details/code-examples.md#section-2-dependency-validation-tests) for test implementations.
 
 ---
 
 ## Resources
-- [legacy-checklists.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/document-legacy-codebase/details/legacy-checklists.md) - Checklists for archaeology, bubble boundaries, and strangler patterns.
-- [code-examples.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/document-legacy-codebase/details/code-examples.md) - Decorator models, sidecar mapping utilities, and boundary dependency tests.
-- [ Living Documentation.pdf](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/TMP/%20Living%20Documentation.pdf) - Original textbook.
+- [legacy-checklists.md](details/legacy-checklists.md) - Checklists for archaeology, bubble boundaries, and strangler patterns.
+- [code-examples.md](details/code-examples.md) - Decorator models, sidecar mapping utilities, and boundary dependency tests.
+- [ Living Documentation.pdf](../TMP/%20Living%20Documentation.pdf) - Original textbook.
 
 ---
 

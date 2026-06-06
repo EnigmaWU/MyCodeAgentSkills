@@ -50,4 +50,4 @@ Invoke this skill using trigger phrases such as:
 * *"superimpose a metadata structure on this legacy code..."*
 * *"perform software archaeology on this brownfield module..."*
 
-The invoking agent will outline legacy endpoints, define boundary interfaces, and establish external metadata mappings by referring to [SKILL.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/document-legacy-codebase/SKILL.md).
+The invoking agent will outline legacy endpoints, define boundary interfaces, and establish external metadata mappings by referring to [SKILL.md](SKILL.md).

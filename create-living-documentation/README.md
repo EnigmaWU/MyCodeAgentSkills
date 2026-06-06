@@ -50,4 +50,4 @@ Invoke this skill using trigger phrases such as:
 * *"extract living specifications from BDD feature files..."*
 * *"generate architecture codex from class annotations..."*
 
-The invoking agent will parse class files, extract metadata, compile living glossaries, and generate automated diagram specs by referring to [SKILL.md](file:///Users/enigmawu/VSCode/MyCodeAgentSkills/create-living-documentation/SKILL.md).
+The invoking agent will parse class files, extract metadata, compile living glossaries, and generate automated diagram specs by referring to [SKILL.md](SKILL.md).
