@@ -20,7 +20,7 @@ Update the repository's spec context after a conversation produces new requireme
 
 ## Where
 - Spec Kit-style feature folders such as `specs/<feature>/spec.md`, `plan.md`, `tasks.md`, `research.md`, `data-model.md`, or `contracts/`.
-- CaTDD SpecFlow-style artifacts such as `projectContext.md`, `pendingNews/`, `todoUS/`, `doingUS/`, `doneUS/`, module design docs, or `WorkingProcessLog.md`.
+- CaTDD SpecFlow-style artifacts such as `projectContext.md`, `pendingNews/`, `todoUS/`, `doingUS/`, `abortUS/`, `doneUS/`, module design docs, or `WorkingProcessLog.md`.
 - Repository planning or product docs such as `docs/`, `README.md`, issue bodies, ADRs, backlog files, or user-story markdown.
 - The current conversation, recent diffs, test output, and validation logs that explain what changed and why.
 
@@ -73,7 +73,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
    - `tasks.md` for actionable work items and status changes.
    - `research.md`, ADRs, or decision logs for tradeoffs and rationale.
    - `projectContext.md` for stable project facts, constraints, conventions, and confirmed decisions.
-   - `pendingNews/`, `todoUS/`, `doingUS/`, and `doneUS/` for CaTDD SpecFlow work-item lifecycle status.
+   - `pendingNews/`, `todoUS/`, `doingUS/`, `abortUS/`, and `doneUS/` for CaTDD SpecFlow work-item lifecycle status.
    - `WorkingProcessLog.md` for optional traces of command transitions, review decisions, and unresolved questions.
    - `README.md` or docs only when they are the repository's actual source of project context.
 3. If no suitable file exists, propose the smallest new artifact and explain why it is needed.
