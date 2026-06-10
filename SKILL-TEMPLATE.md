@@ -29,6 +29,11 @@ Use this when the skill is short, direct, and does not need bundled files.
 ---
 name: <skill-name>
 description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scope>.'
+OR
+description: 
+  WHEN/WHERE/WHO: is doing WHAT will activate this SKILL, 
+  HOW to use this SKILL to make a BETTER RESULT, 
+  and some WHY it matters.
 ---
 
 # <Skill Title>
