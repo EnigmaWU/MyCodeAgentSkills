@@ -108,6 +108,14 @@ This document provides a comprehensive index of all the agent skills available i
 
 ---
 
+## [conduct-event-storming](./conduct-event-storming/)
+
+**English:** WHEN/WHERE/WHO: Architects, domain experts, product owners, or agents analyzing a new business domain or complex workflow. HOW: Use this SKILL to facilitate a Big Picture Event Storming session, discovering Domain Events chronologically, and mapping them to Commands, Actors, and Aggregates. WHY: Traditional requirements gathering focuses on static data (nouns), leading to anemic domain models. Event Storming focuses on behavior (verbs), revealing the true complexity and boundaries of the business domain.
+
+**中文:** 使用时间/地点/人员: 架构师、领域专家、产品负责人或代理人在分析新业务领域或复杂工作流时。 方法: 使用此技能促进全局事件风暴会议，按时间顺序发现领域事件，并将它们映射到命令、参与者和聚合。 原因: 传统的需求收集侧重于静态数据(名词)，导致贫血的领域模型。事件风暴侧重于行为(动词)，揭示了业务领域的真正复杂性和边界。
+
+---
+
 ## [create-ecosystem-map](./create-ecosystem-map/)
 
 **English:** WHEN/WHERE/WHO: System architects, analysts, or agents defining the scope of a new project. HOW: Use this SKILL to extract all upstream and downstream systems from text and render them as a Mermaid.js graph. WHY: Failing to identify an integration point early leads to massive architectural rework later. Ecosystem maps define the exact boundary.
@@ -140,6 +148,14 @@ This document provides a comprehensive index of all the agent skills available i
 
 ---
 
+## [define-bounded-contexts](./define-bounded-contexts/)
+
+**English:** WHEN/WHERE/WHO: Software architects, domain experts, or agents splitting a monolith or designing a microservices architecture. HOW: Use this SKILL to partition the system into Subdomains (Core, Supporting, Generic) and map the integration contracts between Bounded Contexts using Context Mapping patterns. WHY: Monolithic models fail because words mean different things in different contexts. A "Product" in Inventory is a physical box; a "Product" in E-Commerce is a catalog listing. Explicitly defining Bounded Contexts prevents big balls of mud.
+
+**中文:** 使用时间/地点/人员: 软件架构师、领域专家或代理人在拆分单体架构或设计微服务架构时。 方法: 使用此技能将系统划分为子域(核心、支撑、通用)，并使用上下文映射模式映射限界上下文之间的集成契约。 原因: 单体模型会失败，因为单词在不同的上下文中意味着不同的东西。库存中的"产品"是一个物理盒子；电子商务中的"产品"是一个目录列表。明确定义限界上下文可以防止大泥球架构。
+
+---
+
 ## [design-agents-using-patterns](./design-agents-using-patterns/)
 
 **English:** Use when: designing a multi-agent system, creating routing logic, building self-correcting prompt chains, or adding tool-use and planning capabilities. Helps with: selecting appropriate agentic patterns, structuring coordinator-specialist teams, implementing exception handling, and preventing runaway LLM loops. Applies to: orchestration scripts, agent system designs, and prompt chain configurations in the workspace.
@@ -153,6 +169,14 @@ This document provides a comprehensive index of all the agent skills available i
 **English:** Use when: defining the structural views of a system, documenting system architecture, or aligning stakeholder expectations. Helps with: identifying stakeholders and scenarios, selecting viewpoints, drafting views (Context, Functional, Information, Concurrency, Development, Deployment, Operational), applying perspectives, and checking inter-view consistency. Applies to: software architecture descriptions, system design documents, and RFCs.
 
 **中文:** 使用场景: 定义系统的结构视图，记录系统架构，或调整利益相关者的期望时。有助于: 识别利益相关者和场景，选择视角，起草视图（上下文，功能，信息，并发，开发，部署，操作）。适用于: 软件架构说明、系统设计文档和RFC。
+
+---
+
+## [design-ddd-aggregates](./design-ddd-aggregates/)
+
+**English:** WHEN/WHERE/WHO: Developers, database designers, or agents designing the object-oriented domain layer of a system. HOW: Use this SKILL to strictly apply Vaughn Vernon's 4 Rules of Aggregate Design to shape entities and value objects. WHY: Most developers build massive "God Objects" (e.g., an Order object containing all OrderItems, Customer details, and Shipping history). This causes concurrency conflicts and unscalable database transactions. Designing small aggregates referenced by ID ensures transactional safety and high performance.
+
+**中文:** 使用时间/地点/人员: 开发人员、数据库设计师或代理人在设计系统的面向对象领域层时。 方法: 使用此技能严格应用Vaughn Vernon的4个聚合设计规则来塑造实体和值对象。 原因: 大多数开发人员构建了庞大的"上帝对象"(例如，包含所有订单项、客户详细信息和发货历史记录的订单对象)。这会导致并发冲突和无法扩展的数据库事务。设计由ID引用的小型聚合可确保事务安全性和高性能。
 
 ---
 
