@@ -156,6 +156,14 @@ This document provides a comprehensive index of all the agent skills available i
 
 ---
 
+## [define-ubiquitous-language](./define-ubiquitous-language/)
+
+**English:** WHEN/WHERE/WHO: Domain experts, developers, or agents analyzing raw business requirements. HOW: Use this SKILL to extract a strict Ubiquitous Language glossary for a specific Bounded Context. Reject synonyms, define exact semantics, and enforce these terms in all code, tests, and documentation. WHY: Ambiguous terminology causes translation costs and bugs. If the business says "Guest" but the code says "Visitor", the mental model breaks. The Ubiquitous Language ensures developers and domain experts speak the exact same language.
+
+**中文:** 使用时间/地点/人员: 领域专家、开发人员或代理人在分析原始业务需求时。 方法: 使用此技能为特定限界上下文提取严格的通用语言(Ubiquitous Language)词汇表。拒绝同义词，定义确切的语义，并在所有代码、测试和文档中强制使用这些术语。 原因: 模棱两可的术语会导致翻译成本和错误。如果业务人员说"客人(Guest)"而代码说"访客(Visitor)"，心智模型就会崩溃。通用语言可确保开发人员和领域专家使用完全相同的语言。
+
+---
+
 ## [design-agents-using-patterns](./design-agents-using-patterns/)
 
 **English:** Use when: designing a multi-agent system, creating routing logic, building self-correcting prompt chains, or adding tool-use and planning capabilities. Helps with: selecting appropriate agentic patterns, structuring coordinator-specialist teams, implementing exception handling, and preventing runaway LLM loops. Applies to: orchestration scripts, agent system designs, and prompt chain configurations in the workspace.
