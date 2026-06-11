@@ -1,110 +1,67 @@
 ---
 name: write-user-story
-description: 'Use when: the user says "write user story", "create user story", "BDD story", "write a feature", or asks for acceptance criteria in Given/When/Then format. Helps with: writing user stories in BDD style with structured acceptance criteria. Applies to: product requirements, feature descriptions, and backlog items.'
+description: >
+  WHEN/WHERE/WHO: Developers, product owners, or agents formalizing requirements into backlog items.
+  HOW: Use this SKILL to write User Stories in the standard "As a... I want..." format, backed strictly by BDD "Given/When/Then" executable specifications.
+  WHY: Vague stories lead to misunderstandings and bugs. BDD-style acceptance criteria make expected behavior explicit, testable, and unambiguous.
 ---
 
 # Write User Story in BDD Style
 
 ## Who
-Developers, product owners, or agents who need to produce well-structured user stories with BDD-style acceptance criteria.
+Developers, product owners, business analysts, or AI Agents. The agent uses this skill to produce well-structured user stories with BDD-style acceptance criteria.
 
 ## What
-Generate a user story that follows the standard **As a / I want / So that** format, with acceptance criteria written as BDD **Given / When / Then** scenarios. The output is a single, self-contained user story ready for a backlog or specification document.
+Generate a user story that focuses on business value and testability. The output is a single, self-contained user story ready for a backlog or specification document.
 
 ## When
-- The user asks to write, create, or draft a user story.
-- The user asks for BDD-style acceptance criteria.
-- The user describes a feature or requirement and wants it formalized.
-- The user says "write user story", "BDD story", "Given/When/Then", or "acceptance criteria".
-- Do **not** use this skill for bug reports, technical tasks, or epics that need decomposition first.
+Invoke this skill when asked to write, create, or draft a user story, or when asked for BDD-style acceptance criteria based on a feature description.
 
 ## Where
-- Output goes wherever the user specifies: a markdown file, a ticket body, the chat, or a backlog tool.
-- If no target is specified, output directly in the conversation.
+Applies to product requirements, feature descriptions, and backlog items (e.g., JIRA, markdown files).
 
 ## Why
-- BDD-style acceptance criteria make expected behavior explicit, testable, and unambiguous.
-- Consistent story format reduces back-and-forth between product and engineering.
-- Given/When/Then maps directly to automated acceptance tests.
+BDD-style acceptance criteria make expected behavior explicit, testable, and unambiguous. Consistent story format reduces back-and-forth between product and engineering, and Given/When/Then maps directly to automated acceptance tests.
 
 ## Inputs
-- **Feature or requirement description** (required): what the user wants to build or change.
-- **Role / persona** (optional): who the end user is. Defaults to "user" if not provided.
-- **Business value or goal** (optional): why this feature matters.
-- **Edge cases or constraints** (optional): any known boundary conditions, error paths, or non-functional requirements.
+- **Feature description** (required): What the user wants to build.
+- **Role/persona** (optional): Who the end-user is.
+- **Business value** (optional): Why this feature matters.
+- **Edge cases** (optional): Known constraints or error paths.
 
 ## Output
-A user story in the following structure:
-
-```markdown
-## User Story: <concise title>
-
-**As a** <role>,
-**I want** <capability>,
-**So that** <business value>.
-
-### Acceptance Criteria
-
-#### Scenario 1: <scenario title>
-- **Given** <precondition>
-- **When** <action>
-- **Then** <expected outcome>
-
-#### Scenario 2: <scenario title>
-- **Given** <precondition>
-- **When** <action>
-- **Then** <expected outcome>
-
-### Notes
-- <Any assumptions, open questions, or out-of-scope items>
-```
+- A User Story formatted using the standard templates.
 
 ## Constraints
-- Each scenario must have at least one **Given**, one **When**, and one **Then** step.
-- Use **And** to chain additional steps within a Given/When/Then block when needed.
-- Keep scenarios atomic: one behavior per scenario.
-- Do not invent requirements the user did not mention. If something is ambiguous, list it in **Notes** as an open question.
-- Write in plain language that both technical and non-technical readers can understand.
-- Aim for 3–7 scenarios per story. If more are needed, suggest splitting the story.
+- **RULE 1: BDD Executable Specifications First.** The absolute most important part of the story is the Acceptance Criteria. They MUST be written as strict BDD `Given/When/Then` scenarios that can be directly translated into automated tests (e.g., Cucumber).
+- **Primary Story Format:** Use the traditional `As a <role>, I want <capability>, So that <value>` format by default.
+- **Advisory Story Format:** You may optionally suggest the `In order to <value>, As a <role>, I want <capability>` format if the business goal seems to be getting lost in the technical details.
+- Keep scenarios atomic: one behavior per scenario. Do not write "end-to-end test scripts" disguised as scenarios.
 
 ## One More Thing
-If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
+If the input is purely a technical chore (e.g., "Update dependency X to version Y") with no observable business behavior, stop and inform the user that BDD User Stories are for functional requirements, not technical debt.
 
 ## How
 
-### Step 1: Gather Context
-1. Read the user's feature description carefully.
-2. Identify the **role** (who), the **capability** (what), and the **business value** (why).
-3. If any of these are missing or vague, ask the user before continuing.
+### Phase 1: Gather Context
+1. Identify the **role** (who), the **capability** (what), and the **business value** (why).
+2. If any of these are missing or vague, ask the user before continuing.
 
-### Step 2: Write the Story Statement
-1. Compose the **As a / I want / So that** statement.
-2. Keep it concise — one sentence per clause.
+### Phase 2: Write the Story Statement
+3. Compose the Primary Story statement (`As a... I want... So that...`).
 
-### Step 3: Identify Scenarios
-1. Extract the **happy path** first — the main success flow.
-2. Identify **alternate paths** — valid variations of the input or context.
-3. Identify **error or edge-case paths** — invalid input, missing data, permission failures, timeouts, etc.
-4. If the user provided explicit edge cases, include them. Do not fabricate scenarios beyond what the description supports.
+### Phase 3: Identify Scenarios
+4. Extract the **happy path** first — the main success flow.
+5. Identify **alternate paths** — valid variations of the input or context.
+6. Identify **error or edge-case paths** — invalid input, missing data, permission failures, timeouts, etc.
 
-### Step 4: Write Given/When/Then for Each Scenario
-1. **Given** sets up the precondition or system state.
-2. **When** describes the user action or system event.
-3. **Then** states the observable outcome or system response.
-4. Use **And** for additional steps within a block:
-   ```
-   - **Given** the user is logged in
-   - **And** the user has admin privileges
-   - **When** the user deletes a record
-   - **Then** the record is removed
-   - **And** an audit log entry is created
-   ```
+### Phase 4: Write BDD Acceptance Criteria
+7. For each scenario, write the executable specifications using `Given / When / Then`.
+8. Ensure scenarios are declarative (focusing on business intent) rather than imperative (focusing on UI clicks and keystrokes).
 
-### Step 5: Add Notes
-1. List any assumptions made during writing.
-2. Flag open questions or ambiguities for the user to resolve.
-3. Note anything explicitly out of scope.
+## Resources
+- [BDD Story Format](./details/bdd-story-format.md)
 
-### Step 6: Deliver
-1. Output the complete user story in the format shown in **Output**.
-2. If the user specified a file path, write it there. Otherwise, output in the conversation.
+## Validation
+1. Verify that every scenario has at least one Given, one When, and one Then.
+2. Verify that the story includes a clear business value statement.
