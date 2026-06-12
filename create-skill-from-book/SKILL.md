@@ -67,7 +67,7 @@ If the reference material is missing, or if the safety-critical integrity levels
 6. Identify **Red Flags**: Define warning signs that indicate the skill's instructions are being violated (e.g., using `malloc` in real-time loops, or unhandled priority inversions).
 
 ### Phase 3: Choose Tier & Draft SKILL.md
-1. Choose the template tier from [SKILL-TEMPLATE.md](../SKILL-TEMPLATE.md):
+1. Choose the template tier from [SKILL-TEMPLATE.md](../CREATING-SKILL-TEMPLATE/details/SKILL-TEMPLATE.md):
    * **SIMPLE**: A single straight-line checklist (e.g., a MISRA C helper for pointers).
    * **COMPLICATED**: Multi-step workflows requiring inputs, outputs, and clear constraints (e.g., configuring an RTOS task pool).
    * **COMPLEX**: Branching workflows, review loops, or references to PDF files (e.g., design viewpoints, architectural tactics).
@@ -90,7 +90,7 @@ If the reference material is missing, or if the safety-critical integrity levels
 
 ## Resources
 - [extraction-guidelines.md](details/extraction-guidelines.md) - Deep-dive guidelines on extracting procedural checklists for embedded/systems architectures.
-- [SKILL-TEMPLATE.md](../SKILL-TEMPLATE.md) - The workspace templates for SIMPLE, COMPLICATED, and COMPLEX skills.
+- [SKILL-TEMPLATE.md](../CREATING-SKILL-TEMPLATE/details/SKILL-TEMPLATE.md) - The workspace templates for SIMPLE, COMPLICATED, and COMPLEX skills.
 
 ---
 

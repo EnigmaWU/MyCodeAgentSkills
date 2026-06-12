@@ -14,14 +14,14 @@ This template merges the human-readable 5W1H structure with the machine-readable
 | When | **Scheduling** | Exact trigger conditions and explicit near-miss definitions. |
 | Where | **Scheduling** | Explicit path boundaries or system contexts required. |
 | Why | **Scheduling** | Why this skill exists, including value, constraints, and risks. |
-| How | **Structural** | The execution structure, explicit phases, and review loops. |
-| Constraints | **Logical** | Invariants, safety boundaries, and explicitly required tools. |
+| How | **Structural** | The execution state-machine, explicit phases, and branching logic. |
+| Constraints | **Logical** | Invariants, required tools, and Anti-Pattern Mapping (what NOT to do). |
 
 ## Choose a Version
 
 | Version | Use when | Default shape |
 | --- | --- | --- |
-| SIMPLE | One straight-line workflow, light context, one main output | 5W1H plus a short How |
+| SIMPLE | One straight-line workflow, light context, one main output | 5W1H, a short How, and Validation |
 | COMPLICATED | Multi-step workflow, multiple tools, explicit inputs and outputs | 5W1H plus Inputs, Output, and Constraints |
 | COMPLEX | Branching workflow, review loops, bundled resources, or multiple save targets | 5W1H plus Inputs, Output, Constraints, Resources, and Validation |
 
@@ -58,9 +58,12 @@ description:
 <Why this skill exists and why this workflow is worth reusing.>
 
 ## How (Structural Workflow)
-1. <Gather the minimum context.>
-2. <Do the task.>
-3. <Validate the result.>
+<Use strict, deterministic instructions. No ambiguous prose (e.g., 'try to').>
+1. **Input State**: <Gather the explicit context needed.>
+2. **Execution**: <Perform the deterministic task.>
+
+## Validation (Verifiable Rewards)
+1. <Execute a strict checklist, schema validation, or harness command to prove success.>
 
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
@@ -104,16 +107,19 @@ description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scop
 ## Constraints (Logical Boundaries)
 - <Safety, scope, or style rules>
 - <Required CLI tools or APIs>
-- <Things this skill must not do>
+- **Anti-Pattern Mapping**: <Explicitly state what this skill MUST NOT do to prevent loops/reasoning drift>
 
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
 ## How (Structural Workflow)
-1. <Gather the required context.>
-2. <Perform the main task.>
-3. <Validate the result.>
-4. <Report the outcome clearly.>
+<Use imperative state-machine logic. Every step must have a clear input/output state.>
+1. **Input Phase**: <Gather and validate the required context.>
+2. **Execution Phase**: <Perform the main task using explicit conditional branching.>
+
+## Validation (Verifiable Rewards)
+1. <Execute a strict checklist, script, or command to prove success before concluding.>
+2. <Report the outcome and side-effects clearly.>
 ```
 
 ## COMPLEX
@@ -154,31 +160,31 @@ description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scop
 ## Constraints (Logical Boundaries)
 - <Safety, scope, or style rules>
 - <Required CLI tools or APIs>
-- <Things this skill must not do>
+- **Anti-Pattern Mapping**: <Explicitly state what this skill MUST NOT do to prevent loops/reasoning drift>
 
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
 ## How (Structural Workflow)
+<Use imperative state-machine logic. Every phase must explicitly define branching (If/Then/Else).>
 
 ### Phase 1: <discovery or decision>
-<What to do and why it matters.>
+<Explicit input state expectation and execution steps.>
 
 ### Phase 2: <execution>
-<What to do and why it matters.>
+<Explicit execution steps and expected output state.>
 
-### Phase 3: <validation or iteration>
-<Explicit review loops or validation gates between phases.>
+### Phase 3: <iteration>
+<Explicit review loops (with hard retry limits) between phases.>
 
 ## Resources
 - <scripts/>
 - <references/>
 - <assets/>
 
-## Validation
-1. <Check the frontmatter and section names.>
-2. <Run the validation or review flow.>
-3. <Report gaps, risks, or follow-up work.>
+## Validation (Verifiable Rewards)
+1. <Execute a strict test harness, script, or checklist to mathematically prove success.>
+2. <Report gaps, risks, or follow-up work only after verification passes.>
 ```
 
 ## Notes

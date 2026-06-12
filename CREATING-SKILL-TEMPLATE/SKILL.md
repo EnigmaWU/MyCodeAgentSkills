@@ -12,7 +12,7 @@ description: >
 AI Agents acting as meta-engineers to expand the repository's capabilities, or users who want to quickly scaffold a new skill structure.
 
 ## What
-Scaffolds a perfectly formatted, standard-compliant skill directory. This includes the `SKILL.md` based on the Hybrid 5W1H + SSL (Scheduling-Structural-Logical) `SKILL-TEMPLATE.md`, and the automated generation of both English and Chinese `README.md` files.
+Scaffolds a perfectly formatted, standard-compliant skill directory. This includes the `SKILL.md` based on the Hybrid 5W1H + SSL (Scheduling-Structural-Logical) `details/SKILL-TEMPLATE.md`, and the automated generation of both English and Chinese `README.md` files.
 
 ## When
 Invoke this skill when the user asks to "create a skill template", "scaffold a new skill", "generate the boilerplate for skill X", or similar phrases.
@@ -30,7 +30,7 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
 
 ## Output
 - A new directory: `[skill-name]/`
-- `[skill-name]/SKILL.md` formatted from `SKILL-TEMPLATE.md`.
+- `[skill-name]/SKILL.md` formatted from `details/SKILL-TEMPLATE.md`.
 - `[skill-name]/README.md` (English).
 - `[skill-name]/README_ZH.md` (Chinese).
 
@@ -58,7 +58,7 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
 3. **Information Decoupling**: If the skill contains heavy static reference data or massive code blocks, do not bloat the `SKILL.md`. Strip them out and place them in a `details/` directory, using dynamic file-retrieval hooks (relative links) in the core file.
 
 ### Phase 2: Execution Logic & State Machine Conversion
-4. **Determinism Linting**: Scaffold the core sections (Who, What, When, Where, Why) using `SKILL-TEMPLATE.md`. Eliminate all ambiguous prose (e.g., "try to", "use judgment", "if possible") from the instructions.
+4. **Determinism Linting**: Scaffold the core sections (Who, What, When, Where, Why) using `details/SKILL-TEMPLATE.md`. Eliminate all ambiguous prose (e.g., "try to", "use judgment", "if possible") from the instructions.
 5. **Branching Control**: Rewrite the `## How` execution steps into an imperative state machine using strict If-Then-Else conditional branching logic. Every phase must have an explicit input expectation and an expected state output.
 
 ### Phase 3: Negative Constraint Boundary Injection

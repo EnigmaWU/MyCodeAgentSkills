@@ -59,7 +59,7 @@ graph TD
 *   Translate general advice into explicit **Constraints** (what *must not* happen) and **How-To** instructions (what *must* happen).
 *   Define the exact inputs (e.g., "Datasheet register maps", "Existing driver source code") and outputs (e.g., "Driver source code conforming to MISRA C:2012").
 
-### Step 3: Select Template Tier (from SKILL-TEMPLATE.md)
+### Step 3: Select Template Tier (from ../../CREATING-SKILL-TEMPLATE/details/SKILL-TEMPLATE.md)
 *   **SIMPLE**: A straight-line coding checklist with no external resources.
 *   **COMPLICATED**: Multi-step workflows requiring inputs, outputs, and clear operating constraints.
 *   **COMPLEX**: Highly structured workflows involving multi-phase execution (e.g., architecture modeling -> implementation -> validation), review loops, or references to PDF textbooks.

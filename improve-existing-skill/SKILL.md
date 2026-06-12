@@ -124,7 +124,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 ## Resources
 - `save-as-skill/SKILL.md` — the companion skill for creating new skills from scratch.
 - `save-as-skill/scripts/validate_skill.py` — validator for checking `SKILL.md` files against template tiers.
-- `SKILL-TEMPLATE.md` — the master template reference for SIMPLE, COMPLICATED, and COMPLEX tiers.
+- `../CREATING-SKILL-TEMPLATE/details/SKILL-TEMPLATE.md` — the master template reference for SIMPLE, COMPLICATED, and COMPLEX tiers.
 
 ## Validation
 1. Verify the updated `SKILL.md` has valid frontmatter with `name` and `description`.
