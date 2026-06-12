@@ -1,6 +1,9 @@
 ---
 name: save-as-skill
-description: 'Use when: a long conversation solved a hard problem, a debugging session produced a reusable workflow, a multi-step implementation finally converged, or the user says "save as skill", "capture this as a skill", or "turn this into a skill". Helps with: extracting a reusable SKILL.md, preserving the reasoning and artifacts from the conversation, and drafting optional review prompts. Applies to: the current conversation, generated skill packages, and skill handoff for Copilot, Continue, Cline, and Claude Code.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Agents or users wanting to preserve a completed, complex conversation or debugging session into a reusable skill.]
+  HOW: [Structural: Use this SKILL to extract the workflow, format it into the Hybrid 5W1H + SSL structure, and evaluate it via Ctx2Skill Self-Play.]
+  WHY: [Scheduling: Good conversations are expensive. Saving them explicitly to the machine-readable SSL standard ensures future agents can perfectly index and reuse the reasoning without degradation.]
 ---
 
 # Save As Skill
@@ -34,13 +37,15 @@ Turn the current conversation into a self-contained skill package. The main deli
 - Commands, code snippets, configs, logs, or scripts produced during the conversation.
 - Optional target platform, save location, or preferred template tier.
 
-## Output
-- A reusable `SKILL.md` written in the SIMPLE, COMPLICATED, or COMPLEX template tier that best fits the conversation.
+## Output (Logical Evidence)
+- A reusable `SKILL.md` written in the Hybrid 5W1H + SSL framework (SIMPLE, COMPLICATED, or COMPLEX tier).
 - A suggested skill directory structure when bundled resources are needed.
-- A Ctx2Skill self-play evaluation report: scored probe tasks, failure diagnosis, and version history. Always produced during Phase 6; includes Cross-Time Replay results only when two or more self-play rounds run.
+- Explicitly declared state changes or side effects (if any).
+- A Ctx2Skill self-play evaluation report: scored probe tasks, failure diagnosis, and version history.
 - A recommendation to use instructions or project docs instead when the conversation is not skill-worthy.
 
-## Constraints
+## Constraints (Logical Boundaries)
+- **RULE 1: Token Efficiency.** Ensure the generated `SKILL.md` remains under 500 lines. Move verbose reference material into `details/` or `references/`.
 - Preserve the original intent of the conversation. Do not invent steps that did not happen.
 - Use real artifacts from the conversation whenever possible.
 - Explain why steps matter instead of turning the skill into a rigid checklist.
@@ -51,7 +56,7 @@ Turn the current conversation into a self-contained skill package. The main deli
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
+## How (Structural Workflow)
 
 ### Phase 1: Assess Skill-Worthiness
 1. Review the whole conversation for complexity, reusability, and completeness.
@@ -84,21 +89,21 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 - Choose COMPLEX for branching workflows, review loops, bundled scripts, or multi-platform save guidance.
 - Use the lightest tier that still captures the real workflow clearly.
 
-### Phase 4: Build the Skill Descriptor
-Create the following fields from the conversation:
+### Phase 4: Build the SSL Descriptor
+Create the following fields from the conversation according to the Hybrid 5W1H + SSL template:
 
 - `name`: a lowercase, hyphenated identifier derived from the core action.
-- `description`: what it does, when to use it, and where it applies. Include trigger phrases so the skill does not undertrigger.
+- `description`: use the explicit multi-line format (`WHEN/WHERE/WHO`, `HOW`, `WHY`).
 - `who`: who the skill is for.
-- `what`: the task the skill accomplishes.
-- `when`: obvious triggers and near-miss scenarios.
+- `what`: the task the skill accomplishes and concrete side effects.
+- `when`: explicit triggers and near-miss boundaries.
 - `where`: files, systems, or contexts it applies to.
 - `why`: why this workflow is valuable.
-- `how`: ordered steps or phases with reasoning.
-- `inputs`, `output`, and `constraints`: only include what the conversation actually supports.
+- `how`: explicit Structural Workflow phases with review loops.
+- `inputs`, `output`, and `constraints`: concrete Logical boundaries and explicitly required tools.
 
 ### Phase 5: Generate the Skill Package
-1. Write `SKILL.md` using the chosen template tier.
+1. Write `SKILL.md` using the Hybrid 5W1H + SSL framework.
 2. Keep the sections explicit so the next agent can scan the skill quickly.
 3. Use imperative instructions, but explain why each step matters.
 4. Add real commands, code, configs, or file patterns from the conversation instead of abstract placeholders whenever possible.

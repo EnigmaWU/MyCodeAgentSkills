@@ -1,6 +1,9 @@
 ---
 name: create-skill-from-book
-description: 'Use when: codifying a technical textbook, engineering standard, or reference manual into a reusable agent skill. Helps with: extracting procedural workflows, design constraints, and checklists; structuring them into SIMPLE, COMPLICATED, or COMPLEX skill templates; and tailoring skills to embedded systems, real-time safety, and hardware realities. Applies to: skill directories, reference guides, and design checklists in the workspace.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Architects or agents wanting to translate passive technical reference books or engineering standards into executable agent skills.]
+  HOW: [Structural: Use this SKILL to extract actionable workflows, format them into the Hybrid 5W1H + SSL structure, and tailor them to embedded/real-time constraints.]
+  WHY: [Scheduling: Asking an agent to read a 500-page book every chat session is too slow and context-heavy. Codifying textbooks into structured procedural steps ensures strict standard compliance automatically.]
 ---
 
 # Create Skill from Book
@@ -27,14 +30,15 @@ Ingest chapters or sections of a technical book, identify the core engineering g
 - **Reference Material** (required): The specific book, chapter, PDF path, or URL containing the design methodology or standard.
 - **Target Domain Context** (optional): Constraints specific to the target architecture (e.g., STM32, ARM Cortex-M, FreeRTOS, Linux kernel, ISO 26262 ASIL-D, MISRA C compliance).
 
-## Output
+## Output (Logical Evidence)
 - **Skill Directory**: A new workspace directory containing:
-  - `SKILL.md` conforming to the selected template tier (SIMPLE, COMPLICATED, or COMPLEX).
-  - `README.md` introducing the skill, its scope, and how to trigger it.
-  - `details/` (optional) containing Level-3 detailed checklists or cheat sheets for specific chapters.
+  - `SKILL.md` conforming to the selected template tier (SIMPLE, COMPLICATED, or COMPLEX) in the Hybrid 5W1H + SSL framework.
+  - `README.md` and `README_ZH.md` introducing the skill, its scope, and how to trigger it.
+  - `details/` containing Level-3 detailed checklists or cheat sheets to keep the main file under 500 lines.
 - **Validation Log**: Evidence showing the generated skill works, has valid internal file links, and does not contain generic web-stack assumptions.
 
-## Constraints
+## Constraints (Logical Boundaries)
+- **RULE 1: Token Efficiency.** Ensure the generated `SKILL.md` remains under 500 lines. Move verbose reference material into `details/`.
 - **Absolute Realism**: Do not hallucinate tools, compilers, or libraries. Every command or tool recommended in the skill must be standard and validated (e.g., `cppcheck`, `gcc-arm-none-eabi`, or specific static analyzers).
 - **Embedded Rigor**: When the target domain is embedded or systems programming, the skill must explicitly cover physical limits (timing, memory, interrupts, power states) and avoid cloud/web terminology.
 - **Actionable Steps**: Do not use vague language like "keep code clean" or "optimize performance." Use concrete directives like "Verify that WCET is under X ms by using oscilloscope tests or profiling hooks."
@@ -44,7 +48,7 @@ If the reference material is missing, or if the safety-critical integrity levels
 
 ---
 
-## How
+## How (Structural Workflow)
 
 ### Phase 1: Ingest & Domain Mapping
 1. Read the reference textbook, PDF chapters, or standard documents provided in the workspace.
@@ -68,8 +72,8 @@ If the reference material is missing, or if the safety-critical integrity levels
    * **COMPLICATED**: Multi-step workflows requiring inputs, outputs, and clear constraints (e.g., configuring an RTOS task pool).
    * **COMPLEX**: Branching workflows, review loops, or references to PDF files (e.g., design viewpoints, architectural tactics).
 2. Create the target skill directory under the workspace.
-3. Write the `SKILL.md` using the exact structure and order specified in the chosen template tier.
-4. Include the frontmatter at the top of `SKILL.md`, including `name` and `description` (fully quoted).
+3. Write the `SKILL.md` using the explicit **Hybrid 5W1H + SSL** structure defined in the chosen template tier (Scheduling, Structural, Logical).
+4. Include the frontmatter at the top of `SKILL.md`, using the multi-line block scalar format for `description` (`WHEN/WHERE/WHO`, `HOW`, `WHY`).
 5. Always include the **"One More Thing"** section instructing future agents to stop and ask the user if instructions are unclear or conflicting.
 
 ### Phase 4: Create Supporting README and Details

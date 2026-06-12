@@ -1,6 +1,9 @@
 ---
 name: improve-existing-skill
-description: 'Use when: an existing skill was applied but did not fully solve the problem, the user iterated further in conversation to reach a working solution, and the user says "improve this skill", "update the skill", "the skill needs fixing", or "make this skill better". Helps with: updating an existing SKILL.md with lessons learned from a conversation that went beyond what the original skill covered. Applies to: existing skill packages in .github/skills/, .cline/skills/, .continue/prompts/, or .claude/skills/.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Agents or maintainers updating an existing skill in the repository after discovering gaps or improvements during a conversation.]
+  HOW: [Structural: Use this SKILL to identify gaps, classify changes, apply improvements, migrate legacy formats to the Hybrid SSL standard, and validate the final skill.]
+  WHY: [Scheduling: Skills degrade over time. Folding fixes back into the skill keeps it accurate and preserves the original identity while automatically migrating older skills to the state-of-the-art framework.]
 ---
 
 # Improve Existing Skill
@@ -33,18 +36,19 @@ Update an existing `SKILL.md` so it reflects what actually worked. The deliverab
 ## Inputs
 - The existing `SKILL.md` that was applied (required).
 - The current conversation containing the iteration that went beyond the original skill (required).
-- The user's description of what was insufficient or wrong (recommended).
 - Any new artifacts, commands, configs, or scripts produced during the conversation (optional).
 
-## Output
-- A revised `SKILL.md` that incorporates the improvements while preserving the original skill's identity.
-- A diff summary showing what changed and why.
-- Updated bundled resources (`scripts/`, `references/`, `assets/`) when the conversation produced new artifacts.
-- A recommendation to leave the skill unchanged when the conversation did not actually improve it.
+## Output (Logical Evidence)
+- A revised `SKILL.md` that incorporates the improvements while preserving the original skill's identity, migrated to the Hybrid 5W1H + SSL format if it wasn't already.
+- Explicitly declared state changes (diff summary).
+- Updated bundled resources (`scripts/`, `references/`, `assets/`).
 
-## Constraints
-- Preserve the original skill's `name`, overall purpose, and template tier unless the user explicitly asks to change them.
+## Constraints (Logical Boundaries)
+- **RULE 1: Template Migration.** If the existing skill is not using the Hybrid 5W1H + SSL format (e.g., missing multi-line YAML, missing `(Structural Workflow)` headers), you MUST migrate it to the new standard during the update.
+- **RULE 2: Token Efficiency.** Ensure the updated `SKILL.md` remains under 500 lines. Push verbose checklists or examples into a `details/` directory.
+- Preserve the original skill's `name` and overall purpose.
 - Do not remove steps, constraints, or artifacts from the original skill unless they are proven wrong by the conversation.
+- Maintain template compliance against the target tier (SIMPLE, COMPLICATED, or COMPLEX).
 - Add new material only where the conversation provides evidence. Do not invent improvements that did not happen.
 - Keep the updated skill self-contained. If overflow grows too large, move it into `references/`.
 - Maintain template compliance. The updated skill must still pass validation against its template tier (SIMPLE, COMPLICATED, or COMPLEX).
@@ -53,7 +57,7 @@ Update an existing `SKILL.md` so it reflects what actually worked. The deliverab
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
+## How (Structural Workflow)
 
 ### Phase 1: Identify the Original Skill
 1. Determine which skill was applied in the conversation. Look for explicit references, slash commands, or file paths.
@@ -83,17 +87,22 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
    - **Restructure**: the template tier needs to change (e.g., SIMPLE → COMPLICATED) because the workflow is now more complex.
 2. If the change is a **Restructure**, confirm with the user before proceeding because it changes the skill's shape significantly.
 
-### Phase 4: Apply the Improvements
+### Phase 4: Template Migration (SSL Upgrade)
+1. Check if the original skill uses the modern **Hybrid 5W1H + SSL** format. 
+2. If it does NOT, rewrite the frontmatter to the multi-line `description: >` format (`WHEN/WHERE/WHO:`, `HOW:`, `WHY:`).
+3. Add the explicit layer mappings to the headers (e.g., `## How (Structural Workflow)`, `## Constraints (Logical Boundaries)`).
+4. Extract any overly long code blocks or checklists (>500 lines) into a `details/` directory.
+
+### Phase 5: Apply the Improvements
 1. Edit the `SKILL.md` in place, preserving its existing structure as much as possible.
 2. For each gap identified in Phase 2:
    - Add missing steps to the `How` section in the correct position.
    - Update `Inputs`, `Output`, or `Constraints` when new requirements emerged.
-   - Update `When` if new trigger phrases or boundaries were discovered.
+   - Update `When` if new trigger phrases or near-miss boundaries were discovered.
    - Add new artifacts to `scripts/`, `references/`, or `assets/` when the conversation produced them.
 3. Use real commands, code, and file paths from the conversation instead of abstract placeholders.
-4. Explain why each addition matters so the skill teaches reasoning, not just procedure.
 
-### Phase 5: Validate the Updated Skill
+### Phase 6: Validate the Updated Skill
 1. Verify the updated skill still matches its template tier. Use the section-order rules:
    - SIMPLE: `Who`, `What`, `When`, `Where`, `Why`, `How`, `One More Thing`.
    - COMPLICATED: `Who`, `What`, `When`, `Where`, `Why`, `Inputs`, `Output`, `Constraints`, `One More Thing`, `How`.
@@ -106,7 +115,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 
 3. Fix any validation failures before returning the result.
 
-### Phase 6: Present the Diff and Save
+### Phase 7: Present the Diff and Save
 1. Show a concise diff summary to the user, listing what was added, changed, or removed and why.
 2. Ask the user to confirm the update.
 3. Save the updated `SKILL.md` and any new bundled resources to the original skill location.
