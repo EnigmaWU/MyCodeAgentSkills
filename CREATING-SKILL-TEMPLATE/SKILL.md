@@ -41,16 +41,11 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
 - **RULE 4: Token Efficiency (Max 500 Lines).** The `SKILL.md` file MUST be concise (ideally under 500 lines). If the skill contains highly verbose checklists, code examples, or design rules, you MUST place them in a `details/` directory and link to them relatively from `SKILL.md`.
 - **RULE 5: Trigger Accuracy.** The `description` block MUST explicitly define both exact trigger phrases AND "near-misses" (when NOT to use the skill) to prevent accidental executions by the agent.
 
-## How
+## How (The 4-Phase Refinement Protocol)
 
-### Phase 1: Context Gathering
-1. If the user hasn't provided the Skill Name, Complexity, or Purpose, stop and ask them for these details.
-2. Review the `SKILL-TEMPLATE.md` at the root of the repository to select the correct sections based on the Complexity tier (e.g., COMPLEX requires "Resources" and "Validation").
-
-### Phase 2: Scaffolding the Core File
-3. Create the `[skill-name]` directory.
-4. Create the `[skill-name]/SKILL.md` file.
-5. Apply the standard YAML frontmatter exactly like this:
+### Phase 1: Structural Alignment & Routing Optimization
+1. **Context Gathering**: Ask the user for the Skill Name, Complexity, and Purpose if not provided.
+2. **Frontmatter Hardening**: Ensure the `description` block acts as a clean routing trigger. Explicitly state when an agent should load the skill (trigger phrases) and when it shouldn't (near-misses). Apply the standard Hybrid SSL YAML frontmatter:
    ```yaml
    ---
    name: [skill-name]
@@ -60,47 +55,22 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
      WHY: [Scheduling: Why this skill matters or the problem it prevents]
    ---
    ```
-6. Fill in the remaining sections using the Hybrid 5W1H + SSL structure defined in `SKILL-TEMPLATE.md`. Ensure the `## How` section uses explicit phases and the `## Constraints` section lists logical side-effects and required tools. Always include the `## One More Thing` section.
+3. **Information Decoupling**: If the skill contains heavy static reference data or massive code blocks, do not bloat the `SKILL.md`. Strip them out and place them in a `details/` directory, using dynamic file-retrieval hooks (relative links) in the core file.
 
-### Phase 3: Generating Localized READMEs
-7. Create `[skill-name]/README.md` (English) using this structure:
-   ```markdown
-   # [skill-name]
+### Phase 2: Execution Logic & State Machine Conversion
+4. **Determinism Linting**: Scaffold the core sections (Who, What, When, Where, Why) using `SKILL-TEMPLATE.md`. Eliminate all ambiguous prose (e.g., "try to", "use judgment", "if possible") from the instructions.
+5. **Branching Control**: Rewrite the `## How` execution steps into an imperative state machine using strict If-Then-Else conditional branching logic. Every phase must have an explicit input expectation and an expected state output.
 
-   ## Overview
-   [The exact English text from the YAML description block]
+### Phase 3: Negative Constraint Boundary Injection
+6. **Anti-Pattern Mapping**: Explicitly define the negative space under `## Constraints (Logical Boundaries)`. State exactly what the agent *must not do* under any circumstances to prevent common reasoning drift or loop regressions during autonomous execution.
 
-   ## Usage
-   Trigger this skill to execute the defined workflow. See `SKILL.md` for specific triggers and inputs.
+### Phase 4: Verification & Harness Layer Engineering
+7. **Verifiable Rewards Design**: Build a dedicated, non-negotiable validation block (`## Validation`) at the end of the skill. This must force the agent to execute a strict checklist (such as validating output against a JSON schema or running a specific harness command) to confirm execution success before closing the task loop.
 
-   ## Structure
-   - [SKILL.md](./SKILL.md): The core workflow and definition of the skill.
-   ```
-8. Translate the description block into Chinese.
-9. Create `[skill-name]/README_ZH.md` using this structure:
-   ```markdown
-   # [skill-name]
-
-   ## 概述 (Overview)
-   [The exact Chinese translation of the description block]
-
-   ## 使用方法 (Usage)
-   触发此技能以执行定义的工作流。有关特定的触发器和输入，请参见 `SKILL.md`。
-
-   ## 结构 (Structure)
-   - [SKILL.md](./SKILL.md): 技能的核心工作流和定义。
-   ```
-
-### Phase 4: Finalization
-10. Ensure that the total length of `SKILL.md` is under 500 lines. If it is longer, automatically refactor verbose sections into external files inside a `details/` subdirectory.
-11. If the repository uses an automated summary script (e.g., `generate_skill_summary.py`), execute it to update the master `README_SkillSummary.md`.
-
-### Phase 5: Test-Driven Evaluation (Skill Simulation)
-12. Before finalizing the skill, the agent MUST simulate its triggering accuracy.
-13. **Generate Mock Prompts:** Create 3 mock user prompts (e.g., one perfect match, one near-miss, one completely unrelated).
-14. **Evaluate:** Read the newly created `SKILL.md` description frontmatter. Would an agent reading *only* this description correctly trigger the skill for the right prompt, and ignore the near-miss?
-15. **Refine:** If the trigger accuracy is ambiguous, rewrite the `WHEN/WHERE/WHO` section of the description until it is perfectly precise.
-16. Stage and commit the new directory to git with a standard WHAT/HOW/WHY message.
+### Phase 5: Bilingual Support & Finalization
+8. Create `[skill-name]/README.md` (English) and `[skill-name]/README_ZH.md` (Chinese) containing localized usage instructions based on the description block.
+9. **Test-Driven Evaluation**: Simulate the skill's routing accuracy against mock prompts. If trigger accuracy is ambiguous, harden the frontmatter again.
+10. Stage and commit the new directory to git.
 
 ## Validation
 1. Verify the frontmatter uses the `>` multi-line format and does not have surrounding quotes.
