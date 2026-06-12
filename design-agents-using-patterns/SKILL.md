@@ -1,6 +1,9 @@
 ---
 name: design-agents-using-patterns
-description: 'Use when: designing a multi-agent system, creating routing logic, building self-correcting prompt chains, or adding tool-use and planning capabilities. Helps with: selecting appropriate agentic patterns, structuring coordinator-specialist teams, implementing exception handling, and preventing runaway LLM loops. Applies to: orchestration scripts, agent system designs, and prompt chain configurations in the workspace.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: designing a multi-agent system, creating routing logic, building self-correcting prompt chains, or adding tool-use and planning capabilities. Applies to: orchestration scripts, agent system designs, and prompt chain configurations in the workspace]
+  HOW: [Structural: Helps with: selecting appropriate agentic patterns, structuring coordinator-specialist teams, implementing exception handling, and preventing runaway LLM loops]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Design Agents Using Patterns
@@ -39,12 +42,12 @@ Applies to orchestration files, state graphs, system architecture documents, and
 - **Framework Target** (optional): The target framework (e.g., LangChain/LangGraph, Google ADK, or raw Python).
 - **Agentic Design Patterns Book** (optional): Reference book unpacked at [Agentic Design Patterns.epub](../TMP/Agentic%20Design%20Patterns.epub).
 
-## Output
+## Output (Logical Evidence)
 - **Agentic System Architecture Specification**: Visual/textual mapping of agent nodes, state schema, routing rules, and fallback paths.
 - **Orchestration Source Code**: Executable code (e.g., using LangChain `RunnableBranch` or Google ADK `Agent`/`SequentialAgent`) that implements the designed topology.
 - **Resilience Log**: Documentation detailing loop iteration limits, error handling guards, and fallback conditions.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **Runaway Loop Protection**: Every agentic loop (Reflection, Planning, or Exception Recovery) must have a strict, hard-coded maximum iteration limit (e.g., maximum 3 or 5 retries) to prevent runaway token spend.
 - **No Silent Failures**: All tool errors, API timeouts, or parsing exceptions must be caught, logged, and routed through a defined recovery or escalation path.
 - **Schema Validation**: All data passed between agents or tools must be validated against a strict state schema (e.g., Pydantic models or typed state dictionaries).
@@ -54,8 +57,7 @@ If the primary model options, tool schemas, or maximum token/cost budgets are un
 
 ---
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Analyze & Select Patterns
 1. Identify the complexity and requirements of the target system:
    * **Linear & Predictable**: Select *Prompt Chaining*.

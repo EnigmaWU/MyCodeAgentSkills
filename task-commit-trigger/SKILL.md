@@ -28,14 +28,14 @@ Applies to the local git repository in the workspace.
 - **Changes made**: The diff or description of the files modified during the task.
 - **Task context**: The goal of the task that was just completed.
 
-## Output
+## Output (Logical Evidence)
 - A structured commit message containing:
   - **WHAT**: A short summary of what was solved or added.
   - **HOW**: A brief explanation of the technical changes made.
   - **WHY**: The rationale behind the chosen approach or design decisions.
 - Execution of the git commit (if approved).
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not commit changes unrelated to the completed task.
 - Keep the commit message concise but informative.
 - Ensure the WHY section focuses on design decisions, not just repeating the HOW.
@@ -43,7 +43,7 @@ Applies to the local git repository in the workspace.
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
+## How (Structural Workflow)
 1. **Proactive Notification**: Immediately upon completing a task in the conversation, auto trigger or notice developer: "Shall we commit just completed work?".
 2. **Analyze the changes**: If the user agrees, review the git diff and the completed task context.
 3. **Draft the message**: Structure the commit message with clear headers or bullet points for WHAT, HOW, and WHY.

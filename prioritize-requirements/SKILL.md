@@ -27,19 +27,18 @@ Without a strict framework, stakeholders tend to label every requirement as "Cri
 - A list of requirements, features, or user stories.
 - (Optional) Stakeholder input on relative weights (e.g., "Cost is more important than Risk right now").
 
-## Output
+## Output (Logical Evidence)
 - A markdown table displaying the scores for each requirement.
 - A sorted list of requirements from highest priority to lowest.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not use High/Medium/Low. You must use numerical scores (e.g., 1 to 9).
 - Do not guess wildly; if a cost is completely unknown, flag it for estimation rather than giving it a random score.
 
 ## One More Thing
 If the provided list has fewer than 3 items, inform the user that a matrix is unnecessary and they should just use simple pairwise comparison.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Establish the Scale and Weights
 1. Define the scale (usually 1 to 9, where 9 is highest value, highest cost, or highest risk).
 2. Assign weights to the categories if the user provided them (e.g., Business Value = 2x, Cost = 1x). Default to 1x for all.

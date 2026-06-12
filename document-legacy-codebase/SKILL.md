@@ -1,6 +1,9 @@
 ---
 name: document-legacy-codebase
-description: 'Use when: reverse-engineering brownfield systems, mapping legacy code structures, establishing bubble context boundaries, or applying strangler migration patterns. Helps with: extracting fossilized knowledge, superimposing metadata structures via sidecars/decorators, wrapping legacy code in anticontamination layers, and marking deprecated code. Applies to: legacy libraries, brownfield codebases, boundary interfaces, and migration configurations in the workspace.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: reverse-engineering brownfield systems, mapping legacy code structures, establishing bubble context boundaries, or applying strangler migration patterns. Applies to: legacy libraries, brownfield codebases, boundary interfaces, and migration configurations in the workspace]
+  HOW: [Structural: Helps with: extracting fossilized knowledge, superimposing metadata structures via sidecars/decorators, wrapping legacy code in anticontamination layers, and marking deprecated code]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Document Legacy Codebase
@@ -30,13 +33,13 @@ Applies to legacy directories, brownfield code files, integration APIs, database
 - **Code Examples Reference** (required): Located at [code-examples.md](details/code-examples.md).
 - **Textbook PDF**: Cyrille Martraire's *Living Documentation* book located at [ Living Documentation.pdf](../TMP/%20Living%20Documentation.pdf).
 
-## Output
+## Output (Logical Evidence)
 - **Software Archaeology Assessment**: Documentation mapping data flows, critical legacy classes, and known risks.
 - **Bubble Context / Adapter Interface**: Wrapper class files that isolate the legacy logic and translate between legacy and modern domain structures.
 - **Superimposed Metadata Layer**: Decorators, sidecars, or external JSON/YAML mappings documenting legacy functions without modifying original codebase lines.
 - **Biodegradable Deprecation Plan**: Code annotations and retirement timelines designating strangler paths.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **Do Not Break Legacy Execution**: Never modify original legacy code lines unless establishing biodegradable annotations or hooks explicitly agreed upon with the user.
 - **No In-Place Contamination**: Modern design structures must not be mixed directly with legacy logic; they must remain isolated behind anticontamination adapters (Bubble Contexts).
 - **Always Validate Boundaries**: Write unit/integration tests that verify that requests passing through the Bubble Context are translated correctly to and from the legacy model.
@@ -46,8 +49,7 @@ If the legacy codebase has zero unit tests, or if its original domain terms are 
 
 ---
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Software Archaeology & Discovery (Chapter 14)
 1. **Audit Fossilized Knowledge**: Scan import graphs, commit logs, and database schemas. Seek out classes that change together frequently.
 2. **Document via Investigation Questions**: Answer the key archaeology questions (Who owns this? What APIs are active? What database tables are touched?). Refer to [legacy-checklists.md](details/legacy-checklists.md#section-1-software-archaeology-checklists) for the full checklist.

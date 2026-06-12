@@ -31,18 +31,17 @@ A requirement that says "The user shall enter their address" is incomplete. A de
 ## Inputs
 - Functional requirements, user stories, or UI/report descriptions.
 
-## Output
+## Output (Logical Evidence)
 - A markdown table representing the Data Dictionary.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Distinguish between **Primitive Data Elements** (e.g., `FirstName`) and **Data Structures** (e.g., `Address = Street + City + State + ZipCode`).
 - If a data type or length is unknown, mark it as `TBD` (To Be Determined). Do not guess database-specific implementations (like `VARCHAR(255)`) unless explicitly stated; use logical types like `String (Max 50)`.
 
 ## One More Thing
 If the input text contains no specific data fields (e.g., "The system shall be fast"), stop and inform the user that a Data Dictionary requires data elements to define.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Noun Extraction
 1. Scan the text for nouns that represent data the system must store, process, or transmit (e.g., "Customer," "Order Date," "SKU").
 

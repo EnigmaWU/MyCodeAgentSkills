@@ -26,19 +26,18 @@ When teams focus only on the features they are building, they forget the systems
 ## Inputs
 - Requirements documents, PRDs, or architecture descriptions.
 
-## Output
+## Output (Logical Evidence)
 - A Mermaid.js graph diagram (Ecosystem Map).
 - A list of defined interfaces.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not map the internal components of the System Under Design. The SUD is a black box in this model. Only map *external* interactions.
 - Differentiate between human actors and software systems.
 
 ## One More Thing
 If the input text describes a purely standalone script with no external inputs or outputs, inform the user that an Ecosystem Map is trivial and unnecessary.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Identify the Center
 1. Identify the **System Under Design (SUD)**. This is the application or service being built or modified. It goes in the center of the map.
 

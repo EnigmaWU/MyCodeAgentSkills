@@ -27,20 +27,19 @@ Ad hoc architecture design often ignores non-functional requirements until it's 
 - Architectural Drivers (Use cases, Quality Attribute Scenarios, Constraints).
 - Context diagram or system boundaries.
 
-## Output
+## Output (Logical Evidence)
 - Instantiated elements and allocated responsibilities.
 - Sketches of architectural views (Logical, Deployment, etc.).
 - Recorded design decisions.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not attempt to design the entire system in one pass; use iterations.
 - Base design choices on the drivers, not just preference.
 
 ## One More Thing
 If the input architectural drivers are missing or vague, stop and ask the user to clarify them before proceeding with the design.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Preparation
 1. **Review Inputs:** Ensure the architectural drivers are prioritized.
 2. **Establish the Iteration Goal:** Select a subset of drivers to focus on for this iteration.

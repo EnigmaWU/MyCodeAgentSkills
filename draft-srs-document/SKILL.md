@@ -34,18 +34,17 @@ A pile of 100 user stories is not a specification. Developers need to know the o
 ## Inputs
 - Raw requirements, user stories, transcripts, or existing vision documents.
 
-## Output
+## Output (Logical Evidence)
 - A markdown document formatted using the SRS Template.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not invent requirements. If a section of the SRS cannot be filled from the provided input, mark it as `TBD` (To Be Determined) and list it as an open question.
 - Write in verifiable, unambiguous language (e.g., replace "fast" with "sub-second response time").
 
 ## One More Thing
 If the input text only contains UI mockups, stop and inform the user that an SRS requires functional logic and data requirements, not just visual designs.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Categorization
 1. Read the input material and classify every statement: Is it a feature? A constraint? A user class? A performance goal?
 

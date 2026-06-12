@@ -29,19 +29,18 @@ Traditional requirements sessions often dive too deep into a single edge case, i
 ## Inputs
 - A User Story or a high-level feature request.
 
-## Output
+## Output (Logical Evidence)
 - A visual or structured text map of the Rules, Examples, and Questions.
 - A decision on whether the story is "Ready" for development.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Keep it fast. Do not spend time debating the precise Given/When/Then Gherkin syntax during Example Mapping. Use "Friends episode" titles (e.g., "The one where the credit card is expired").
 - If there are unresolved Pink cards, the story cannot be moved to development.
 
 ## One More Thing
 If the input text is a technical task (e.g., "Upgrade database to Postgres 13"), stop and inform the user that Example Mapping is for exploring *business behavior*, not technical chores.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: The Story
 1. Place the User Story (Yellow) at the top of the map.
 

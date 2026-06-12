@@ -29,18 +29,17 @@ Without strict rules, object graphs grow infinitely. If `Order` has a list of `O
 - **Proposed Entities/Data Model** (required): The nouns in the system (e.g., User, Post, Comment).
 - **Business Rules/Invariants** (required): The rules that must *always* be true (e.g., "A post cannot have more than 100 comments").
 
-## Output
+## Output (Logical Evidence)
 - A refined domain model with clear boundaries between **Aggregate Roots**, **Entities**, and **Value Objects**.
 - Adherence to the 4 rules of Aggregate Design.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **RULE 1: Model True Invariants.** An aggregate is a transaction boundary. Only data that must be strictly, transactionally consistent at the exact same millisecond should be inside the same aggregate.
 - **RULE 2: Design Small Aggregates.** An aggregate should contain only the Root Entity and the minimal number of nested Entities/Value Objects needed to enforce the invariants.
 - **RULE 3: Reference by Identity.** Aggregates must NOT hold object references (pointers) to other aggregates. They must only hold the ID (String/UUID) of the other aggregate.
 - **RULE 4: Eventual Consistency.** If modifying Aggregate A requires modifying Aggregate B, do not update both in the same database transaction. Aggregate A must publish a Domain Event, which Aggregate B listens to and updates itself in a separate transaction.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Identify the Root and Invariants
 1. Analyze the proposed data model and business rules.
 2. Identify the **Aggregate Root** (the primary entity that external objects interact with).

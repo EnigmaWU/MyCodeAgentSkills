@@ -1,6 +1,9 @@
 ---
 name: test-case-with-demo
-description: 'Use when: the user asks to create a demo test case, example test, UserGuide demo, UserStories demo, manual demo, setup-backed test case, or explicitly invokes test-case-with-demo. Helps with: building an end-to-end demonstration test package that shows how to use a feature according to the UserGuide and how it satisfies UserStories/acceptance criteria, including setup scripts, manual instructions, fixtures, expected outputs, and traceability. Applies to: documentation-oriented P4 demo/example tests for CLIs, APIs, tools, workflows, repository user guides, and user story specifications.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: the user asks to create a demo test case, example test, UserGuide demo, UserStories demo, manual demo, setup-backed test case, or explicitly invokes test-case-with-demo. Applies to: documentation-oriented P4 demo/example tests for CLIs, APIs, tools, workflows, repository user guides, and user story specifications]
+  HOW: [Structural: Helps with: building an end-to-end demonstration test package that shows how to use a feature according to the UserGuide and how it satisfies UserStories/acceptance criteria, including setup scripts, manual instructions, fixtures, expected outputs, and traceability]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Test Case with Demo
@@ -39,7 +42,7 @@ Demo tests are P4 Addons: they are for documentation, onboarding, and workflow v
 - Recommended: existing test framework, fixture conventions, and project setup commands.
 - Optional: target demo name, preferred output folder, platform constraints, and whether the demo should be fully automated or manual-first.
 
-## Output
+## Output (Logical Evidence)
 - A demo package, normally shaped like:
 
   ```text
@@ -61,7 +64,7 @@ Demo tests are P4 Addons: they are for documentation, onboarding, and workflow v
 - Manual instructions with prerequisites, setup, run, expected result, troubleshooting, cleanup, and evidence to capture.
 - Validation evidence showing which scripts or tests were run.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not invent CLI flags, files, outputs, or product behavior. Read the UserGuide, UserStories, and existing implementation before writing the demo.
 - Do not treat a UserGuide-only usage example as sufficient when UserStories/AC exist. The demo must show both how to use the workflow and which user-facing requirement it satisfies.
 - Keep the demo small and deterministic. Prefer local fixture repositories, sample JSON, temporary directories, and generated outputs over network dependencies.
@@ -73,8 +76,7 @@ Demo tests are P4 Addons: they are for documentation, onboarding, and workflow v
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Read the User Workflow
 1. Read the relevant UserGuide, README, and UserStories completely enough to understand the intended workflow and requirement intent.
 2. Extract the exact user-visible command, API call, input files, output files, and success criteria from the UserGuide.

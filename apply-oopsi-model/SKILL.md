@@ -31,18 +31,17 @@ When teams start by defining inputs (e.g., "Given a user with ID 1234"), they of
 ## Inputs
 - A User Story, Epic, or high-level feature description.
 
-## Output
+## Output (Logical Evidence)
 - A completed OOPSI framework document.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Outputs must be tangible and verifiable (e.g., "A confirmation email is sent," "Database record is updated"). "The user feels happy" is an Outcome, not an Output.
 - Inputs should be specific data values required to execute the Scenarios.
 
 ## One More Thing
 If the input text is a non-functional requirement (e.g., "System must support 1000 TPS"), stop and inform the user that OOPSI is designed for functional workflows and data processing.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Define Outcome and Outputs
 1. Identify the **Outcome** (the business goal of the feature).
 2. List the tangible **Outputs** that result from a successful (or failed) execution of this feature.

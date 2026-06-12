@@ -1,6 +1,9 @@
 ---
 name: update-spec-context
-description: 'Use when: a vibe-coding or AI-assisted coding conversation changes requirements, design decisions, plans, task status, or implementation context. Helps with: updating spec-driven-development context files before the details are lost. Applies to: GitHub Spec Kit-style specs, plans, tasks, constitutions, and repository planning docs.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: a vibe-coding or AI-assisted coding conversation changes requirements, design decisions, plans, task status, or implementation context. Applies to: GitHub Spec Kit-style specs, plans, tasks, constitutions, and repository planning docs]
+  HOW: [Structural: Helps with: updating spec-driven-development context files before the details are lost]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Update Spec Context
@@ -36,13 +39,13 @@ Update the repository's spec context after a conversation produces new requireme
 - Current implementation state, changed files, test results, or task progress when available.
 - Optional reference model such as GitHub Spec Kit's specify/plan/tasks/implement workflow or CaTDD `Px SpecFlow`.
 
-## Output
+## Output (Logical Evidence)
 - A short plan shown to the user before editing, listing the artifacts to update and the reason each update is needed.
 - Minimal edits to the selected spec-context files.
 - A concise summary of what changed, what remains open, and which files were updated.
 - Validation evidence such as a diff review, checklist update, or relevant test/docs command when available.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Plan first. Do not edit spec-context files until the user has seen the proposed update plan, unless the user explicitly asked for direct editing.
 - Preserve the existing artifact structure and terminology. Do not introduce a Spec Kit layout into a repository that uses a different convention unless the user asks.
 - Update only context that is supported by the conversation, repository state, or validation output. Mark uncertain items as open questions instead of inventing details.
@@ -53,8 +56,7 @@ Update the repository's spec context after a conversation produces new requireme
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Decide Whether This Belongs in Spec Context
 1. Review the conversation and identify durable information:
    - **Requirement**: new behavior, acceptance criteria, constraints, or non-goals.

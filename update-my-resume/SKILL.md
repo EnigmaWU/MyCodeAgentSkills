@@ -40,13 +40,13 @@ Analyze the current conversation to extract a resume-worthy accomplishment, then
 - Explicit user feedback on what they consider the most important takeaway (optional).
 - Target resume file path override from the user (optional; defaults to project `.resume` then `$HOME/.resume`).
 
-## Output
+## Output (Logical Evidence)
 - A structured resume entry appended to the English section of the `.resume` file.
 - The same entry, translated and culturally adapted, appended to the Chinese section of the `.resume` file.
 - A brief summary shown to the user: what was appended, where, and why it qualifies.
 - A recommendation to skip the update when the conversation does not meet the bar, with a clear reason.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Only record what the conversation actually demonstrates. Do not inflate scope.
 - Each entry must include all three parts: the problem, the step-by-step approach, and the verified outcome.
 - Keep each entry concise — aim for 3–6 lines per part, enough to be credible but not a narrative essay.
@@ -58,8 +58,7 @@ Analyze the current conversation to extract a resume-worthy accomplishment, then
 ## One More Thing
 If anything is unclear, missing, or conflicting — especially which problem to highlight, what the actual verified outcome was, or where the resume file lives — stop and ask the user before writing anything.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Locate the Resume File
 1. Check for `.resume` in the current project root.
 2. If not found, check `$HOME/.resume`.

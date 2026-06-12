@@ -1,6 +1,9 @@
 ---
 name: comment-alive-test-driven-development
-description: 'Use when: writing new tests from scratch, designing verification for a new feature or module, applying CaTDD, starting a new test file with comment-alive design. Helps with: creating structured test files using CaTDD (Comment-alive Test-Driven Development) methodology with US/AC/TC design, priority-based test categories, and LLM-friendly verification comments. Applies to: new test files for UnitTesting, SysTesting, and UserTesting in any language.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: writing new tests from scratch, designing verification for a new feature or module, applying CaTDD, starting a new test file with comment-alive design. Applies to: new test files for UnitTesting, SysTesting, and UserTesting in any language]
+  HOW: [Structural: Helps with: creating structured test files using CaTDD (Comment-alive Test-Driven Development) methodology with US/AC/TC design, priority-based test categories, and LLM-friendly verification comments]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Comment-alive Test-Driven Development (CaTDD)
@@ -48,13 +51,13 @@ The result is a self-contained design document that is readable by humans, parse
 - **Testing level** (optional): UnitTesting, SysTesting, or UserTesting — affects OVERVIEW framing.
 - **Priority focus** (optional): e.g., "reliability-critical" promotes Fault; "high-concurrency" promotes Concurrency.
 
-## Output
+## Output (Logical Evidence)
 - A new test file in CaTDD format with all required sections (OVERVIEW, DESIGN, IMPLEMENTATION, TODO).
 - A summary of User Stories, Acceptance Criteria, and Test Cases designed.
 - A TODO tracking section showing the planned implementation order (⚪ TODO for all new TCs).
 - Guidance on which TCs to implement first based on the priority framework.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Write TC specifications (the design) before writing test code (the implementation).
 - Follow the US → AC → TC traceability chain; every TC must trace to an AC and US.
 - Follow the test naming convention: `verifyBehavior_byCondition_expectResult`.
@@ -67,8 +70,7 @@ The result is a self-contained design document that is readable by humans, parse
 ## One More Thing
 If the feature description, target language, or testing level is unclear or missing, stop and ask the user before writing any design or code.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Define Scope and Coverage Strategy
 
 1. Read the feature description, API headers, or specification provided.

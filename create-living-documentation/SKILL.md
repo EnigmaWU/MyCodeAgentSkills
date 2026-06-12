@@ -1,6 +1,9 @@
 ---
 name: create-living-documentation
-description: 'Use when: automating specifications, extracting domain glossaries, generating PlantUML/Graphviz architecture diagrams, or creating BDD reconciliation tests. Helps with: establishing a single source of truth, avoiding documentation drift, extracting code metadata via AST/annotations, and validating documentation via unit tests. Applies to: codebase architecture, glossary generators, API schemas, and build validation scripts in the workspace.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: automating specifications, extracting domain glossaries, generating PlantUML/Graphviz architecture diagrams, or creating BDD reconciliation tests. Applies to: codebase architecture, glossary generators, API schemas, and build validation scripts in the workspace]
+  HOW: [Structural: Helps with: establishing a single source of truth, avoiding documentation drift, extracting code metadata via AST/annotations, and validating documentation via unit tests]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Create Living Documentation
@@ -30,12 +33,12 @@ Applies to source code directories (Java, Python, C#, etc.), AST parsing scripts
 - **Code Examples Reference** (required): Located at [code-examples.md](details/code-examples.md).
 - **Textbook PDF**: Cyrille Martraire's *Living Documentation* book located at [ Living Documentation.pdf](../TMP/%20Living%20Documentation.pdf).
 
-## Output
+## Output (Logical Evidence)
 - **Living Glossary/Specification**: Dynamically generated Markdown files documenting system terms, roles, and rules.
 - **Living Diagram**: Generated SVG/PNG/Text diagrams (PlantUML or Graphviz DOT) rendering class topologies or package relationships.
 - **Reconciliation Test Suite**: Automated unit tests (e.g., Python `unittest` or JUnit tests) that assert the consistency of source structures with generated documentation or metadata.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **Zero Manual Copy-Paste**: Never manually transcribe business properties or structural rules from code to documentation files. All structured summaries must be extracted programmatically.
 - **No Silent Extraction Failures**: If an AST parsing script or custom Doclet fails to parse a code file, it must abort the build or fail the test, rather than generating an empty or partial output.
 - **Always Test Consistency**: Every living document must be backed by a reconciliation test or contract check that alerts developers of mismatches.
@@ -45,8 +48,7 @@ If target annotations, package names, or document output directories are ambiguo
 
 ---
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Curation & Curation Scoping (Chapter 5)
 1. **Identify the Core**: Determine what parts of the system represent the core domain knowledge (e.g., domain models, business policies, external API contracts). Do not waste time extracting boilerplate (e.g., getters/setters, frameworks).
 2. **Define Conventions and Annotations**: Select or create clear annotations (e.g., `@Concept`, `@DomainService`, or specific Python decorators) to mark authoritative knowledge in source code. Refer to [reconciliation-checklists.md](details/reconciliation-checklists.md#section-1-knowledge-curation-checklists) for details.

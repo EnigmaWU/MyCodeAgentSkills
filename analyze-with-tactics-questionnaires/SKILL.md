@@ -27,19 +27,18 @@ Free-form reviews often miss edge cases. Tactics-based questionnaires force the 
 - The architecture design or ADRs.
 - The target Quality Attribute(s) to analyze (e.g., Availability, Modifiability).
 
-## Output
+## Output (Logical Evidence)
 - A gap analysis report highlighting missing tactics or unaddressed risks.
 - Recommendations for architectural improvements.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not attempt to evaluate every single quality attribute at once; focus on the top 1 or 2 highest priority ones.
 - Justify every identified gap with evidence (or lack of evidence) from the design document.
 
 ## One More Thing
 If the target Quality Attribute is not specified, stop and ask the user which attribute they want to analyze.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Preparation
 1. Identify the target Quality Attribute(s) for the review based on the system's business drivers.
 2. Load the corresponding Tactics-Based Questionnaire.

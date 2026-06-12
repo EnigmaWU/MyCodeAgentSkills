@@ -36,12 +36,12 @@ Activate the user's personal working profile before doing the main task, then ke
 - New expertise, preferences, teamwork defaults, terminology mappings, corrections, or boundaries declared during the conversation.
 - Optional confirmation from the user when a statement might be temporary, private, or ambiguous.
 
-## Output
+## Output (Logical Evidence)
 - A concise activation summary describing which personal expertise or preferences are being applied to the current task.
 - A minimal update to the stored personal profile when the user provides new durable information.
 - A short note explaining what was added, changed, or left unchanged for future sessions.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Only store durable user-provided information that is safe and appropriate to reuse. Do not invent expertise or preferences.
 - Do not treat temporary instructions such as "for this task" or "for now" as profile updates.
 - Do not store secrets, credentials, sensitive personal data, or anything the user would not expect to persist.
@@ -51,8 +51,7 @@ Activate the user's personal working profile before doing the main task, then ke
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Find the Current Personal Profile
 1. Look for reusable personal context in this order:
    - user-scoped memory that is already available to the agent,

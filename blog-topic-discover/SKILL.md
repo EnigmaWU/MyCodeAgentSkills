@@ -1,6 +1,9 @@
 ---
 name: blog-topic-discover
-description: 'Use when: a task is completed, a goal is met, or the user asks to review recent work for blog ideas. Helps with: extracting insights, mistakes, new methods, and topics from recent git commits and chat logs to brainstorm blog posts. Applies to: post-task reflection and developer branding.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: a task is completed, a goal is met, or the user asks to review recent work for blog ideas. Applies to: post-task reflection and developer branding]
+  HOW: [Structural: Helps with: extracting insights, mistakes, new methods, and topics from recent git commits and chat logs to brainstorm blog posts]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Blog Topic Discover
@@ -28,7 +31,7 @@ Reviews the trajectory of a recently completed task "from start to end". By anal
 - **Timeframe / Start Point** (required): A commit hash, timestamp, or logical starting point (e.g., "since yesterday", "for the last 5 commits", "this conversation").
 - **Final Goal** (optional): What the original objective was.
 
-## Output
+## Output (Logical Evidence)
 Generate a complete, gracefully structured blog post draft using the following specific artistic template:
 
 ```markdown
@@ -60,7 +63,7 @@ Generate a complete, gracefully structured blog post draft using the following s
 （备注：问题是真的，过程也是真的，内容都是生成的）
 ```
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Base the findings strictly on the provided git diffs, commits, and recent conversation logs. Do not fabricate challenges.
 - Focus on the *journey* (the "why" and "how") rather than just a dry changelog (the "what").
 - Be honest about mistakes or wrong decisions—these make the best blog posts.
@@ -69,8 +72,7 @@ Generate a complete, gracefully structured blog post draft using the following s
 ## One More Thing
 If the timeframe or start point for the review is unclear, ask the user to clarify how far back to look before proceeding.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Discovery & Context Gathering
 1. Ask or determine the starting point for the review (e.g., specific commit, start of the chat).
 2. Gather the logs: use git tools (`git log`, `git diff`) or review the conversation history to reconstruct the timeline from the start point to the end point.

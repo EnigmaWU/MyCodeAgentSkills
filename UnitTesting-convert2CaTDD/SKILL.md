@@ -46,13 +46,13 @@ The converted file is a self-contained design document that is readable by human
 - **Target language** (optional): defaults to the language of the existing tests.
 - **Priority focus** (optional): which test priority categories matter most (e.g., "reliability-critical" promotes Fault and Robust).
 
-## Output
+## Output (Logical Evidence)
 - A converted test file in CaTDD format containing all required sections.
 - A summary of User Stories, Acceptance Criteria, and Test Cases extracted.
 - A TODO tracking section showing the status of each test case.
 - Recommendations for additional tests to fill coverage gaps.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Preserve all existing test logic. Do not remove or break any passing test.
 - Do not invent User Stories or Acceptance Criteria that are not supported by the existing tests or production code.
 - Follow the test naming convention: `verifyBehavior_byCondition_expectResult`.
@@ -64,8 +64,7 @@ The converted file is a self-contained design document that is readable by human
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Analyze the Existing Tests
 
 1. Read the target test file(s) completely.

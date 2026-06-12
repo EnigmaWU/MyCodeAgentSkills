@@ -31,18 +31,17 @@ If a user story says, "The system shall charge 7% tax for state residents," the 
 ## Inputs
 - PRDs, User Stories, or transcripts containing business logic.
 
-## Output
+## Output (Logical Evidence)
 - A catalog of extracted Business Rules, tagged by taxonomy type.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Business rules are NOT software functions. "The system shall display a warning" is a functional requirement, not a business rule.
 - Do not invent rules. If a calculation is implied but not stated, flag it as a question.
 
 ## One More Thing
 If the input text is purely technical (e.g., "The API must respond in 200ms"), stop and inform the user that these are Non-Functional Requirements, not Business Rules.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Rule Extraction
 1. Read the input text and identify any statements that represent corporate policies, government regulations, industry standards, or mathematical calculations.
 2. Extract these statements, separating them from the software features that might implement them.

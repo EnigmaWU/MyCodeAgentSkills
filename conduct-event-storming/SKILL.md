@@ -29,17 +29,16 @@ Focusing on data structures (ERDs) early leads to tight coupling and "CRUD-heavy
 - **Business Process/Workflow** (required): The domain to explore (e.g., "E-commerce Checkout", "Loan Origination").
 - **Known Actors** (optional): Users or external systems interacting with the workflow.
 
-## Output
+## Output (Logical Evidence)
 - A chronological timeline of **Domain Events**, **Commands**, **Actors**, **Policies**, and **Aggregates**.
 - A Mermaid.js flowchart visualizing the Event Storming timeline.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **RULE 1: Events First.** Always start by identifying Domain Events. Do not discuss UI, databases, or classes until the timeline of events is complete.
 - **RULE 2: Past Tense.** Domain Events MUST be written as verbs in the past tense (e.g., `OrderPlaced`, not `PlaceOrder`).
 - **RULE 3: Identify Triggers.** Every event must have a trigger: either a user Command, an external system, time passing, or a Policy.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Chaotic Exploration (Domain Events)
 1. Ask the user to list all the things that happen in the business process.
 2. Format these as **Domain Events** (Orange sticky notes) written in past tense.

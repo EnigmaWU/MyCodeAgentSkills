@@ -29,10 +29,10 @@ BDD-style acceptance criteria make expected behavior explicit, testable, and una
 - **Business value** (optional): Why this feature matters.
 - **Edge cases** (optional): Known constraints or error paths.
 
-## Output
+## Output (Logical Evidence)
 - A User Story formatted using the standard templates.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **RULE 1: BDD Executable Specifications First.** The absolute most important part of the story is the Acceptance Criteria. They MUST be written as strict BDD `Given/When/Then` scenarios that can be directly translated into automated tests (e.g., Cucumber).
 - **Primary Story Format:** Use the traditional `As a <role>, I want <capability>, So that <value>` format by default.
 - **Advisory Story Format:** You may optionally suggest the `In order to <value>, As a <role>, I want <capability>` format if the business goal seems to be getting lost in the technical details.
@@ -41,8 +41,7 @@ BDD-style acceptance criteria make expected behavior explicit, testable, and una
 ## One More Thing
 If the input is purely a technical chore (e.g., "Update dependency X to version Y") with no observable business behavior, stop and inform the user that BDD User Stories are for functional requirements, not technical debt.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Gather Context
 1. Identify the **role** (who), the **capability** (what), and the **business value** (why).
 2. If any of these are missing or vague, ask the user before continuing.

@@ -1,6 +1,9 @@
 ---
 name: apply-architectural-tactics
-description: 'Use when: designing a system architecture, conducting structural design reviews, or mapping quality goals to design decisions. Helps with: defining Architecturally Significant Requirements (ASRs), building Quality Attribute Utility Trees, applying Attribute-Driven Design (ADD) steps, selecting SAiP tactics, and executing ATAM tradeoff analysis. Applies to: architecture design documents, RFCs, and system design specifications.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: designing a system architecture, conducting structural design reviews, or mapping quality goals to design decisions. Applies to: architecture design documents, RFCs, and system design specifications]
+  HOW: [Structural: Helps with: defining Architecturally Significant Requirements (ASRs), building Quality Attribute Utility Trees, applying Attribute-Driven Design (ADD) steps, selecting SAiP tactics, and executing ATAM tradeoff analysis]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Apply Architectural Tactics
@@ -27,21 +30,20 @@ Ensures that architectural design is systematic, driven by measurable quality go
 - **Quality Attribute Tactics Reference** (required): Located at [quality-attribute-tactics-and-checklists.md](details/quality-attribute-tactics-and-checklists.md).
 - **Software Architecture in Practice PDF** (optional): Located at [references/Software_Architecture_in_Practice.pdf](references/Software_Architecture_in_Practice.pdf).
 
-## Output
+## Output (Logical Evidence)
 - **Utility Tree**: A hierarchical decomposition of quality attributes into concrete scenarios with prioritization.
 - **Attribute-Driven Design (ADD) Log**: A breakdown of the design steps, patterns, and tactics chosen.
 - **ATAM Evaluation Report**: Sensitivity points, tradeoff points, risks, and non-risks.
 - **CBAM Economic Assessment**: Optional ROI ranking of design alternatives.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Every Quality Attribute Scenario must have a quantitative, measurable response metric.
 - Architectural design must be completed prior to choosing specific frameworks, libraries, or cloud services.
 
 ## One More Thing
 If the quality requirements are unmeasurable or missing, stop and ask the user to define the targets before choosing tactics.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Elicit ASRs and Build a Utility Tree (SAiP Ch 16)
 1. Read the functional and business requirements to extract **Architecturally Significant Requirements (ASRs)**.
 2. Build a **Utility Tree** to organize quality goals:

@@ -26,19 +26,18 @@ Words like "fast," "seamless," and "robust" mean different things to different p
 ## Inputs
 - Drafted requirements, user stories, or PRD text.
 
-## Output
+## Output (Logical Evidence)
 - A list of Ambiguity Warnings and clarifying questions.
 - Formalized Acceptance Criteria in BDD format.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not make up thresholds for ambiguous words; flag them so the stakeholder can decide. (e.g., If the text says "timeout quickly," ask "Is 'quickly' 5 seconds or 30 seconds?")
 - Ensure every `Given / When / Then` scenario tests exactly one behavior.
 
 ## One More Thing
 If the input text is a technical implementation detail rather than a user requirement (e.g., "Use a Redis cache"), inform the user that this is an architecture decision, not a business requirement.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Ambiguity Hunt
 1. Scan the text against the Ambiguity Checklist. Look for adjectives, adverbs, and unbounded absolutes (e.g., "always," "never").
 2. Highlight the dangerous words and generate specific clarifying questions.

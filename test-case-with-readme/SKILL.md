@@ -1,6 +1,9 @@
 ---
 name: test-case-with-readme
-description: 'Use when: the user creates a new test case, plans to write a test, or asks to generate a readme for an existing test. Helps with: planning and documenting test files with structured purpose, status, coverage, and manual steps. Applies to: any test creation workflow or existing test files like .py, .cxx, etc.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: the user creates a new test case, plans to write a test, or asks to generate a readme for an existing test. Applies to: any test creation workflow or existing test files like ]
+  HOW: [Structural: Helps with: planning and documenting test files with structured purpose, status, coverage, and manual steps]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Test Case with Readme
@@ -31,7 +34,7 @@ Generates a companion markdown readme file for a given test case file. For a tes
 - **Test case file** (required): The path or content of the test file (e.g., `test_user_story.py`).
 - **Additional context** (optional): Any specific details about the purpose, status, coverage, or manual steps the user wants to include.
 
-## Output
+## Output (Logical Evidence)
 A markdown file named `<test_filename_without_extension>_readme.md` (e.g., `test_user_story_readme.md`) with the following structure:
 
 ```markdown
@@ -76,7 +79,7 @@ Planned / Draft
 3. Run with `pytest test_payment_gateway.py -v`.
 ```
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not modify the original test code file.
 - Ensure the generated file uses the exact base name of the test file, appending `_readme.md` to it (e.g. `test_login.cxx` -> `test_login_readme.md`).
 - Analyze the test code to infer the content of the sections. If some details are not inferable, use placeholders or prompt explicitly.
@@ -84,7 +87,7 @@ Planned / Draft
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
+## How (Structural Workflow)
 1. **Identify the File & Intent**: Determine the target test file name and whether the test is already written, or if it is being planned/newly created.
 2. **Determine the Output File Name**: Strip the file extension and append `_readme.md` (e.g. `test_user_story.py` becomes `test_user_story_readme.md`).
 3. **Analyze or Plan the Test Context**: 

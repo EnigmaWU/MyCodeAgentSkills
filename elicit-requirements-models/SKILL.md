@@ -27,19 +27,18 @@ Human language is inherently ambiguous and linear. When describing a system, sta
 - Raw text requirements or user stories.
 - Existing system context (optional).
 
-## Output
+## Output (Logical Evidence)
 - A Mermaid.js diagram block representing the logic.
 - A list of "Missing Requirements" discovered by analyzing the model.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not invent logic to fill gaps; explicitly highlight the gaps as questions for the stakeholder.
 - Keep models scoped to the provided text to avoid diagram bloat.
 
 ## One More Thing
 If the input text is purely cosmetic (e.g., "Change the button to blue") and contains no logic, state, or flow, inform the user that visual modeling is not applicable.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Model Selection
 1. Analyze the text to determine the dominant logic:
    - If it describes an object changing status over time -> **State Transition Diagram**.

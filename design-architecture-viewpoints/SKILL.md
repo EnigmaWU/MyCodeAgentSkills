@@ -1,6 +1,9 @@
 ---
 name: design-architecture-viewpoints
-description: 'Use when: defining the structural views of a system, documenting system architecture, or aligning stakeholder expectations. Helps with: identifying stakeholders and scenarios, selecting viewpoints, drafting views (Context, Functional, Information, Concurrency, Development, Deployment, Operational), applying perspectives, and checking inter-view consistency. Applies to: software architecture descriptions, system design documents, and RFCs.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: defining the structural views of a system, documenting system architecture, or aligning stakeholder expectations. Applies to: software architecture descriptions, system design documents, and RFCs]
+  HOW: [Structural: Helps with: identifying stakeholders and scenarios, selecting viewpoints, drafting views (Context, Functional, Information, Concurrency, Development, Deployment, Operational), applying perspectives, and checking inter-view consistency]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Design Architecture Viewpoints
@@ -27,21 +30,20 @@ Ensures that system documentation is comprehensive, targets all relevant stakeho
 - **Viewpoints and Perspectives Reference** (required): Located at [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md).
 - **Software Systems Architecture PDF** (optional): Located at [references/Software_Systems_Architecture.pdf](references/Software_Systems_Architecture.pdf).
 
-## Output
+## Output (Logical Evidence)
 - **Stakeholder-to-Viewpoint Matrix**: Mapping stakeholders to their primary viewpoints of interest.
 - **Viewpoint Catalog**: Completed architectural views (Context, Functional, Deployment, etc.).
 - **Perspective Checksheets**: Validation logs for cross-cutting perspectives (Security, Performance, Availability, Evolution).
 - **Consistency Log**: Alignment verification between views.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Every drafted view must specify which stakeholder concern it addresses.
 - Logical components must be explicitly mapped to physical deployment nodes in the Deployment view.
 
 ## One More Thing
 If anything is unclear, missing, or conflicting (especially if the primary stakeholders are unknown), stop and ask the user before proceeding.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Identify Stakeholders and Scenarios (SSA Ch 9, 10)
 1. Categorize stakeholders using the Rozanski-Woods classes:
    * **Acquirers**: Oversee the procurement and business goals.

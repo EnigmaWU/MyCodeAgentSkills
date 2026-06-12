@@ -27,18 +27,17 @@ If an architect tries to design a system based purely on "it needs to be fast an
 - Raw requirements documents (PRD, user stories).
 - Business goals.
 
-## Output
+## Output (Logical Evidence)
 - A completed Architectural Drivers Document.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not invent drivers; infer them only from the provided inputs.
 - Quality Attributes must be written as 6-part scenarios (Source, Stimulus, Artifact, Environment, Response, Response Measure).
 
 ## One More Thing
 If the input lacks sufficient detail to create testable response measures (e.g., "fast"), stop and ask the user to provide specific SLA targets.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Context Extraction
 1. Extract the **Design Purpose**: Why are we designing this architecture? (e.g., greenfield project, extending a legacy system, improving performance).
 2. Extract the **Primary Functionality**: Identify the top 3-5 core use cases the system must support.

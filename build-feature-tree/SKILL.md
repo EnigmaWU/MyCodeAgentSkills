@@ -32,20 +32,19 @@ A backlog with 150 items is impossible to review for completeness. By organizing
 - A flat list of features, requirements, or user stories.
 - The overarching Product Concept (the root node).
 
-## Output
+## Output (Logical Evidence)
 - A hierarchical list of features.
 - A Mermaid.js Mindmap rendering the tree.
 - A list of "Potential Missing Features" discovered by analyzing the visual gaps.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Features should be brief noun phrases (e.g., "Shopping Cart," not "The system shall allow the user to add items to a cart").
 - Limit the depth to 3 or 4 levels to maintain readability.
 
 ## One More Thing
 If the input text is not a list of features but rather a list of technical tasks (e.g., "Setup database," "Configure DNS"), stop and inform the user that a Feature Tree models *business functionality*, not technical implementation.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Extraction and Normalization
 1. Read the input and extract all functional requirements.
 2. Convert long sentences into concise 1-3 word noun phrases.

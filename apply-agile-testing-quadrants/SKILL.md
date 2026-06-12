@@ -1,6 +1,9 @@
 ---
 name: apply-agile-testing-quadrants
-description: 'Use when: defining a test strategy or planning tests for a feature. Helps with: balancing test coverage across business/technology and support/critique dimensions. Applies to: test planning, feature review, acceptance criteria.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: defining a test strategy or planning tests for a feature. Applies to: test planning, feature review, acceptance criteria]
+  HOW: [Structural: Helps with: balancing test coverage across business/technology and support/critique dimensions]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Apply Agile Testing Quadrants
@@ -24,19 +27,18 @@ Focusing solely on one type of testing (e.g., automated unit tests) leaves blind
 - Feature description, user story, or acceptance criteria.
 - System context or architecture documents.
 
-## Output
+## Output (Logical Evidence)
 - A categorized list of proposed tests mapped to the four Agile Testing Quadrants.
 - Identified testing gaps and recommendations.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not assume all tests must be automated (Quadrant 3 is typically manual/exploratory).
 - Do not treat the quadrants as sequential phases; they are a taxonomy, not a timeline.
 
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Quadrant 1 and 2 Analysis (Supporting the Team)
 Analyze the feature to define tests that guide development.
 - **Q1 (Technology-facing):** Define unit and component tests that verify the internal quality of the code.

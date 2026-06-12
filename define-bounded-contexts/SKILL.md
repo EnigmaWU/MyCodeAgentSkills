@@ -29,16 +29,15 @@ A unified data model spanning the entire enterprise always fails. Words are ambi
 - **Business Domain** (required): The overarching business area to analyze.
 - **Identified Aggregates/Events** (optional): Output from Event Storming if available.
 
-## Output
+## Output (Logical Evidence)
 - **Subdomain Categorization**: Core, Supporting, and Generic subdomains.
 - **Bounded Context Map**: Explicit boundaries and their integration patterns (ACL, OHS, Conformist, etc.).
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **RULE 1: Linguistic Boundary.** A Bounded Context is a linguistic boundary. A model inside one context must not be corrupted by concepts from outside.
 - **RULE 2: Core Domain Focus.** The Core Domain is where the business makes its money. It must be built in-house. Generic subdomains (like Identity or Invoicing) should be outsourced or bought if possible.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Problem Space (Subdomains)
 1. Analyze the overarching business domain and break it into sub-parts.
 2. Classify each part into one of three Subdomains:

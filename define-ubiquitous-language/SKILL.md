@@ -29,17 +29,16 @@ In Domain-Driven Design (DDD), the most critical failure point is the translatio
 - **Raw Business Documents** (required): User stories, meeting transcripts, PRDs, or Event Storming outputs.
 - **Target Bounded Context** (required): The linguistic boundary. (e.g., "Billing Context" vs "Shipping Context").
 
-## Output
+## Output (Logical Evidence)
 - A strict **Ubiquitous Language Glossary** mapping Terms to Definitions.
 - A list of **Rejected Terms** (synonyms that must not be used).
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **RULE 1: One Meaning Per Context.** Inside a single Bounded Context, a term can have only one meaning. If a term means two different things, you have missed a Bounded Context boundary.
 - **RULE 2: No Synonyms.** If "User", "Client", and "Account" all mean the same thing, pick ONE. The others must be actively rejected.
 - **RULE 3: Code Must Match.** The exact terms defined in the Ubiquitous Language must be used to name classes, methods, variables, and database tables.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Elicitation
 1. Read the provided raw business documents or Event Storming outputs.
 2. Highlight all the **Nouns** (entities, value objects, actors) and **Verbs** (commands, domain events, processes).

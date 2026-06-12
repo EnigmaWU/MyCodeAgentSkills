@@ -1,6 +1,9 @@
 ---
 name: doc-with-usage-example
-description: 'Use when: the user asks to create or update documentation. Helps with: producing docs that always include 5W1H context and a copy-exec Usage Example. Applies to: markdown documents, READMEs, guides, and runbooks.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Use when: the user asks to create or update documentation. Applies to: markdown documents, READMEs, guides, and runbooks]
+  HOW: [Structural: Helps with: producing docs that always include 5W1H context and a copy-exec Usage Example]
+  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
 ---
 
 # Document with Usage Example
@@ -30,12 +33,12 @@ Produce documentation that is immediately actionable by always including a **Usa
 - Topic/workflow that the document must explain.
 - Required commands, parameters, and expected results.
 
-## Output
+## Output (Logical Evidence)
 A document section set that includes:
 - 5W1H coverage: **Who, What, When, Where, Why, How**.
 - A dedicated `## Usage Example` section with copy-exec snippets.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Always include a section titled exactly `## Usage Example`.
 - Ensure examples are executable as written (no placeholder-only commands unless explicitly labeled).
 - Keep examples aligned with the documented environment and paths.
@@ -44,7 +47,7 @@ A document section set that includes:
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the developer before proceeding.
 
-## How
+## How (Structural Workflow)
 1. Gather the minimum context: audience, goal, environment, and expected outcome.
 2. Draft the document using 5W1H headings (Who/What/When/Where/Why/How).
 3. Add `## Usage Example` with at least one copy-exec command block and brief expected result.

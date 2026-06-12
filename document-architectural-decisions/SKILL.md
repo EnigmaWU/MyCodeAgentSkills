@@ -30,11 +30,11 @@ Elicit design issues, catalog and compare design alternatives, and compile a str
 - **Decision Template Details** (required): Located at [decision-template-details.md](details/decision-template-details.md).
 - **Documenting Software Architectures PDF** (optional): Reference book located at [references/Documenting Software Architectures.pdf](../TMP/Documenting%20Software%20Architectures.pdf).
 
-## Output
+## Output (Logical Evidence)
 - **Architectural Decision Record (ADR)**: A markdown file containing the completed 12-field template.
 - **Alternatives Comparison Matrix**: A structured matrix comparing options against technical/business concerns.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **Viable Options Only**: Do not list weak placeholders as alternatives. All alternatives listed in the comparison matrix must be genuinely viable solutions.
 - **No Empty Fields**: The *Implications*, *Assumptions*, and *Argument* fields must never be blank or marked as "N/A."
 - **Rigorous Typing**: Every decision must be explicitly categorized under Kruchten's types (Existence, Ban, Property, or Executive).
@@ -44,8 +44,7 @@ If the primary business goals, timing budgets, or physical hardware constraints 
 
 ---
 
-## How
-
+## How (Structural Workflow)
 ### 1. Gather the Required Context
 *   Identify the core design issue and what triggers it now.
 *   Locate any business/technical concerns (e.g., CPU headroom, latency budgets, safety regulations like ISO 26262, or development schedule limits).

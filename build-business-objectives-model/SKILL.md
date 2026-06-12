@@ -30,18 +30,17 @@ Stakeholders often jump straight to "We need an AI chatbot." If you don't ask *w
 ## Inputs
 - Project charters, vision documents, or interview transcripts.
 
-## Output
+## Output (Logical Evidence)
 - A completed Business Objectives Model document.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - Do not invent metrics. If an objective is not quantifiable in the source text, flag it as a question (e.g., "[Insert metric here - requires stakeholder input]").
 - Ensure there is a 1:1 or 1:N mapping from Problems to Objectives. An objective without a problem is invalid.
 
 ## One More Thing
 If the input text is just a list of features (e.g., "Build a login page, build a cart"), stop and ask the user what the overarching business problem is before proceeding.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Problem Extraction
 1. Read the input text and extract the core **Business Problems**. These are negative statements about the current state (e.g., "Costs are too high," "Revenue is dropping," "Manual entry takes too long").
 

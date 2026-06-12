@@ -27,10 +27,10 @@ Keeping the BDD acceptance criteria perfectly aligned with the latest conversati
 - **Existing User Story** (required): The current version of the user story (from a file or chat context).
 - **New Improvement/Feature** (required): The new requirement, edge case, or workflow change.
 
-## Output
+## Output (Logical Evidence)
 - An updated User Story that strictly follows the `write-user-story` formatting rules.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **RULE 1: BDD Executable Specifications First.** Acceptance Criteria MUST be written as strict BDD `Given/When/Then` scenarios.
 - **Primary Story Format:** Use the traditional `As a <role>, I want <capability>, So that <value>` format by default.
 - **Advisory Story Format:** You may optionally suggest the `In order to <value>, As a <role>, I want <capability>` format.
@@ -39,8 +39,7 @@ Keeping the BDD acceptance criteria perfectly aligned with the latest conversati
 ## One More Thing
 If it's unclear *which* User Story to update, or if the new improvement conflicts with a core requirement, stop and ask the user for clarification.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Detect Change & Identify Target
 1. Notice when a new feature, improvement, or edge case is agreed upon in the conversation.
 2. Locate the existing user story that covers this domain.

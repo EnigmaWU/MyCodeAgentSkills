@@ -26,10 +26,10 @@ When UI tests rely heavily on Page Objects, tests become tightly coupled to the 
 ## Inputs
 - An automated test script, a set of Page Objects, or a Gherkin scenario.
 
-## Output
+## Output (Logical Evidence)
 - Refactored test code separated into Actors, Tasks, Interactions, and Questions.
 
-## Constraints
+## Constraints (Logical Boundaries)
 - **Tasks** should describe business intent (e.g., `LoginWithCredentials`) and should NOT contain WebDriver or API specific code.
 - **Interactions** handle the low-level execution (e.g., `Click.on`, `Enter.theValue`) and are the *only* place where framework-specific code lives.
 - **Questions** extract state from the application to be used in assertions. Do NOT put assertions directly inside Tasks or Page Objects.
@@ -37,8 +37,7 @@ When UI tests rely heavily on Page Objects, tests become tightly coupled to the 
 ## One More Thing
 If the input is just a simple unit test for a pure logic function (no external interfaces), stop and inform the user that the Screenplay Pattern is designed for integration and end-to-end testing, not simple unit tests.
 
-## How
-
+## How (Structural Workflow)
 ### Phase 1: Identify the Actor and Abilities
 1. Identify the **Actor** representing the user in the scenario.
 2. Determine what **Abilities** the actor needs (e.g., `BrowseTheWeb`, `CallAnApi`).
