@@ -4,6 +4,14 @@ This document provides a comprehensive index of all the agent skills available i
 
 ---
 
+## [CREATING-SKILL-TEMPLATE](./CREATING-SKILL-TEMPLATE/)
+
+**English:** WHEN/WHERE/WHO: AI Agents or users generating a new skill for the repository. HOW: Use this SKILL to automatically scaffold a new skill directory, format the `SKILL.md` with the correct tier template (SIMPLE/COMPLICATED/COMPLEX), apply the standardized YAML frontmatter, and auto-generate bilingual READMEs. WHY: Creating skills manually from scratch leads to inconsistent folder structures, broken frontmatter, and missing READMEs. Automating this ensures every new skill strictly adheres to the repository's high-quality standards.
+
+**中文:** 使用时间/地点/人员: AI代理或用户在为存储库生成新技能时。 方法: 使用此技能自动搭建新的技能目录，使用正确的层级模板（SIMPLE/COMPLICATED/COMPLEX）格式化 `SKILL.md`，应用标准化的 YAML 前言（frontmatter），并自动生成双语自述文件（README）。 原因: 从头开始手动创建技能会导致文件夹结构不一致、前言损坏以及缺少自述文件。将此过程自动化可确保每项新技能都严格遵守存储库的高质量标准。
+
+---
+
 ## [UnitTesting-convert2CaTDD](./UnitTesting-convert2CaTDD/)
 
 **English:** Use when: the user says "convert to CaTDD", "refactor tests to CaTDD", "apply CaTDD", "make tests comment-alive", or asks to restructure existing tests with US/AC/TC format. Helps with: converting legacy or unstructured tests into CaTDD (Comment-alive Test-Driven Development) format with structured verification design. Applies to: existing test files in any language that lack structured US/AC/TC comments.
