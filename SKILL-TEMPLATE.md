@@ -2,16 +2,20 @@
 
 Use this file to choose the right `SKILL.md` shape for the skill you are creating.
 
-## 5W1H Guide
+## Hybrid 5W1H + SSL Guide
 
-| Item | What to capture |
-| --- | --- |
-| Who | Who should use this skill, or who the work is for |
-| What | What problem the skill solves and what output it should produce |
-| When | When the skill should be invoked, including trigger phrases and boundaries |
-| Where | Which files, folders, systems, or contexts it applies to |
-| Why | Why this skill exists, including value, constraints, and risks |
-| How | The workflow, tools, decision points, and validation steps |
+This template merges the human-readable 5W1H structure with the machine-readable Scheduling-Structural-Logical (SSL) representation (arXiv:2604.24026) for optimal agent execution.
+
+| Section | SSL Layer | What to capture |
+| --- | --- | --- |
+| Frontmatter | **Scheduling** | Explicit trigger phrases, boundaries, and context lock. |
+| Who | **Scheduling** | Who should use this skill, or who the work is for. |
+| What | **Logical** | What the skill does and explicit concrete side effects. |
+| When | **Scheduling** | Exact trigger conditions and explicit near-miss definitions. |
+| Where | **Scheduling** | Explicit path boundaries or system contexts required. |
+| Why | **Scheduling** | Why this skill exists, including value, constraints, and risks. |
+| How | **Structural** | The execution structure, explicit phases, and review loops. |
+| Constraints | **Logical** | Invariants, safety boundaries, and explicitly required tools. |
 
 ## Choose a Version
 
@@ -53,7 +57,7 @@ description:
 ## Why
 <Why this skill exists and why this workflow is worth reusing.>
 
-## How
+## How (Structural Workflow)
 1. <Gather the minimum context.>
 2. <Do the task.>
 3. <Validate the result.>
@@ -93,18 +97,19 @@ description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scop
 - <Required input or context>
 - <Optional input or assumption>
 
-## Output
+## Output (Logical Evidence)
 - <Expected deliverable>
-- <Validation evidence or artifacts>
+- <Explicitly declared state changes or side effects>
 
-## Constraints
-- <Safety, scope, tool, or style rules>
+## Constraints (Logical Boundaries)
+- <Safety, scope, or style rules>
+- <Required CLI tools or APIs>
 - <Things this skill must not do>
 
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
+## How (Structural Workflow)
 1. <Gather the required context.>
 2. <Perform the main task.>
 3. <Validate the result.>
@@ -142,18 +147,19 @@ description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scop
 - <Required input or context>
 - <Optional input or assumption>
 
-## Output
+## Output (Logical Evidence)
 - <Expected deliverable>
-- <Validation evidence or artifacts>
+- <Explicitly declared state changes or side effects>
 
-## Constraints
-- <Safety, scope, tool, or style rules>
+## Constraints (Logical Boundaries)
+- <Safety, scope, or style rules>
+- <Required CLI tools or APIs>
 - <Things this skill must not do>
 
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
-## How
+## How (Structural Workflow)
 
 ### Phase 1: <discovery or decision>
 <What to do and why it matters.>
@@ -162,7 +168,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 <What to do and why it matters.>
 
 ### Phase 3: <validation or iteration>
-<What to do and why it matters.>
+<Explicit review loops or validation gates between phases.>
 
 ## Resources
 - <scripts/>

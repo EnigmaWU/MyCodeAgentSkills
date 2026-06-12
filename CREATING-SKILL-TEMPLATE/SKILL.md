@@ -12,7 +12,7 @@ description: >
 AI Agents acting as meta-engineers to expand the repository's capabilities, or users who want to quickly scaffold a new skill structure.
 
 ## What
-Scaffolds a perfectly formatted, standard-compliant skill directory. This includes the `SKILL.md` based on `SKILL-TEMPLATE.md`, and the automated generation of both English and Chinese `README.md` files.
+Scaffolds a perfectly formatted, standard-compliant skill directory. This includes the `SKILL.md` based on the Hybrid 5W1H + SSL (Scheduling-Structural-Logical) `SKILL-TEMPLATE.md`, and the automated generation of both English and Chinese `README.md` files.
 
 ## When
 Invoke this skill when the user asks to "create a skill template", "scaffold a new skill", "generate the boilerplate for skill X", or similar phrases.
@@ -55,12 +55,12 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
    ---
    name: [skill-name]
    description: >
-     WHEN/WHERE/WHO: [Who should use this, and when/where]
-     HOW: Use this SKILL to [What this skill actually does]
-     WHY: [Why this skill matters or the problem it prevents]
+     WHEN/WHERE/WHO: [Scheduling: Who should use this, and explicit trigger/boundary contexts]
+     HOW: [Structural: Use this SKILL to explicitly execute phases and workflows]
+     WHY: [Scheduling: Why this skill matters or the problem it prevents]
    ---
    ```
-6. Fill in the remaining sections (Who, What, When, Where, Why, How) using the provided purpose. Always include the `## One More Thing` section.
+6. Fill in the remaining sections using the Hybrid 5W1H + SSL structure defined in `SKILL-TEMPLATE.md`. Ensure the `## How` section uses explicit phases and the `## Constraints` section lists logical side-effects and required tools. Always include the `## One More Thing` section.
 
 ### Phase 3: Generating Localized READMEs
 7. Create `[skill-name]/README.md` (English) using this structure:
