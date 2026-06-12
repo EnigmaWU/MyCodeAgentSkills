@@ -38,6 +38,8 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
 - **RULE 1: Directory Naming.** The directory name MUST exactly match the `name:` value in the `SKILL.md` YAML frontmatter.
 - **RULE 2: Multi-line Frontmatter.** The YAML `description` must use the multi-line block scalar format (`>`) and explicitly include the `WHEN/WHERE/WHO`, `HOW`, and `WHY` prefixes.
 - **RULE 3: Bilingual Support.** Every skill MUST have a `README.md` and a `README_ZH.md`.
+- **RULE 4: Token Efficiency (Max 500 Lines).** The `SKILL.md` file MUST be concise (ideally under 500 lines). If the skill contains highly verbose checklists, code examples, or design rules, you MUST place them in a `details/` directory and link to them relatively from `SKILL.md`.
+- **RULE 5: Trigger Accuracy.** The `description` block MUST explicitly define both exact trigger phrases AND "near-misses" (when NOT to use the skill) to prevent accidental executions by the agent.
 
 ## How
 
@@ -90,8 +92,15 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
    ```
 
 ### Phase 4: Finalization
-10. If the repository uses an automated summary script (e.g., `generate_skill_summary.py`), execute it to update the master `README_SkillSummary.md`.
-11. Stage and commit the new directory to git with a standard WHAT/HOW/WHY message.
+10. Ensure that the total length of `SKILL.md` is under 500 lines. If it is longer, automatically refactor verbose sections into external files inside a `details/` subdirectory.
+11. If the repository uses an automated summary script (e.g., `generate_skill_summary.py`), execute it to update the master `README_SkillSummary.md`.
+
+### Phase 5: Test-Driven Evaluation (Skill Simulation)
+12. Before finalizing the skill, the agent MUST simulate its triggering accuracy.
+13. **Generate Mock Prompts:** Create 3 mock user prompts (e.g., one perfect match, one near-miss, one completely unrelated).
+14. **Evaluate:** Read the newly created `SKILL.md` description frontmatter. Would an agent reading *only* this description correctly trigger the skill for the right prompt, and ignore the near-miss?
+15. **Refine:** If the trigger accuracy is ambiguous, rewrite the `WHEN/WHERE/WHO` section of the description until it is perfectly precise.
+16. Stage and commit the new directory to git with a standard WHAT/HOW/WHY message.
 
 ## Validation
 1. Verify the frontmatter uses the `>` multi-line format and does not have surrounding quotes.
