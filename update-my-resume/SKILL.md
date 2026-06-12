@@ -1,6 +1,9 @@
 ---
 name: update-my-resume
-description: 'Use when: the user just solved a problem, completed a task, finished a debugging session, or says "update my resume", "add this to my resume", "what did I learn today", or "capture my growth". Helps with: analyzing what new skills or competencies the user demonstrated, then writing a structured resume entry in both English and Chinese that covers the problem, the step-by-step approach, and the verified outcome. Applies to: .resume in the project root or $HOME/.resume, both EN and ZH sections.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Developers or agents analyzing a freshly solved, non-trivial problem to update the user's resume.]
+  HOW: [Structural: Use this SKILL to write a structured entry (WHAT problem, HOW approached, WHAT gained) in both EN and ZH sections.]
+  WHY: [Scheduling: Solving hard problems is valuable, but the value disappears if it is never recorded. Captures verifiable outcomes.]
 ---
 
 # Update My Resume

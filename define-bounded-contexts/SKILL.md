@@ -1,9 +1,9 @@
 ---
 name: define-bounded-contexts
 description: >
-  WHEN/WHERE/WHO: Software architects, domain experts, or agents splitting a monolith or designing a microservices architecture.
-  HOW: Use this SKILL to partition the system into Subdomains (Core, Supporting, Generic) and map the integration contracts between Bounded Contexts using Context Mapping patterns.
-  WHY: Monolithic models fail because words mean different things in different contexts. A "Product" in Inventory is a physical box; a "Product" in E-Commerce is a catalog listing. Explicitly defining Bounded Contexts prevents big balls of mud.
+  WHEN/WHERE/WHO: [Scheduling: Software architects, domain experts, or agents splitting a monolith or designing a microservices architecture.]
+  HOW: [Structural: Use this SKILL to partition the system into Subdomains and map the integration contracts using Context Mapping patterns.]
+  WHY: [Scheduling: Explicitly defining Bounded Contexts prevents big balls of mud caused by ambiguous terminology across domains.]
 ---
 
 # Define Bounded Contexts (Strategic Design)

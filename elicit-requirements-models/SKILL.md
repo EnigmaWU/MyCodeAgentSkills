@@ -1,9 +1,9 @@
 ---
 name: elicit-requirements-models
 description: >
-  WHEN/WHERE/WHO: Business analysts, agents, or developers reviewing complex user stories or PRDs.
-  HOW: Use this SKILL to parse text requirements into Mermaid.js visual models (state/flow diagrams) to identify missing logic.
-  WHY: Flat text hides missing edge cases and logical dead-ends. Visual modeling exposes these gaps before code is written.
+  WHEN/WHERE/WHO: [Scheduling: Business analysts, agents, or developers reviewing complex user stories or PRDs.]
+  HOW: [Structural: Use this SKILL to parse text requirements into Mermaid.js visual models (state/flow diagrams) to identify missing logic.]
+  WHY: [Scheduling: Flat text hides missing edge cases and logical dead-ends. Visual modeling exposes these gaps before code is written.]
 ---
 
 # Elicit Requirements Models

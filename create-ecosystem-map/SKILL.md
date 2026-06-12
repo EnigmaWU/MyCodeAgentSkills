@@ -1,9 +1,9 @@
 ---
 name: create-ecosystem-map
 description: >
-  WHEN/WHERE/WHO: System architects, analysts, or agents defining the scope of a new project.
-  HOW: Use this SKILL to extract all upstream and downstream systems from text and render them as a Mermaid.js graph.
-  WHY: Failing to identify an integration point early leads to massive architectural rework later. Ecosystem maps define the exact boundary.
+  WHEN/WHERE/WHO: [Scheduling: System architects, analysts, or agents defining the scope of a new project.]
+  HOW: [Structural: Use this SKILL to extract all upstream and downstream systems from text and render them as a Mermaid.js graph.]
+  WHY: [Scheduling: Failing to identify an integration point early leads to massive architectural rework later. Ecosystem maps define the exact boundary.]
 ---
 
 # Create Ecosystem Map

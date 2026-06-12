@@ -1,9 +1,9 @@
 ---
 name: conduct-event-storming
 description: >
-  WHEN/WHERE/WHO: Architects, domain experts, product owners, or agents analyzing a new business domain or complex workflow.
-  HOW: Use this SKILL to facilitate a Big Picture Event Storming session, discovering Domain Events chronologically, and mapping them to Commands, Actors, and Aggregates.
-  WHY: Traditional requirements gathering focuses on static data (nouns), leading to anemic domain models. Event Storming focuses on behavior (verbs), revealing the true complexity and boundaries of the business domain.
+  WHEN/WHERE/WHO: [Scheduling: Architects, domain experts, product owners, or agents analyzing a new business domain or complex workflow.]
+  HOW: [Structural: Use this SKILL to facilitate a Big Picture Event Storming session, discovering Domain Events chronologically, and mapping them to Commands, Actors, and Aggregates.]
+  WHY: [Scheduling: Traditional requirements gathering focuses on static data, leading to anemic models. Event Storming focuses on behavior to reveal domain boundaries.]
 ---
 
 # Conduct Event Storming

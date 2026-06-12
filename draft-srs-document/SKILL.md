@@ -1,9 +1,9 @@
 ---
 name: draft-srs-document
 description: >
-  WHEN/WHERE/WHO: Business analysts, systems engineers, or agents compiling requirements into a final specification.
-  HOW: Use this SKILL to map scattered user stories, constraints, and UI notes into the formal IEEE-style SRS template.
-  WHY: Unstructured documents lead to missing context. The SRS forces teams to explicitly state dependencies, external interfaces, and quality attributes alongside features.
+  WHEN/WHERE/WHO: [Scheduling: Business analysts, systems engineers, or agents compiling requirements into a final specification.]
+  HOW: [Structural: Use this SKILL to map scattered user stories, constraints, and UI notes into the formal IEEE-style SRS template.]
+  WHY: [Scheduling: Unstructured documents lead to missing context. The SRS forces teams to state dependencies and quality attributes.]
 ---
 
 # Draft SRS Document

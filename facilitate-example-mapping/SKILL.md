@@ -1,9 +1,9 @@
 ---
 name: facilitate-example-mapping
 description: >
-  WHEN/WHERE/WHO: Business analysts, Product Owners, or agents leading a Backlog Refinement or "Three Amigos" session.
-  HOW: Use this SKILL to decompose a User Story into Business Rules (Blue), Concrete Examples (Green), and Open Questions (Pink).
-  WHY: Unstructured conversations ramble and miss edge cases. Example Mapping provides a visual breadth-first constraint to flush out unknowns before coding starts.
+  WHEN/WHERE/WHO: [Scheduling: Business analysts, Product Owners, or agents leading a Backlog Refinement or "Three Amigos" session.]
+  HOW: [Structural: Use this SKILL to decompose a User Story into Business Rules (Blue), Concrete Examples (Green), and Open Questions (Pink).]
+  WHY: [Scheduling: Example Mapping provides a visual breadth-first constraint to flush out unknowns before coding starts.]
 ---
 
 # Facilitate Example Mapping

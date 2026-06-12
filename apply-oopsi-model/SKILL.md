@@ -1,9 +1,9 @@
 ---
 name: apply-oopsi-model
 description: >
-  WHEN/WHERE/WHO: Business analysts, testers, or agents exploring user journeys or data workflows.
-  HOW: Use this SKILL to work backward from the business Outcome, to tangible Outputs, to the Process, down to Scenarios and exact Inputs.
-  WHY: Starting with inputs ("When I type 'admin'...") obscures the business goal. Starting with the Outcome ("I want to book a flight") guarantees alignment before writing granular tests.
+  WHEN/WHERE/WHO: [Scheduling: Business analysts, testers, or agents exploring user journeys or data workflows.]
+  HOW: [Structural: Use this SKILL to work backward from the business Outcome, to tangible Outputs, to the Process, down to Scenarios and exact Inputs.]
+  WHY: [Scheduling: Starting with inputs obscures the business goal. Starting with Outcome guarantees alignment.]
 ---
 
 # Apply OOPSI Model

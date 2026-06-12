@@ -1,9 +1,9 @@
 ---
 name: build-business-objectives-model
 description: >
-  WHEN/WHERE/WHO: Product owners or agents analyzing project kickoff documents or vision statements.
-  HOW: Use this SKILL to map subjective Business Problems to quantifiable Business Objectives, and derive the Product Concept.
-  WHY: Avoids the trap of building features no one needs. If a feature doesn't trace back to a BOM objective, it shouldn't be built.
+  WHEN/WHERE/WHO: [Scheduling: Product owners or agents analyzing project kickoff documents or vision statements.]
+  HOW: [Structural: Use this SKILL to map subjective Business Problems to quantifiable Business Objectives, and derive the Product Concept.]
+  WHY: [Scheduling: Avoids the trap of building features no one needs. If a feature doesn't trace back to a BOM objective, it shouldn't be built.]
 ---
 
 # Build Business Objectives Model

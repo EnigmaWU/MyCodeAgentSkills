@@ -1,6 +1,9 @@
 ---
 name: document-architectural-decisions
-description: 'Use when: a key design choice is being made, an architectural design tradeoff is resolved, or the user says "document this decision", "write an ADR", or "log these tradeoffs". Helps with: writing structured 12-field decision records (ADRs), creating alternatives comparison matrices, and classifying choices via Kruchten''s ontology. Applies to: architecture records, design proposals, RFCs, and decision folders in the workspace.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Architects, system designers, or agents resolving an architectural tradeoff. Applies to design proposals and RFCs.]
+  HOW: [Structural: Use this SKILL to write structured 12-field Architectural Decision Records (ADRs) and alternatives matrices.]
+  WHY: [Scheduling: Capturing the "why" behind system design prevents future developers from repeating dead-end paths.]
 ---
 
 # Document Architectural Decisions

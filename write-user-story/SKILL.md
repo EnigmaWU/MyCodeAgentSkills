@@ -1,9 +1,9 @@
 ---
 name: write-user-story
 description: >
-  WHEN/WHERE/WHO: Developers, product owners, or agents formalizing requirements into backlog items.
-  HOW: Use this SKILL to write User Stories in the standard "As a... I want..." format, backed strictly by BDD "Given/When/Then" executable specifications.
-  WHY: Vague stories lead to misunderstandings and bugs. BDD-style acceptance criteria make expected behavior explicit, testable, and unambiguous.
+  WHEN/WHERE/WHO: [Scheduling: Developers, product owners, or agents formalizing requirements into backlog items.]
+  HOW: [Structural: Use this SKILL to write User Stories backed strictly by BDD "Given/When/Then" executable specifications.]
+  WHY: [Scheduling: Vague stories lead to misunderstandings. BDD-style criteria make expected behavior explicit and testable.]
 ---
 
 # Write User Story in BDD Style

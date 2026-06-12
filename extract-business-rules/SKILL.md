@@ -1,9 +1,9 @@
 ---
 name: extract-business-rules
 description: >
-  WHEN/WHERE/WHO: Business analysts or agents reviewing user stories or PRDs that contain embedded business logic.
-  HOW: Use this SKILL to extract policies, laws, and calculations from text and categorize them into a strict Business Rules Taxonomy.
-  WHY: Business rules change more frequently than software. Hardcoding a rule as a "feature" creates legacy debt. Separating rules allows for dynamic configuration or rules-engine implementation.
+  WHEN/WHERE/WHO: [Scheduling: Business analysts or agents reviewing user stories or PRDs that contain embedded business logic.]
+  HOW: [Structural: Use this SKILL to extract policies, laws, and calculations from text and categorize them into a strict Business Rules Taxonomy.]
+  WHY: [Scheduling: Separating rules allows for dynamic configuration. Hardcoding a rule as a feature creates legacy debt.]
 ---
 
 # Extract Business Rules

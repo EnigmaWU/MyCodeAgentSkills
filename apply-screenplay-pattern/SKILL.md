@@ -1,9 +1,9 @@
 ---
 name: apply-screenplay-pattern
 description: >
-  WHEN/WHERE/WHO: SDETs, developers, or agents writing or refactoring automated acceptance tests.
-  HOW: Use this SKILL to structure test code around Actors, Tasks, Interactions, Abilities, and Questions rather than Page Objects.
-  WHY: Page Objects bloat into massive "God classes" full of brittle locators and mixed concerns. Screenplay applies SOLID principles to test code, making it reusable, readable, and highly maintainable at scale.
+  WHEN/WHERE/WHO: [Scheduling: SDETs, developers, or agents writing or refactoring automated acceptance tests.]
+  HOW: [Structural: Use this SKILL to structure test code around Actors, Tasks, Interactions, Abilities, and Questions rather than Page Objects.]
+  WHY: [Scheduling: Page Objects bloat into massive "God classes". Screenplay applies SOLID principles to test code.]
 ---
 
 # Apply Screenplay Pattern

@@ -1,9 +1,9 @@
 ---
 name: apply-attribute-driven-design
 description: >
-  WHEN/WHERE/WHO: Software architects or lead developers designing a new feature or greenfield system.
-  HOW: Use this SKILL to systematically execute the 7-step ADD 3.0 methodology to map drivers to design patterns.
-  WHY: Ensures the architecture handles all constraints and quality attributes instead of just functional requirements.
+  WHEN/WHERE/WHO: [Scheduling: Software architects or lead developers designing a new feature or greenfield system.]
+  HOW: [Structural: Use this SKILL to systematically execute the 7-step ADD 3.0 methodology to map drivers to design patterns.]
+  WHY: [Scheduling: Ensures the architecture handles all constraints and quality attributes instead of just functional requirements.]
 ---
 
 # Apply Attribute-Driven Design (ADD 3.0)

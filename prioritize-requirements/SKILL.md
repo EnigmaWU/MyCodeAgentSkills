@@ -1,9 +1,9 @@
 ---
 name: prioritize-requirements
 description: >
-  WHEN/WHERE/WHO: Product owners or agents grooming a backlog of features or user stories.
-  HOW: Use this SKILL to score items across Value, Cost, and Risk using an analytical matrix, yielding a strict rank order.
-  WHY: Subjective "High/Medium/Low" labels lead to everything being marked "High." Mathematical scoring forces objective trade-offs.
+  WHEN/WHERE/WHO: [Scheduling: Product owners or agents grooming a backlog of features or user stories.]
+  HOW: [Structural: Use this SKILL to score items across Value, Cost, and Risk using an analytical matrix, yielding a strict rank order.]
+  WHY: [Scheduling: Subjective "High/Medium/Low" labels lead to everything being marked "High." Mathematical scoring forces objective trade-offs.]
 ---
 
 # Prioritize Requirements

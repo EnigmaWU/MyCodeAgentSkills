@@ -1,6 +1,9 @@
 ---
 name: UnitTesting-convert2CaTDD
-description: 'Use when: the user says "convert to CaTDD", "refactor tests to CaTDD", "apply CaTDD", "make tests comment-alive", or asks to restructure existing tests with US/AC/TC format. Helps with: converting legacy or unstructured tests into CaTDD (Comment-alive Test-Driven Development) format with structured verification design. Applies to: existing test files in any language that lack structured US/AC/TC comments.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Developers or agents refactoring tests to CaTDD. Applies to existing test files lacking US/AC/TC structure.]
+  HOW: [Structural: Use this SKILL to extract User Stories, Acceptance Criteria, and Test Cases from legacy code into the Comment-alive format.]
+  WHY: [Scheduling: Legacy tests lack design rationale. CaTDD makes tests living, structured design documents parseable by AI.]
 ---
 
 # Convert to CaTDD

@@ -1,9 +1,9 @@
 ---
 name: build-data-dictionary
 description: >
-  WHEN/WHERE/WHO: Database designers, business analysts, or agents analyzing forms, reports, or data-heavy requirements.
-  HOW: Use this SKILL to extract domain nouns from text and map them into a strict Data Dictionary (Element Name, Data Type, Length, Allowed Values).
-  WHY: Ambiguous data definitions cause integration failures. If system A thinks "Zip Code" is an integer and system B thinks it's a 10-char string, the system crashes.
+  WHEN/WHERE/WHO: [Scheduling: Database designers, business analysts, or agents analyzing forms, reports, or data-heavy requirements.]
+  HOW: [Structural: Use this SKILL to extract domain nouns from text and map them into a strict Data Dictionary (Element Name, Data Type, Length, Allowed Values).]
+  WHY: [Scheduling: Ambiguous data definitions cause integration failures between systems.]
 ---
 
 # Build Data Dictionary

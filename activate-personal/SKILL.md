@@ -1,6 +1,9 @@
 ---
 name: activate-personal
-description: 'Use when: starting work with EnigmaWU''s skill set, the user says "activate my personal", asks to use their personal defaults, or declares durable expertise or preferences that should be reused later. Helps with: activating the user''s personal working profile and updating it for future sessions. Applies to: personal profile activation for AI-assisted work.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Agents or users declaring durable expertise, preferences, or personal defaults.]
+  HOW: [Structural: Use this SKILL to activate the personal profile and update it when new durable information is provided.]
+  WHY: [Scheduling: Prevents having to re-explain personal context every session. Keeps future sessions faster and more accurate.]
 ---
 
 # Activate Personal

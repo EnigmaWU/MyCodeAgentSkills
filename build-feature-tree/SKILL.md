@@ -1,9 +1,9 @@
 ---
 name: build-feature-tree
 description: >
-  WHEN/WHERE/WHO: Analysts or agents reviewing flat product backlogs or lengthy PRDs.
-  HOW: Use this SKILL to group unstructured requirements into a hierarchical Feature Tree (L1, L2, L3) rendered as a mindmap.
-  WHY: Flat lists hide missing features. A visual hierarchy exposes gaps (e.g., "We have 'Edit Profile', but where is 'Delete Profile'?").
+  WHEN/WHERE/WHO: [Scheduling: Analysts or agents reviewing flat product backlogs or lengthy PRDs.]
+  HOW: [Structural: Use this SKILL to group unstructured requirements into a hierarchical Feature Tree (L1, L2, L3) rendered as a mindmap.]
+  WHY: [Scheduling: Flat lists hide missing features. A visual hierarchy exposes gaps.]
 ---
 
 # Build Feature Tree

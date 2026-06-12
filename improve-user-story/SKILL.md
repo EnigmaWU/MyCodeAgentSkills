@@ -1,9 +1,9 @@
 ---
 name: improve-user-story
 description: >
-  WHEN/WHERE/WHO: Developers, product owners, QA engineers, or agents needing to keep existing BDD-style user stories up to date.
-  HOW: Use this SKILL to proactively detect when a conversation introduces a new edge case or change, and safely update the relevant User Story with new Given/When/Then scenarios.
-  WHY: Requirements evolve during discussion, and documentation often goes stale. Keeping the BDD acceptance criteria aligned with the latest conversation prevents testing gaps.
+  WHEN/WHERE/WHO: [Scheduling: Developers, product owners, QA engineers, or agents keeping BDD-style user stories up to date.]
+  HOW: [Structural: Use this SKILL to proactively detect when a conversation introduces a new edge case or change, and update the Story.]
+  WHY: [Scheduling: Requirements evolve during discussion, and keeping BDD acceptance criteria aligned prevents testing gaps.]
 ---
 
 # Improve User Story

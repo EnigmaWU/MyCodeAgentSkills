@@ -1,9 +1,9 @@
 ---
 name: analyze-with-tactics-questionnaires
 description: >
-  WHEN/WHERE/WHO: Reviewers, architects, or agents analyzing a proposed or existing architecture.
-  HOW: Use this SKILL to systematically evaluate the design against targeted Quality Attribute questionnaires (e.g., Availability, Security).
-  WHY: Uncovers hidden architectural risks and missing tactics before implementation.
+  WHEN/WHERE/WHO: [Scheduling: Reviewers, architects, or agents analyzing a proposed or existing architecture.]
+  HOW: [Structural: Use this SKILL to systematically evaluate the design against targeted Quality Attribute questionnaires (e.g., Availability, Security).]
+  WHY: [Scheduling: Uncovers hidden architectural risks and missing tactics before implementation.]
 ---
 
 # Analyze with Tactics Questionnaires

@@ -1,6 +1,9 @@
 ---
 name: test-driven-development
-description: Use when implementing any feature or bugfix, before writing implementation code
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Developers or agents implementing any new feature, bugfix, or refactoring.]
+  HOW: [Structural: Use this SKILL to strictly enforce the Red-Green-Refactor cycle. No production code without a failing test first.]
+  WHY: [Scheduling: Tests written after code pass immediately, proving nothing. TDD forces edge case discovery before implementing.]
 ---
 
 # Test-Driven Development (TDD)

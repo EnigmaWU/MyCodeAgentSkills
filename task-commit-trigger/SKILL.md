@@ -1,6 +1,9 @@
 ---
 name: task-commit-trigger
-description: 'Use when: a task is just completed. Helps with: auto triggering or noticing developer "shall we commit just completed work?", and generating a structured WHAT/HOW/WHY commit message. Applies to: git repositories and conversation context.'
+description: >
+  WHEN/WHERE/WHO: [Scheduling: Developers or agents who have just finished a task and want a structured commit message.]
+  HOW: [Structural: Use this SKILL to auto-trigger a commit prompt and generate a structured WHAT/HOW/WHY git commit.]
+  WHY: [Scheduling: Capturing the rationale immediately after task completion ensures accurate context and saves time.]
 ---
 
 # Task Commit Trigger

@@ -1,9 +1,9 @@
 ---
 name: define-architectural-drivers
 description: >
-  WHEN/WHERE/WHO: System analysts or architects analyzing raw product requirements before design begins.
-  HOW: Use this SKILL to extract and formalize unstructured requirements into the four types of architectural drivers.
-  WHY: Architecture cannot be designed without clear constraints and prioritized quality attribute scenarios.
+  WHEN/WHERE/WHO: [Scheduling: System analysts or architects analyzing raw product requirements before design begins.]
+  HOW: [Structural: Use this SKILL to extract and formalize unstructured requirements into the four types of architectural drivers.]
+  WHY: [Scheduling: Architecture cannot be designed without clear constraints and prioritized quality attribute scenarios.]
 ---
 
 # Define Architectural Drivers

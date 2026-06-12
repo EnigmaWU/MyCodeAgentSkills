@@ -1,9 +1,9 @@
 ---
 name: validate-requirements-criteria
 description: >
-  WHEN/WHERE/WHO: QA engineers, agents, or business analysts reviewing drafted requirements before development.
-  HOW: Use this SKILL to hunt for ambiguous words, identify edge cases, and translate the text into strict BDD Acceptance Criteria.
-  WHY: Ambiguous requirements lead to bugs. Fixing requirements defects is cheapest during the analysis phase.
+  WHEN/WHERE/WHO: [Scheduling: QA engineers, agents, or business analysts reviewing drafted requirements before development.]
+  HOW: [Structural: Use this SKILL to hunt for ambiguous words, identify edge cases, and translate the text into strict BDD Acceptance Criteria.]
+  WHY: [Scheduling: Ambiguous requirements lead to bugs. Fixing requirements defects is cheapest during the analysis phase.]
 ---
 
 # Validate Requirements Criteria
