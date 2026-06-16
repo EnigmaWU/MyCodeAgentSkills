@@ -59,4 +59,14 @@ ctest
 - `DiagUBSAN` (Undefined Behavior)
 - `DiagMSAN` (Memory Sanitizer - Uninitialized memory)
 - `DiagLSAN` (Leak Sanitizer)
+
+## 5. VSCode Integrated Testing
+
+You can seamlessly run and debug your Google Tests using VSCode's built-in "Testing" sidebar. 
+
+1. **Install Extensions**: Ensure you have the `CMake Tools` and `C/C++` extensions installed. You may also want to install `C++ TestMate` for deeper test discovery.
+2. **Configure CMake**: Open the Command Palette (`Cmd+Shift+P` on macOS) and run `CMake: Configure`.
+3. **Build the Tests**: Run `CMake: Build` to compile the test executables.
+4. **Discover Tests**: Open the **Testing** activity bar (the beaker icon on the left). VSCode will automatically discover the CTest targets.
+5. **Run/Debug**: Click the "Play" icon to run the tests, or the "Bug" icon to debug a specific test. You can set breakpoints directly in your `*.cxx` files.
 ```
