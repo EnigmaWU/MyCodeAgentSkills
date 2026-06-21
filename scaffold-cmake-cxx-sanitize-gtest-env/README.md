@@ -12,3 +12,4 @@ Trigger this skill to execute the defined workflow. See `SKILL.md` for specific 
 - [SKILL.md](./SKILL.md): The core workflow and definition of the skill.
 - [details/cmake-template.md](./details/cmake-template.md): The robust CMake configuration template.
 - [details/readme-build-run-test-template.md](./details/readme-build-run-test-template.md): The template for the developer guide.
+- [details/vscode-settings-template.md](./details/vscode-settings-template.md): The template for VSCode CMake and Clangd integration.

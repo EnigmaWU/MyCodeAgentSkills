@@ -12,3 +12,4 @@ WHY: [Scheduling: 确保所有C/C++项目都具有统一、安全且易于测试
 - [SKILL.md](./SKILL.md): 技能的核心工作流和定义。
 - [details/cmake-template.md](./details/cmake-template.md): 稳健的CMake配置模板。
 - [details/readme-build-run-test-template.md](./details/readme-build-run-test-template.md): 开发人员指南的模板。
+- [details/vscode-settings-template.md](./details/vscode-settings-template.md): VSCode CMake和Clangd集成的模板。

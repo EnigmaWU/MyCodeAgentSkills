@@ -32,6 +32,7 @@ Manually configuring CMake for cross-platform compilation, sanitizer flags, and 
 - A configured `CMakeLists.txt` in the root directory.
 - A `Test/` directory for unit tests.
 - A `README_BuildRunTest.md` explaining how to build and test the project.
+- A `.vscode/settings.json` file configuring CMake Tools and clangd.
 
 ## Constraints (Logical Boundaries)
 - **Sanitizer Flags**: The `CMakeLists.txt` MUST include branches for `DiagASAN`, `DiagTSAN`, `DiagUBSAN`, `DiagMSAN`, and `DiagLSAN`.
@@ -71,6 +72,13 @@ If the project already has a complex `CMakeLists.txt`, stop and ask the user if 
 2. Replace any placeholders with the **Project Name**.
 3. Write the resulting markdown to `README_BuildRunTest.md` in the target directory.
 **Output State**: Project documentation generated.
+
+### Phase 5: Scaffold VSCode Configuration
+**Input State**: Workspace prepared.
+1. Check if the `.vscode/` directory exists. If not, create it.
+2. Read the template from `details/vscode-settings-template.md`.
+3. Write the configuration to `.vscode/settings.json` (merging with existing settings if necessary).
+**Output State**: VSCode environment fully configured for CMake and Sanitizers.
 
 ## Validation (Verifiable Rewards)
 1. Verify that `CMakeLists.txt` exists and contains the string `DiagASAN`.
