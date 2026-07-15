@@ -76,6 +76,14 @@ This document provides a comprehensive index of all the agent skills available i
 
 ---
 
+## [apply-specification-by-example](./apply-specification-by-example/)
+
+**English:** WHEN/WHERE/WHO: Product owners, business analysts, testers, developers, and agents aligning requirements with delivery. HOW: Use this SKILL to derive scope from goals, specify collaboratively with examples, refine for clarity, automate validation, and evolve living documentation. WHY: Reduces rework and ambiguity by turning requirements into executable, trustworthy documentation.
+
+**中文:** 使用时间/地点/人员: 产品负责人、业务分析师、测试、开发或代理人在需求与交付对齐时。 方法: 使用此技能从业务目标推导范围，通过协作示例澄清规则，持续细化规范，自动化验证，并演进活文档。 原因: 通过把需求转化为可执行且可验证的文档，显著降低歧义与返工。
+
+---
+
 ## [blog-topic-discover](./blog-topic-discover/)
 
 **English:** Use when: a task is completed, a goal is met, or the user asks to review recent work for blog ideas. Helps with: extracting insights, mistakes, new methods, and topics from recent git commits and chat logs to brainstorm blog posts. Applies to: post-task reflection and developer branding.

@@ -13,3 +13,4 @@ Use the `write-user-story` skill to draft a story for the "Password Reset" featu
 ## Structure
 - [SKILL.md](./SKILL.md): The core workflow for writing User Stories and BDD scenarios.
 - [details/bdd-story-format.md](./details/bdd-story-format.md): The standard template for User Stories and Given/When/Then scenarios.
+- [details/specification-by-example-enhancements.md](./details/specification-by-example-enhancements.md): Additional checklist to improve scope alignment, example quality, and executable clarity.

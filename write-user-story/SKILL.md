@@ -12,7 +12,7 @@ description: >
 Developers, product owners, business analysts, or AI Agents. The agent uses this skill to produce well-structured user stories with BDD-style acceptance criteria.
 
 ## What
-Generate a user story that focuses on business value and testability. The output is a single, self-contained user story ready for a backlog or specification document.
+Generate a user story that focuses on business value and testability. The output is a self-contained story package: story statement, executable BDD criteria, concrete business examples, and ambiguity/risk notes ready for backlog refinement.
 
 ## When
 Invoke this skill when asked to write, create, or draft a user story, or when asked for BDD-style acceptance criteria based on a feature description.
@@ -25,18 +25,25 @@ BDD-style acceptance criteria make expected behavior explicit, testable, and una
 
 ## Inputs
 - **Feature description** (required): What the user wants to build.
+- **Business goal / expected outcome** (required): Why this feature should exist and what measurable behavior change is expected.
 - **Role/persona** (optional): Who the end-user is.
 - **Business value** (optional): Why this feature matters.
 - **Edge cases** (optional): Known constraints or error paths.
 
 ## Output (Logical Evidence)
 - A User Story formatted using the standard templates.
+- Executable BDD criteria with at least one happy path and one error/edge path.
+- A compact example set with realistic domain data.
+- A short ambiguity/risk list for unresolved decisions.
 
 ## Constraints (Logical Boundaries)
 - **RULE 1: BDD Executable Specifications First.** The absolute most important part of the story is the Acceptance Criteria. They MUST be written as strict BDD `Given/When/Then` scenarios that can be directly translated into automated tests (e.g., Cucumber).
+- **RULE 2: Goal Before Detail.** Derive scenario scope from business outcome first. Do not start from UI click paths.
 - **Primary Story Format:** Use the traditional `As a <role>, I want <capability>, So that <value>` format by default.
 - **Advisory Story Format:** You may optionally suggest the `In order to <value>, As a <role>, I want <capability>` format if the business goal seems to be getting lost in the technical details.
 - Keep scenarios atomic: one behavior per scenario. Do not write "end-to-end test scripts" disguised as scenarios.
+- Keep examples concrete, realistic, and domain-readable; avoid placeholders that hide rules.
+- Do not couple `Then` clauses to implementation details, APIs, or database internals.
 
 ## One More Thing
 If the input is purely a technical chore (e.g., "Update dependency X to version Y") with no observable business behavior, stop and inform the user that BDD User Stories are for functional requirements, not technical debt.
@@ -45,6 +52,7 @@ If the input is purely a technical chore (e.g., "Update dependency X to version 
 ### Phase 1: Gather Context
 1. Identify the **role** (who), the **capability** (what), and the **business value** (why).
 2. If any of these are missing or vague, ask the user before continuing.
+3. Confirm the expected business outcome and scope boundary before drafting scenarios.
 
 ### Phase 2: Write the Story Statement
 3. Compose the Primary Story statement (`As a... I want... So that...`).
@@ -57,10 +65,19 @@ If the input is purely a technical chore (e.g., "Update dependency X to version 
 ### Phase 4: Write BDD Acceptance Criteria
 7. For each scenario, write the executable specifications using `Given / When / Then`.
 8. Ensure scenarios are declarative (focusing on business intent) rather than imperative (focusing on UI clicks and keystrokes).
+9. Use realistic example values and explicit expected outcomes in `Then`.
+
+### Phase 5: Refine for Specification Quality
+10. Remove ambiguous words from `Then` clauses (for example: fast, robust, seamless) unless quantified.
+11. Verify each scenario tests one behavior and has clear pass/fail observables.
+12. Add a brief ambiguity/risk note for unresolved business decisions.
 
 ## Resources
 - [BDD Story Format](./details/bdd-story-format.md)
+- [Specification by Example Enhancements](./details/specification-by-example-enhancements.md)
 
 ## Validation
 1. Verify that every scenario has at least one Given, one When, and one Then.
 2. Verify that the story includes a clear business value statement.
+3. Verify at least one error/edge path exists and is behavior-focused.
+4. Verify all `Then` clauses are concrete and testable without implementation coupling.
