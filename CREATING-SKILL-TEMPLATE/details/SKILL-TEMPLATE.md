@@ -195,3 +195,5 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 - Quote the `description` when it contains colons.
 - Keep the `One More Thing` section in every version.
 - Prefer real examples and real artifacts over abstract placeholders.
+- Keep operational instructions in natural language so the workflow is executable from text alone.
+- Treat diagrams, figures, and visual assets as optional references, not required execution steps.

@@ -36,10 +36,16 @@ A backlog with 150 items is impossible to review for completeness. By organizing
 - A hierarchical list of features.
 - A Mermaid.js Mindmap rendering the tree.
 - A list of "Potential Missing Features" discovered by analyzing the visual gaps.
+- A short "Visualization Quality Notes" section documenting readability and labeling decisions.
 
 ## Constraints (Logical Boundaries)
 - Features should be brief noun phrases (e.g., "Shopping Cart," not "The system shall allow the user to add items to a cart").
 - Limit the depth to 3 or 4 levels to maintain readability.
+- Keep one primary message per rendered mindmap (scope structure), and avoid decorative styling that does not improve interpretation.
+- If node coloring is used, limit category colors to a small, distinguishable set and do not rely on color alone to convey hierarchy.
+- Prefer explicit node labels and structural grouping over legend-heavy color coding.
+- Keep execution guidance text-first; the feature tree can be represented in plain structured lists when diagrams are unavailable.
+- Do not require Mermaid rendering to complete analysis or validation.
 
 ## One More Thing
 If the input text is not a list of features but rather a list of technical tasks (e.g., "Setup database," "Configure DNS"), stop and inform the user that a Feature Tree models *business functionality*, not technical implementation.
@@ -58,9 +64,16 @@ If the input text is not a list of features but rather a list of technical tasks
 6. Output the structure using Mermaid.js Mindmap syntax.
 7. Review the tree for symmetry and completeness. If an L2 category feels sparse compared to its siblings, suggest missing L3 features.
 
+### Phase 4: Visualization Quality Pass
+8. Check visual density and simplify if crowded (split into multiple trees if needed).
+9. Ensure labels remain concise and readable without requiring color interpretation.
+10. Add "Visualization Quality Notes" summarizing any compromises (for example: split by domain, grouped sparse branches).
+
 ## Resources
 - [Feature Tree Examples](./details/feature-tree-examples.md)
+- [Visualization Quality Checklist](./details/visualization-quality-checklist.md)
 
 ## Validation
 1. Verify that the Mermaid syntax is valid (`mindmap` format).
 2. Ensure no feature from the original list was dropped; every item must have a home in the tree.
+3. Verify the tree remains readable at the expected viewing size and does not depend on color-only interpretation.

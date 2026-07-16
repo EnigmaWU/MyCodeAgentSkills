@@ -13,3 +13,4 @@ Use the `build-feature-tree` skill to organize these 50 user stories into a hier
 ## Structure
 - [SKILL.md](./SKILL.md): The core workflow for identifying L1, L2, and L3 features and rendering the tree.
 - [details/feature-tree-examples.md](./details/feature-tree-examples.md): Examples of how to format the Feature Tree using Mermaid.js syntax.
+- [details/visualization-quality-checklist.md](./details/visualization-quality-checklist.md): Quality checks to keep feature trees readable, accessible, and interpretation-safe.

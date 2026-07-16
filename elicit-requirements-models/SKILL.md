@@ -34,6 +34,8 @@ Human language is inherently ambiguous and linear. When describing a system, sta
 ## Constraints (Logical Boundaries)
 - Do not invent logic to fill gaps; explicitly highlight the gaps as questions for the stakeholder.
 - Keep models scoped to the provided text to avoid diagram bloat.
+- Keep instructions executable via natural language checklists; visual diagrams are optional outputs.
+- If Mermaid cannot be rendered, provide equivalent state/flow structures in plain text form.
 
 ## One More Thing
 If the input text is purely cosmetic (e.g., "Change the button to blue") and contains no logic, state, or flow, inform the user that visual modeling is not applicable.

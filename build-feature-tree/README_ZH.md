@@ -10,3 +10,4 @@
 
 ## 结构 (Structure)
 - [SKILL.md](./SKILL.md): 技能的核心工作流和定义。
+- [details/visualization-quality-checklist.md](./details/visualization-quality-checklist.md): 保证功能树可读性、可访问性与解释一致性的质量检查清单。

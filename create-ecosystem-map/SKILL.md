@@ -33,6 +33,8 @@ When teams focus only on the features they are building, they forget the systems
 ## Constraints (Logical Boundaries)
 - Do not map the internal components of the System Under Design. The SUD is a black box in this model. Only map *external* interactions.
 - Differentiate between human actors and software systems.
+- Keep execution guidance in plain language; Mermaid output is optional representation, not a required execution prerequisite.
+- If rendering tools are unavailable, produce the same ecosystem map as a structured text adjacency list.
 
 ## One More Thing
 If the input text describes a purely standalone script with no external inputs or outputs, inform the user that an Ecosystem Map is trivial and unnecessary.

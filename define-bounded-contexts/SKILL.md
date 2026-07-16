@@ -36,6 +36,8 @@ A unified data model spanning the entire enterprise always fails. Words are ambi
 ## Constraints (Logical Boundaries)
 - **RULE 1: Linguistic Boundary.** A Bounded Context is a linguistic boundary. A model inside one context must not be corrupted by concepts from outside.
 - **RULE 2: Core Domain Focus.** The Core Domain is where the business makes its money. It must be built in-house. Generic subdomains (like Identity or Invoicing) should be outsourced or bought if possible.
+- **RULE 3: Text-First Execution.** The workflow must be executable from natural-language context definitions even without diagram tooling.
+- **RULE 4: Diagram Optionality.** Context maps may be represented as structured text tables when Mermaid output is unavailable.
 
 ## How (Structural Workflow)
 ### Phase 1: Problem Space (Subdomains)

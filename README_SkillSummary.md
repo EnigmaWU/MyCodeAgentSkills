@@ -60,6 +60,14 @@ This document provides a comprehensive index of all the agent skills available i
 
 ---
 
+## [apply-fundamentals-of-data-visualization](./apply-fundamentals-of-data-visualization/)
+
+**English:** WHEN/WHERE/WHO: Analysts, researchers, product teams, and agents creating or reviewing charts, dashboards, reports, or infographics. HOW: Use this SKILL to choose chart types by analytical intent, apply perception-safe encodings, improve accessibility, and refine narrative clarity. WHY: Poor chart choices and visual styling errors can mislead decisions and hide key insights.
+
+**中文:** 使用时间/地点/人员: 数据分析师、研究人员、产品团队或代理人在设计或审查图表、仪表盘、报告或信息图时。 方法: 使用此技能按分析目标选择图表类型，应用感知友好的视觉编码，提升可访问性，并优化叙事表达。 原因: 错误的图表选择和视觉样式会误导决策并掩盖关键洞察。
+
+---
+
 ## [apply-oopsi-model](./apply-oopsi-model/)
 
 **English:** WHEN/WHERE/WHO: Business analysts, testers, or agents exploring user journeys or data workflows. HOW: Use this SKILL to work backward from the business Outcome, to tangible Outputs, to the Process, down to Scenarios and exact Inputs. WHY: Starting with inputs ("When I type 'admin'...") obscures the business goal. Starting with the Outcome ("I want to book a flight") guarantees alignment before writing granular tests.
