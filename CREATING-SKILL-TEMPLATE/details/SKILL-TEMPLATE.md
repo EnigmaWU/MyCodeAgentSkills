@@ -15,6 +15,7 @@ This template merges the human-readable 5W1H structure with the machine-readable
 | Where | **Scheduling** | Explicit path boundaries or system contexts required. |
 | Why | **Scheduling** | Why this skill exists, including value, constraints, and risks. |
 | How | **Structural** | The execution state-machine, explicit phases, and branching logic. |
+| Optimization Readiness | **Logical** | Failure signals, revision evidence, safe mutation boundaries, acceptance criteria, rejection handling, and stop rules. |
 | Constraints | **Logical** | Invariants, required tools, and Anti-Pattern Mapping (what NOT to do). |
 
 ## Choose a Version
@@ -24,6 +25,22 @@ This template merges the human-readable 5W1H structure with the machine-readable
 | SIMPLE | One straight-line workflow, light context, one main output | 5W1H, a short How, and Validation |
 | COMPLICATED | Multi-step workflow, multiple tools, explicit inputs and outputs | 5W1H plus Inputs, Output, and Constraints |
 | COMPLEX | Branching workflow, review loops, bundled resources, or multiple save targets | 5W1H plus Inputs, Output, Constraints, Resources, and Validation |
+
+## Depth Rules
+
+Choose the tier by workflow depth and control structure, not by document length.
+
+- **SIMPLE = one path**: Use when the skill is mostly a straight-line execution with 1 to 2 main steps, little or no branching, and direct local validation.
+- **COMPLICATED = one path plus decisions**: Use when the skill has multiple steps, at least one meaningful decision point, explicit constraints, or non-trivial input/output handling.
+- **COMPLEX = multiple paths plus iteration**: Use when the skill has phased execution, branching paths, retries, review loops, escalation rules, multiple artifacts, or resource handoffs.
+
+Practical test:
+
+1. If the skill can be executed as one linear checklist, choose `SIMPLE`.
+2. If the skill still has one main flow but needs explicit branching or stronger state checks, choose `COMPLICATED`.
+3. If the skill requires iteration, alternative paths, or a multi-phase control loop, choose `COMPLEX`.
+
+Do not upgrade the tier only because the topic is important or the explanation is long. Upgrade the tier when the execution logic becomes deeper.
 
 ## SIMPLE
 
@@ -57,10 +74,24 @@ description:
 ## Why
 <Why this skill exists and why this workflow is worth reusing.>
 
+## Optimization Readiness
+- **Failure Signals**: <What repeated signs show this skill is not working well enough.>
+- **Evidence To Collect**: <What examples, traces, or outputs should be gathered before revising it.>
+- **Safe Mutations**: <What parts may be revised without changing the skill's core scope.>
+- **Acceptance Criteria**: <What independent check proves the revision is better.>
+- **Rejected Revision Rule**: <How to record a failed rewrite or anti-pattern.>
+- **Stop Rule**: <When to stop iterating and ask for more evidence or user input.>
+
 ## How (Structural Workflow)
 <Use strict, deterministic instructions. No ambiguous prose (e.g., 'try to').>
 1. **Input State**: <Gather the explicit context needed.>
 2. **Execution**: <Perform the deterministic task.>
+
+Example shape:
+
+1. **Input State**: Read the user request and confirm the target artifact name.
+2. **Execution**: Generate the artifact in one pass using the required format.
+3. **Validation**: Check that the artifact exists and matches the requested shape.
 
 ## Validation (Verifiable Rewards)
 1. <Execute a strict checklist, schema validation, or harness command to prove success.>
@@ -104,6 +135,15 @@ description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scop
 - <Expected deliverable>
 - <Explicitly declared state changes or side effects>
 
+## Optimization Readiness
+- **Failure Signals**: <What recurring failure patterns, ambiguities, or low-quality outcomes indicate the skill needs revision.>
+- **Evidence To Collect**: <What traces, examples, review comments, or outputs should be compared before revising the skill.>
+- **Safe Mutation Boundaries**: <Which sections may be tightened or restructured, and which invariants must remain stable.>
+- **Acceptance Criteria**: <What independent comparison, checklist, or harness proves the new version improved.>
+- **Rejected Revision Handling**: <How to record failed candidate edits so they are not repeated blindly.>
+- **Transfer Check**: <How to confirm the change still works on at least one nearby use case.>
+- **Stop Rule**: <When to stop iterating and escalate for missing context or conflicting evidence.>
+
 ## Constraints (Logical Boundaries)
 - <Safety, scope, or style rules>
 - <Required CLI tools or APIs>
@@ -116,6 +156,13 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 <Use imperative state-machine logic. Every step must have a clear input/output state.>
 1. **Input Phase**: <Gather and validate the required context.>
 2. **Execution Phase**: <Perform the main task using explicit conditional branching.>
+
+Example shape:
+
+1. **Input Phase**: Gather the request, required files, and success criteria. If a required input is missing, stop and ask for it; otherwise continue.
+2. **Decision Phase**: Choose the correct output path based on the input type. If the request is a new artifact, use the creation path; if it is an existing artifact, use the revision path.
+3. **Execution Phase**: Produce or revise the artifact using the selected path.
+4. **Validation Phase**: Run the relevant checks and report whether the output satisfied the criteria.
 
 ## Validation (Verifiable Rewards)
 1. <Execute a strict checklist, script, or command to prove success before concluding.>
@@ -157,6 +204,15 @@ description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scop
 - <Expected deliverable>
 - <Explicitly declared state changes or side effects>
 
+## Optimization Readiness
+- **Failure Signals**: <What repeated defects, routing misses, or unstable outputs trigger a revision cycle.>
+- **Evidence To Collect**: <What multi-run traces, benchmark cases, reviews, or transcripts must be gathered.>
+- **Safe Mutation Boundaries**: <Which instructions, checklists, examples, or resource links may be changed, and what must remain fixed.>
+- **Acceptance Criteria**: <What independent validation gate must pass before accepting a rewrite.>
+- **Rejected Revision Handling**: <Where rejected edits, anti-patterns, or failed hypotheses are captured.>
+- **Transfer Check**: <How to verify the rewrite generalizes across nearby tasks, users, or environments.>
+- **Stop Rule**: <What hard limit or evidence threshold ends the current optimization cycle.>
+
 ## Constraints (Logical Boundaries)
 - <Safety, scope, or style rules>
 - <Required CLI tools or APIs>
@@ -171,11 +227,20 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 ### Phase 1: <discovery or decision>
 <Explicit input state expectation and execution steps.>
 
+Example:
+If the task goal, evidence, or destination is unclear, stop and resolve the ambiguity. Otherwise classify the request into the correct execution path and record the planned validation gate.
+
 ### Phase 2: <execution>
 <Explicit execution steps and expected output state.>
 
+Example:
+Execute the chosen path and produce the first candidate output. If execution fails because a dependency or constraint blocks progress, switch to the recovery path; otherwise continue to validation.
+
 ### Phase 3: <iteration>
 <Explicit review loops (with hard retry limits) between phases.>
+
+Example:
+Validate the candidate output against the acceptance criteria. If validation passes, finalize the result. If validation fails and the retry budget remains, revise only the allowed sections and rerun validation. If the retry budget is exhausted, stop and escalate with the failed evidence.
 
 ## Resources
 - <scripts/>
@@ -197,3 +262,5 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 - Prefer real examples and real artifacts over abstract placeholders.
 - Keep operational instructions in natural language so the workflow is executable from text alone.
 - Treat diagrams, figures, and visual assets as optional references, not required execution steps.
+- Keep the optimization-ready section lightweight by default; use stronger multi-run evidence only when the skill is high-value or repeatedly unstable.
+- These optimization-ready conventions are inspired by controllable skill-evolution patterns from SkillOpt and SkillOpt-Lite, adapted here as plain-language authoring guidance rather than research-protocol boilerplate.
