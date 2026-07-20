@@ -2,9 +2,13 @@
 
 Update an existing skill when a conversation reveals that the original skill is incomplete, outdated, or wrong. This is the companion to `save-as-skill`: where `save-as-skill` creates a brand-new skill from a conversation, `improve-existing-skill` folds conversation learnings back into an existing skill.
 
+This workflow is intentionally **COMPLEX**: it identifies evidence-backed gaps, classifies the update scope, preserves the original skill's identity, and validates the revised skill through an independent acceptance gate instead of treating file edits as success.
+
 ## What Is This
 
 When you apply a saved skill and it does not fully work — you need extra steps, workarounds, or corrections — the improvements typically stay in your chat and never reach the skill file. This skill captures those improvements and merges them back into the original `SKILL.md`, keeping the skill accurate over time.
+
+It also strengthens future activation by keeping the strongest trigger phrases in the frontmatter description, not only in the body text. That matters because auto-invocation normally relies on the frontmatter discovery surface first.
 
 ## When to Use This vs save-as-skill
 
@@ -14,6 +18,12 @@ When you apply a saved skill and it does not fully work — you need extra steps
 | Applied an existing skill, had to iterate further | `improve-existing-skill` |
 | Skill is completely wrong and needs a rewrite | `save-as-skill` (create a replacement) |
 | Skill needs a cosmetic or formatting fix | Edit the file directly |
+
+## Why Activation Was Weak
+
+- The exact user-language triggers such as `improve this skill` and `this skill didn't work` were present in `## When`, but not clearly represented in the frontmatter `description`.
+- The frontmatter was too abstract, so the discovery surface did not carry the strongest routing clues.
+- The refined version fixes this by moving exact triggers and near-miss boundaries into the frontmatter, where the model is more likely to see them during skill selection.
 
 ## Porting to Other Agents
 
@@ -144,6 +154,8 @@ with what we learned?" Then follow .claude/skills/improve-existing-skill/SKILL.m
 ```
 
 The agent compares what the original skill prescribed with what the conversation actually needed, then updates the skill.
+
+The revised skill should also include `Optimization Readiness` guidance when needed, so future improvements remain evidence-backed instead of speculative.
 
 ### Validate the Updated Skill
 

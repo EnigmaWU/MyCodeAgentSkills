@@ -1,9 +1,9 @@
 ---
 name: improve-existing-skill
 description: >
-  WHEN/WHERE/WHO: [Scheduling: Agents or maintainers updating an existing skill in the repository after discovering gaps or improvements during a conversation.]
-  HOW: [Structural: Use this SKILL to identify gaps, classify changes, apply improvements, migrate legacy formats to the Hybrid SSL standard, and validate the final skill.]
-  WHY: [Scheduling: Skills degrade over time. Folding fixes back into the skill keeps it accurate and preserves the original identity while automatically migrating older skills to the state-of-the-art framework.]
+   WHEN/WHERE/WHO: [Scheduling: Use when an existing skill was applied, did not fully solve the problem, and the user says "improve this skill", "update the skill", "the skill needs fixing", "make this skill better", or "this skill didn't work". Do not use for brand-new skills or formatting-only edits.]
+   HOW: [Structural: Use this COMPLEX SKILL to identify evidence-backed gaps, classify the update scope, preserve the original skill's identity, apply improvements, record rejected revisions, migrate legacy formats to the Hybrid 5W1H + SSL standard, and validate the final skill through an independent acceptance gate.]
+   WHY: [Scheduling: Skills degrade over time. Folding proven fixes back into the original skill keeps it accurate, reusable, and easier for the agent to trigger reliably in future conversations.]
 ---
 
 # Improve Existing Skill
@@ -42,6 +42,16 @@ Update an existing `SKILL.md` so it reflects what actually worked. The deliverab
 - A revised `SKILL.md` that incorporates the improvements while preserving the original skill's identity, migrated to the Hybrid 5W1H + SSL format if it wasn't already.
 - Explicitly declared state changes (diff summary).
 - Updated bundled resources (`scripts/`, `references/`, `assets/`).
+- A short validation record listing the confirmed gaps, the chosen update scope, and any rejected edits that should not be repeated blindly.
+
+## Optimization Readiness
+- **Failure Signals**: The original skill was triggered but required undocumented extra steps, used wrong assumptions, missed important boundaries, or failed to produce a working result without conversational rescue.
+- **Evidence To Collect**: The original skill text, concrete steps from the current conversation, commands or files that actually worked, user corrections, and failed attempts that exposed weak instructions.
+- **Safe Mutation Boundaries**: Revise frontmatter triggers, workflow steps, constraints, validation, and supporting resources while preserving the skill's original purpose and name.
+- **Acceptance Criteria**: Accept the updated skill only if every meaningful change traces back to conversation evidence, the tier still matches the workflow depth, the routing language is clearer, and the validation steps are more actionable than before.
+- **Rejected Revision Handling**: Record discarded trigger phrases, structural rewrites, or speculative improvements that were considered but not supported by evidence.
+- **Transfer Check**: Confirm that the updated skill would also help on at least one nearby recurrence of the same problem class, not only the exact conversation instance.
+- **Stop Rule**: If the conversation did not actually improve the original skill, or two revision attempts fail the same acceptance check, stop and report that no justified update is available.
 
 ## Constraints (Logical Boundaries)
 - **RULE 1: Template Migration.** If the existing skill is not using the Hybrid 5W1H + SSL format (e.g., missing multi-line YAML, missing `(Structural Workflow)` headers), you MUST migrate it to the new standard during the update.
@@ -53,6 +63,7 @@ Update an existing `SKILL.md` so it reflects what actually worked. The deliverab
 - Keep the updated skill self-contained. If overflow grows too large, move it into `references/`.
 - Maintain template compliance. The updated skill must still pass validation against its template tier (SIMPLE, COMPLICATED, or COMPLEX).
 - If the conversation did not actually improve the skill, say so and stop instead of forcing a change.
+- Make the routing language explicit enough that the frontmatter alone can signal when this skill should activate.
 
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
@@ -86,6 +97,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
    - **Extend**: add new steps, phases, inputs, or outputs. The structure grows but the purpose stays the same.
    - **Restructure**: the template tier needs to change (e.g., SIMPLE → COMPLICATED) because the workflow is now more complex.
 2. If the change is a **Restructure**, confirm with the user before proceeding because it changes the skill's shape significantly.
+3. Record any rejected scope options so future edits do not reopen unsupported rewrites.
 
 ### Phase 4: Template Migration (SSL Upgrade)
 1. Check if the original skill uses the modern **Hybrid 5W1H + SSL** format. 
@@ -101,19 +113,21 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
    - Update `When` if new trigger phrases or near-miss boundaries were discovered.
    - Add new artifacts to `scripts/`, `references/`, or `assets/` when the conversation produced them.
 3. Use real commands, code, and file paths from the conversation instead of abstract placeholders.
+4. If the skill is missing `## Optimization Readiness`, add it and fill it with evidence-backed failure signals, acceptance criteria, and stop rules derived from the conversation.
 
 ### Phase 6: Validate the Updated Skill
 1. Verify the updated skill still matches its template tier. Use the section-order rules:
    - SIMPLE: `Who`, `What`, `When`, `Where`, `Why`, `How`, `One More Thing`.
    - COMPLICATED: `Who`, `What`, `When`, `Where`, `Why`, `Inputs`, `Output`, `Constraints`, `One More Thing`, `How`.
-   - COMPLEX: `Who`, `What`, `When`, `Where`, `Why`, `Inputs`, `Output`, `Constraints`, `One More Thing`, `How`, `Resources`, `Validation`.
+   - COMPLEX: `Who`, `What`, `When`, `Where`, `Why`, `Inputs`, `Output`, `Optimization Readiness`, `Constraints`, `One More Thing`, `How`, `Resources`, `Validation`.
 2. If `scripts/validate_skill.py` is available, run:
 
    ```bash
    python <skill-root>/scripts/validate_skill.py <updated-skill-path> --tier <tier>
    ```
 
-3. Fix any validation failures before returning the result.
+3. Verify that the updated frontmatter description now carries the strongest trigger phrases and near-miss boundaries, rather than hiding them only in `## When`.
+4. Fix any validation failures before returning the result.
 
 ### Phase 7: Present the Diff and Save
 1. Show a concise diff summary to the user, listing what was added, changed, or removed and why.
@@ -131,4 +145,5 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 2. Verify the section layout matches the skill's template tier.
 3. Verify every change traces back to something that actually happened in the conversation.
 4. Verify the skill still contains the stop-and-ask rule in `One More Thing`.
-5. Run `scripts/validate_skill.py` when available and fix any reported issues.
+5. Verify that the strongest trigger phrases and near-miss boundaries are present in the frontmatter description, not only in `## When`.
+6. Run `scripts/validate_skill.py` when available and fix any reported issues.
