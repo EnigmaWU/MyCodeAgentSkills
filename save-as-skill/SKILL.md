@@ -1,9 +1,9 @@
 ---
 name: save-as-skill
 description: >
-  WHEN/WHERE/WHO: [Scheduling: Agents or users wanting to preserve a completed, complex conversation or debugging session into a reusable skill.]
-  HOW: [Structural: Use this SKILL to extract the workflow, format it into the Hybrid 5W1H + SSL structure, and evaluate it via Ctx2Skill Self-Play.]
-  WHY: [Scheduling: Good conversations are expensive. Saving them explicitly to the machine-readable SSL standard ensures future agents can perfectly index and reuse the reasoning without degradation.]
+   WHEN/WHERE/WHO: [Scheduling: Use when the user says "save as skill", "capture this as a skill", or "turn this into a skill", or when a long solved conversation produced a reusable workflow that would be expensive to rediscover. Do not use for trivial one-liners or permanent team conventions better stored in instructions or docs.]
+   HOW: [Structural: Use this COMPLEX SKILL to assess skill-worthiness, choose the correct template tier, convert the conversation into the Hybrid 5W1H + SSL structure, and refine the generated skill through validation and Ctx2Skill-inspired evaluation loops.]
+   WHY: [Scheduling: Good conversations are expensive. Saving them as structured skills preserves the triggers, pivots, artifacts, and failure lessons so future agents can discover and reuse them reliably.]
 ---
 
 # Save As Skill
@@ -44,6 +44,15 @@ Turn the current conversation into a self-contained skill package. The main deli
 - A Ctx2Skill self-play evaluation report: scored probe tasks, failure diagnosis, and version history.
 - A recommendation to use instructions or project docs instead when the conversation is not skill-worthy.
 
+## Optimization Readiness
+- **Failure Signals**: The generated skill is too vague, overfits one conversation, picks the wrong tier, hides key triggers in body text instead of frontmatter, or cannot guide a fresh agent without extra explanation.
+- **Evidence To Collect**: Reusable steps from the conversation, exact trigger phrases, failed attempts, produced artifacts, validation outcomes, and reviewer feedback from self-play or manual checks.
+- **Safe Mutation Boundaries**: Revise frontmatter wording, section structure, examples, validation steps, and supporting resources while preserving the proven workflow learned from the conversation.
+- **Acceptance Criteria**: Accept the generated skill only if it matches the chosen tier's control depth, carries strong routing cues in frontmatter, includes actionable validation, and remains reusable without depending on the original chat transcript.
+- **Rejected Revision Handling**: Record discarded names, dropped prompts, failed evaluation proposals, and over-specific rules so they are not reintroduced blindly.
+- **Transfer Check**: Confirm the skill would help on at least one nearby future problem of the same class, not only the exact conversation that produced it.
+- **Stop Rule**: If the conversation is not skill-worthy, or two revision cycles fail the same acceptance check, stop and recommend a more appropriate storage target instead of forcing a skill.
+
 ## Constraints (Logical Boundaries)
 - **RULE 1: Token Efficiency.** Ensure the generated `SKILL.md` remains under 500 lines. Move verbose reference material into `details/` or `references/`.
 - Preserve the original intent of the conversation. Do not invent steps that did not happen.
@@ -52,6 +61,7 @@ Turn the current conversation into a self-contained skill package. The main deli
 - Keep the skill self-contained and concise. Move overflow into `references/` when needed.
 - Do not claim files, tooling, or setup exist unless you verified them in the target environment.
 - If the conversation is too simple, say so and stop instead of forcing a skill.
+- Keep the strongest trigger phrases and near-miss boundaries in the frontmatter description because it is the primary discovery surface for auto-activation.
 
 ## One More Thing
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
@@ -88,6 +98,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 - Choose COMPLICATED for a multi-step workflow with clear inputs, outputs, and constraints.
 - Choose COMPLEX for branching workflows, review loops, bundled scripts, or multi-platform save guidance.
 - Use the lightest tier that still captures the real workflow clearly.
+- Record why the selected tier matches the workflow depth so later revisions do not drift upward or downward without evidence.
 
 ### Phase 4: Build the SSL Descriptor
 Create the following fields from the conversation according to the Hybrid 5W1H + SSL template:
@@ -101,6 +112,7 @@ Create the following fields from the conversation according to the Hybrid 5W1H +
 - `why`: why this workflow is valuable.
 - `how`: explicit Structural Workflow phases with review loops.
 - `inputs`, `output`, and `constraints`: concrete Logical boundaries and explicitly required tools.
+- `optimization readiness`: failure signals, evidence, safe mutation boundaries, acceptance criteria, rejected revision handling, transfer checks, and a stop rule.
 
 ### Phase 5: Generate the Skill Package
 1. Write `SKILL.md` using the Hybrid 5W1H + SSL framework.
@@ -124,6 +136,7 @@ Create the following fields from the conversation according to the Hybrid 5W1H +
    ```
 
 7. Keep `SKILL.md` under about 500 lines. Move long reference material into `references/` and point to it from the skill.
+8. If the skill is auto-invocable, ensure the frontmatter description repeats the strongest exact trigger phrases instead of relying on `## When` alone.
 
 ### Phase 5A: Check Template Compliance
 Before returning the generated skill, compare it against the chosen template tier.
@@ -131,8 +144,9 @@ Before returning the generated skill, compare it against the chosen template tie
 - Frontmatter: `name` is present, `description` is present, and the description is quoted when it contains colons.
 - SIMPLE requires these level-2 sections in order: `Who`, `What`, `When`, `Where`, `Why`, `How`, `One More Thing`.
 - COMPLICATED requires these level-2 sections in order: `Who`, `What`, `When`, `Where`, `Why`, `Inputs`, `Output`, `Constraints`, `One More Thing`, `How`.
-- COMPLEX requires these level-2 sections in order: `Who`, `What`, `When`, `Where`, `Why`, `Inputs`, `Output`, `Constraints`, `One More Thing`, `How`, `Resources`, `Validation`.
+- COMPLEX requires these level-2 sections in order: `Who`, `What`, `When`, `Where`, `Why`, `Inputs`, `Output`, `Optimization Readiness`, `Constraints`, `One More Thing`, `How`, `Resources`, `Validation`.
 - `One More Thing` must explicitly tell the next agent to stop and ask when something is unclear, missing, or conflicting.
+- The frontmatter description must carry the best exact trigger phrases and near-miss boundaries, not only the body sections.
 - If `scripts/validate_skill.py` exists in the current package, run:
 
    ```bash
@@ -195,8 +209,9 @@ Take on the Generator role. Apply the Proposer's proposals to produce an updated
 1. Add the highest-impact proposal first.
 2. Keep the skill concise — remove filler when adding new content.
 3. Re-run `scripts/validate_skill.py` on the updated skill to confirm template compliance.
-4. Append the new version to `skill_history` (e.g., `v2`).
-5. Return to Step 1 for the next round.
+4. Update the `Optimization Readiness` section if the new evidence changes failure signals, acceptance criteria, or stop rules.
+5. Append the new version to `skill_history` (e.g., `v2`).
+6. Return to Step 1 for the next round.
 
 **If the user wants the bundled review tool**, save tasks and rubrics in `<skill-name>-workspace/evals.json` and launch:
 
@@ -243,4 +258,5 @@ After two or more self-play rounds, use the Ctx2Skill Cross-Time Replay mechanis
 2. Run the manual template checklist, and run `scripts/validate_skill.py` when it is available.
 3. Verify the section layout matches the chosen template tier.
 4. Verify the examples, commands, and file paths come from the conversation or the current workspace.
-5. Verify the skill includes the stop-and-ask rule before returning it to the user.
+5. Verify the strongest trigger phrases and near-miss boundaries are present in the frontmatter description.
+6. Verify the generated skill includes the stop-and-ask rule before returning it to the user.

@@ -2,9 +2,13 @@
 
 A 3-layer system for extracting reusable skills from AI conversations, designed for GitHub Copilot and portable to Cline, Continue, and Claude Code.
 
+This workflow is intentionally **COMPLEX** under the repository template: it assesses skill-worthiness, chooses the lightest valid tier for the generated skill, injects `Optimization Readiness`, and uses validation plus Ctx2Skill-inspired review loops before accepting the result.
+
 ## What Is This
 
 When a long AI conversation solves a hard problem, the knowledge typically evaporates when the chat ends. This skill captures that knowledge as a structured, reusable file (`SKILL.md`) that any AI coding agent can discover and apply to similar future problems.
+
+The generated skill should remain executable from natural language alone. Supporting artifacts, diagrams, or review tools may help build it, but they must not become required to use it later.
 
 The system has three layers that work together:
 
@@ -36,6 +40,8 @@ Without the nudge layer, qualifying conversations slip through. Without the auto
 Anthropic's open-source [skill-creator](https://github.com/anthropics/skill-creator) found that skills **undertrigger** far more often than they overtrigger. A short description like `"Save conversation as skill"` rarely activates.
 
 The fix: write descriptions that include extra trigger phrases and near-miss scenarios. Our description explicitly lists phrases like "save as skill", "capture this as a skill", "turn this into a skill" so the model matches more reliably.
+
+That point is operational, not cosmetic: auto-invocation tends to read the frontmatter discovery surface first, so exact trigger phrases must live there instead of being buried only in `## When`.
 
 ## Why Explain-the-Why
 
@@ -153,6 +159,8 @@ Then follow .claude/skills/save-as-skill/SKILL.md
 ```
 
 The agent reviews the conversation, extracts a skill, and generates `SKILL.md`.
+
+The current template contract also expects the generated skill to include an `Optimization Readiness` section, actionable validation, and the correct tier based on workflow depth.
 
 ### Validate a Generated Skill
 

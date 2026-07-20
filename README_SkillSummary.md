@@ -158,9 +158,9 @@ This document provides a comprehensive index of all the agent skills available i
 
 ## [create-skill-from-book](./create-skill-from-book/)
 
-**English:** Use when: codifying a technical textbook, engineering standard, or reference manual into a reusable agent skill. Helps with: extracting procedural workflows, design constraints, and checklists; structuring them into SIMPLE, COMPLICATED, or COMPLEX skill templates; and tailoring skills to embedded systems, real-time safety, and hardware realities. Applies to: skill directories, reference guides, and design checklists in the workspace.
+**English:** Use when: the user asks to "create a skill from [Book/Chapter]", "codify [Standard] into a skill", or "extract design guidelines from [Reference] into a skill". Helps with: extracting procedural workflows, design constraints, and checklists; choosing the correct tier by workflow depth; generating bilingual skill packages; and refining the draft through an evidence-backed validation gate. Applies to: skill directories, reference guides, and design checklists in the workspace.
 
-**中文:** 使用场景: 将技术教科书、工程标准或参考手册整理为可重用的代理技能时。有助于: 提取程序化工作流、设计约束和检查表；将它们结构化为简单、复杂或极其复杂的技能模板。适用于: 工作区中的技能目录、参考指南和设计检查表。
+**中文:** 使用场景: 用户要求“从这本书创建技能”、“把这个标准整理成技能”或“从参考资料中提取设计规则生成技能”时。有助于: 提取程序化工作流、设计约束和检查表；按控制深度选择正确层级；生成双语技能包；并通过有证据支撑的验收门细化草案。适用于: 工作区中的技能目录、参考指南和设计检查表。
 
 ---
 
@@ -270,9 +270,9 @@ This document provides a comprehensive index of all the agent skills available i
 
 ## [improve-existing-skill](./improve-existing-skill/)
 
-**English:** Use when: an existing skill was applied but did not fully solve the problem, the user iterated further in conversation to reach a working solution, and the user says "improve this skill", "update the skill", "the skill needs fixing", or "make this skill better". Helps with: updating an existing SKILL.md with lessons learned from a conversation that went beyond what the original skill covered. Applies to: existing skill packages in .github/skills/, .cline/skills/, .continue/prompts/, or .claude/skills/.
+**English:** Use when: an existing skill was applied but did not fully solve the problem, and the user says "improve this skill", "update the skill", "the skill needs fixing", "make this skill better", or "this skill didn't work". Do not use for brand-new skills or formatting-only edits. Helps with: updating an existing SKILL.md with evidence-backed lessons learned from a conversation, preserving the original skill's identity, and validating the revised version through an acceptance gate. Applies to: existing skill packages in .github/skills/, .cline/skills/, .continue/prompts/, or .claude/skills/.
 
-**中文:** 使用场景: 已应用现有技能但未完全解决问题，用户在对话中进一步迭代以达到有效解决方案，并要求“改进此技能”时。有助于: 使用对话中学到的、超出原始技能涵盖范围的经验教训更新现有的SKILL.md。适用于: .github/skills/ 等目录中的现有技能包。
+**中文:** 使用场景: 已应用现有技能但未完全解决问题，且用户说“improve this skill”、“update the skill”、“the skill needs fixing”、“make this skill better”或“this skill didn't work”时。不要用于全新技能或纯格式修正。有助于: 使用对话中有证据支撑的经验更新现有 SKILL.md，保持原技能身份不变，并通过验收门验证修订结果。适用于: .github/skills/、.cline/skills/、.continue/prompts/ 或 .claude/skills/ 中的现有技能包。
 
 ---
 
@@ -294,9 +294,9 @@ This document provides a comprehensive index of all the agent skills available i
 
 ## [save-as-skill](./save-as-skill/)
 
-**English:** Use when: a long conversation solved a hard problem, a debugging session produced a reusable workflow, a multi-step implementation finally converged, or the user says "save as skill", "capture this as a skill", or "turn this into a skill". Helps with: extracting a reusable SKILL.md, preserving the reasoning and artifacts from the conversation, and drafting optional review prompts. Applies to: the current conversation, generated skill packages, and skill handoff for Copilot, Continue, Cline, and Claude Code.
+**English:** Use when: a long conversation solved a hard problem, a debugging session produced a reusable workflow, a multi-step implementation converged, or the user says "save as skill", "capture this as a skill", or "turn this into a skill". Do not use for trivial one-liners or permanent team conventions better stored in instructions or docs. Helps with: extracting a reusable SKILL.md, choosing the correct tier by workflow depth, preserving reasoning and artifacts, adding optimization-readiness guidance, and refining the result through validation and review loops. Applies to: the current conversation, generated skill packages, and skill handoff for Copilot, Continue, Cline, and Claude Code.
 
-**中文:** 使用场景: 经过长时间对话解决了一个难题，调试会话产生了一个可重用的工作流，或者用户要求“保存为技能”时。有助于: 提取可重用的SKILL.md，保留对话中的推理和工件。适用于: 当前对话，生成的技能包以及AI助手的技能交接。
+**中文:** 使用场景: 长对话解决了难题、调试会话产出了可复用工作流、多步骤实现最终收敛，或者用户说“save as skill”、“capture this as a skill”或“turn this into a skill”时。不要用于琐碎的一次性结果或更适合写入说明文档的团队约定。有助于: 提取可复用的 SKILL.md，按控制深度选择正确层级，保留推理与工件，补齐优化准备信息，并通过验证与评审循环细化结果。适用于: 当前对话、生成的技能包以及 Copilot、Continue、Cline、Claude Code 之间的技能交接。
 
 ---
 
@@ -363,4 +363,3 @@ This document provides a comprehensive index of all the agent skills available i
 **中文:** 使用时间/地点/人员: 开发人员，产品负责人或代理人将需求形式化为待办事项时。 方法: 使用此技能以标准的“作为...我想要...”格式编写用户故事，并以BDD“给定/当/那么”可执行规范为后盾。 原因: 模糊的故事会导致误解和错误。BDD风格的验收标准使预期行为明确、可测试和清晰。
 
 ---
-

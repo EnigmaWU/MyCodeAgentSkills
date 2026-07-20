@@ -42,6 +42,17 @@ Practical test:
 
 Do not upgrade the tier only because the topic is important or the explanation is long. Upgrade the tier when the execution logic becomes deeper.
 
+## Activation Checklist
+
+Before finalizing any skill, check the discovery surface explicitly.
+
+1. Put the strongest exact trigger phrases in the frontmatter `description`, not only in `## When`.
+2. Put the strongest near-miss boundaries in the frontmatter `description`, not only in `## When`.
+3. Make the frontmatter specific enough that a model can choose the skill without reading the full body first.
+4. Keep `## When` and the frontmatter aligned; they should reinforce each other instead of describing different trigger logic.
+5. If the skill is auto-invocable, prefer concrete user-language examples such as `save as skill`, `improve this skill`, or `create a skill from [book]` over abstract summaries like `preserve reusable knowledge`.
+6. If activation is weak in practice, fix the frontmatter first before widening the body content.
+
 ## SIMPLE
 
 Use this when the skill is short, direct, and does not need bundled files.
