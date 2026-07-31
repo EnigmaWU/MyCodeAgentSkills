@@ -32,6 +32,15 @@ In classic SE, Blended Testing speeds up test execution by using APIs to bypass 
 - A mapped separation of **Fast Perception** tools (APIs/Databases) and **Slow Perception** tools (UI/Vision).
 - A strictly enforced execution order (Fast first, Slow only for final validation).
 
+## Optimization Readiness
+- **Failure Signals**: The workflow falls back to UI too early, setup steps remain bound to slow tools, equivalent APIs are ignored, or the final execution order does not enforce Fast First.
+- **Evidence To Collect**: Tool-mapping tables, example task breakdowns, latency comparisons, and cases where slow-path usage was necessary or avoidable.
+- **Safe Mutation Boundaries**: Refine interface categorization rules, task-to-tool mapping guidance, and hierarchy prompts without changing the core Fast Perception versus Slow Perception split.
+- **Acceptance Criteria**: Accept revisions only if the skill consistently routes setup and state inspection to fast interfaces and reserves slow tools for genuinely unavoidable or final visual checks.
+- **Rejected Revision Handling**: Record weak categorization heuristics, premature UI fallbacks, and missing-backend-access assumptions so they are not retried blindly.
+- **Transfer Check**: Verify the workflow still works across API-heavy, CLI-heavy, and mixed UI automation systems.
+- **Stop Rule**: If no fast interfaces exist or their scope is unclear, stop and ask before claiming a blended perception strategy.
+
 ## Constraints (Logical Boundaries)
 - **Fast First**: The agent MUST exhaust all Fast Perception tools before falling back to Slow Perception tools.
 - **Anti-Pattern Mapping**: 

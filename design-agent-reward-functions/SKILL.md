@@ -32,6 +32,15 @@ In classic SE, Gherkin was a communication tool for humans. In Agentic SE, Gherk
 - A deterministic `Given/When/Then` scenario.
 - A mapped set of programmatic checks (the "Verifiable Reward") that correspond to the `Then` clauses.
 
+## Optimization Readiness
+- **Failure Signals**: Reward definitions remain subjective, `Then` clauses cannot be observed programmatically, the agent is allowed to self-certify success, or the scenario omits critical preconditions.
+- **Evidence To Collect**: Given/When/Then scenarios, mapped checks, failed validations, and examples where a reward function caught or missed execution drift.
+- **Safe Mutation Boundaries**: Refine scenario wording, reward-mapping guidance, and deterministic check examples without changing the core requirement that success be externally verifiable.
+- **Acceptance Criteria**: Accept revisions only if every success condition maps to observable evidence and the workflow rejects subjective or purely LLM-based validation.
+- **Rejected Revision Handling**: Record weak `Then` clauses, pseudo-deterministic checks, and self-evaluation shortcuts so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for file, API, and database state changes rather than only one verification medium.
+- **Stop Rule**: If the task goal cannot be tied to programmatic evidence, stop and tell the user the workflow lacks a safe reward function.
+
 ## Constraints (Logical Boundaries)
 - **Observable Evidence**: Every `Then` clause MUST correspond to an observable state change in the system (e.g., a file written, a database row added, an API 200 OK response).
 - **Anti-Pattern Mapping**: 

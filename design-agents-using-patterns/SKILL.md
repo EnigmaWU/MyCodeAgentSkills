@@ -47,6 +47,15 @@ Applies to orchestration files, state graphs, system architecture documents, and
 - **Orchestration Source Code**: Executable code (e.g., using LangChain `RunnableBranch` or Google ADK `Agent`/`SequentialAgent`) that implements the designed topology.
 - **Resilience Log**: Documentation detailing loop iteration limits, error handling guards, and fallback conditions.
 
+## Optimization Readiness
+- **Failure Signals**: Pattern choice does not match workflow complexity, loops lack hard stop conditions, failures are swallowed instead of routed, or state handoffs violate the declared schema.
+- **Evidence To Collect**: Pattern-selection notes, topology diagrams, state schemas, failure traces, and examples of fallback paths that were triggered or missing.
+- **Safe Mutation Boundaries**: Refine pattern-selection heuristics, topology templates, schema guidance, and recovery-path rules without changing the core requirement to build bounded, typed orchestration.
+- **Acceptance Criteria**: Accept revisions only if the chosen pattern matches the task shape, every loop has an explicit limit, errors flow through visible recovery paths, and shared state remains schema-validated.
+- **Rejected Revision Handling**: Record mismatched pattern choices, silent-failure paths, and weak loop controls so they are not repeated.
+- **Transfer Check**: Confirm the workflow still works for prompt chaining, routing, reflection, planning, and multi-agent collaboration patterns.
+- **Stop Rule**: If model limits, tool schemas, or cost and retry budgets are undefined, stop and ask before finalizing the orchestration design.
+
 ## Constraints (Logical Boundaries)
 - **Runaway Loop Protection**: Every agentic loop (Reflection, Planning, or Exception Recovery) must have a strict, hard-coded maximum iteration limit (e.g., maximum 3 or 5 retries) to prevent runaway token spend.
 - **No Silent Failures**: All tool errors, API timeouts, or parsing exceptions must be caught, logged, and routed through a defined recovery or escalation path.

@@ -32,6 +32,15 @@ Without a plan, agents often suffer from "context drift" or get stuck in repetit
 - **Planner Orchestration Code**: Code that implements a Planner node, an Executor loop, and a Replanner (if dynamic).
 - **Plan Schema**: A Pydantic model or TypedDict defining a list of `SubTask` objects.
 
+## Optimization Readiness
+- **Failure Signals**: Plans stay too coarse to execute atomically, executors lose track of step state, replanning loops thrash without converging, or tool availability is assumed instead of modeled.
+- **Evidence To Collect**: Plan schemas, execution traces, replanning decisions, and examples of plans that succeeded, stalled, or fragmented into unusable steps.
+- **Safe Mutation Boundaries**: Refine plan-schema fields, planner prompts, executor update rules, and replanning conditions without changing the core planner-executor-replanner architecture.
+- **Acceptance Criteria**: Accept revisions only if the plan breaks work into executable atomic steps, stores progress explicitly in state, and supports controlled replanning when new evidence arrives.
+- **Rejected Revision Handling**: Record over-granular or under-granular planning patterns, weak state-update rules, and failed replanning heuristics so they are not reused blindly.
+- **Transfer Check**: Confirm the workflow still works for both static plan execution and dynamic replanning scenarios.
+- **Stop Rule**: If the available tools or execution ownership are unclear, stop and ask before designing the plan structure.
+
 ## Constraints (Logical Boundaries)
 - **Atomic Sub-tasks**: The Planner must break tasks down into steps that can be completed by a single tool call or a single specialist agent.
 - **State Validation**: The plan must be stored in the state explicitly so the Executor can cross them off one by one.

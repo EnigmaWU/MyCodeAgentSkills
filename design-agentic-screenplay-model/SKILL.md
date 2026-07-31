@@ -33,6 +33,15 @@ In classic SE, Screenplay was used to separate "what" from "how" in UI tests. In
 - A mapped set of `Abilities` (Tools granted to each Actor).
 - A hierarchical breakdown of `Tasks` (Multi-step reasoning prompts) and `Interactions` (Atomic tool executions).
 
+## Optimization Readiness
+- **Failure Signals**: Actors blur together, tasks invoke tools directly, abilities are over-shared, or the model collapses back into one monolithic prompt instead of a cast-task-interaction structure.
+- **Evidence To Collect**: Actor-to-ability maps, task hierarchies, interaction breakdowns, and examples of delegation failures or successful actor isolation.
+- **Safe Mutation Boundaries**: Refine persona naming, task decomposition guidance, interaction examples, and delegation rules without changing the core Actor, Ability, Task, and Interaction model.
+- **Acceptance Criteria**: Accept revisions only if the design preserves actor isolation, routes technical execution through interactions, and keeps tasks focused on business intent rather than raw tool calls.
+- **Rejected Revision Handling**: Record monolithic-prompt rewrites, direct-task-to-tool shortcuts, and weak actor definitions so they are not reintroduced.
+- **Transfer Check**: Verify the workflow still works for single-agent screenplay designs and multi-actor collaborations with delegated abilities.
+- **Stop Rule**: If the available abilities or actor responsibilities are undefined, stop and ask before drafting the screenplay topology.
+
 ## Constraints (Logical Boundaries)
 - **Actor Isolation**: Actors MUST NOT share abilities unless explicitly granted. An agent without the `QueryDatabase` ability cannot perform a database interaction.
 - **Anti-Pattern Mapping**: 
