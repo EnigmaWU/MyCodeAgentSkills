@@ -33,6 +33,15 @@ Stakeholders often jump straight to "We need an AI chatbot." If you don't ask *w
 ## Output (Logical Evidence)
 - A completed Business Objectives Model document.
 
+## Optimization Readiness
+- **Failure Signals**: Features are mistaken for business problems, objectives lack measurable outcomes, product concepts are accepted without root-cause clarity, or guiding principles are invented rather than sourced.
+- **Evidence To Collect**: Problem statements, objective mappings, missing-metric questions, product concepts, and reviewer feedback on whether the BOM stays tied to business intent.
+- **Safe Mutation Boundaries**: Refine problem-extraction prompts, objective templates, and formatting guidance without changing the core requirement to connect problems, objectives, and product concept explicitly.
+- **Acceptance Criteria**: Accept revisions only if every objective maps back to a business problem, missing metrics are flagged instead of fabricated, and the BOM separates problem, objective, concept, and principles clearly.
+- **Rejected Revision Handling**: Record feature-list-only interpretations, invented metrics, and orphan objectives so they are not reused.
+- **Transfer Check**: Verify the workflow still works for executive charters, stakeholder interviews, and vision documents with uneven detail.
+- **Stop Rule**: If the source material contains only solution ideas or feature lists with no identifiable business problem, stop and ask before drafting the BOM.
+
 ## Constraints (Logical Boundaries)
 - Do not invent metrics. If an objective is not quantifiable in the source text, flag it as a question (e.g., "[Insert metric here - requires stakeholder input]").
 - Ensure there is a 1:1 or 1:N mapping from Problems to Objectives. An objective without a problem is invalid.

@@ -30,6 +30,15 @@ If an architect tries to design a system based purely on "it needs to be fast an
 ## Output (Logical Evidence)
 - A completed Architectural Drivers Document.
 
+## Optimization Readiness
+- **Failure Signals**: Drivers are invented instead of inferred, quality attributes stay vague, response measures remain untestable, or prioritization is disconnected from business risk.
+- **Evidence To Collect**: Source requirements, extracted driver lists, quality attribute scenarios, prioritization rationale, and reviewer feedback on missing or ambiguous drivers.
+- **Safe Mutation Boundaries**: Refine extraction prompts, scenario templates, and prioritization guidance without changing the core requirement to derive measurable drivers from provided inputs.
+- **Acceptance Criteria**: Accept revisions only if the skill produces explicit drivers, formal quality attribute scenarios with measurable response measures, and a ranking tied to business value or architectural risk.
+- **Rejected Revision Handling**: Record weak scenario phrasings, invented constraints, and non-measurable driver patterns so they are not reused blindly.
+- **Transfer Check**: Verify the workflow still works for both greenfield architecture design and legacy-extension planning.
+- **Stop Rule**: If the inputs cannot support measurable response measures, stop and ask for explicit targets before drafting the drivers document.
+
 ## Constraints (Logical Boundaries)
 - Do not invent drivers; infer them only from the provided inputs.
 - Quality Attributes must be written as 6-part scenarios (Source, Stimulus, Artifact, Environment, Response, Response Measure).

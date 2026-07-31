@@ -33,6 +33,15 @@ A unified data model spanning the entire enterprise always fails. Words are ambi
 - **Subdomain Categorization**: Core, Supporting, and Generic subdomains.
 - **Bounded Context Map**: Explicit boundaries and their integration patterns (ACL, OHS, Conformist, etc.).
 
+## Optimization Readiness
+- **Failure Signals**: Context boundaries collapse into one enterprise model, subdomain classification is superficial, integration patterns are assigned without rationale, or context language leaks across boundaries.
+- **Evidence To Collect**: Subdomain breakdowns, context maps, integration notes, linguistic distinctions, and examples of where a proposed boundary held or broke down.
+- **Safe Mutation Boundaries**: Refine subdomain classification prompts, mapping-pattern guidance, and output structure without changing the core separation between problem-space subdomains and solution-space bounded contexts.
+- **Acceptance Criteria**: Accept revisions only if the skill produces explicit subdomain categories, clear bounded-context boundaries, and justified integration patterns that preserve linguistic isolation.
+- **Rejected Revision Handling**: Record over-centralized models, weak mapping choices, and ambiguous boundary definitions so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for greenfield DDD design and for legacy systems that span multiple contexts imperfectly.
+- **Stop Rule**: If the business domain or domain-language differences are too unclear to define boundaries safely, stop and ask before drawing a context map.
+
 ## Constraints (Logical Boundaries)
 - **RULE 1: Linguistic Boundary.** A Bounded Context is a linguistic boundary. A model inside one context must not be corrupted by concepts from outside.
 - **RULE 2: Core Domain Focus.** The Core Domain is where the business makes its money. It must be built in-house. Generic subdomains (like Identity or Invoicing) should be outsourced or bought if possible.

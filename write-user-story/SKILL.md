@@ -36,6 +36,15 @@ BDD-style acceptance criteria make expected behavior explicit, testable, and una
 - A compact example set with realistic domain data.
 - A short ambiguity/risk list for unresolved decisions.
 
+## Optimization Readiness
+- **Failure Signals**: The story collapses into a technical task, scenarios focus on UI clicks instead of business behavior, acceptance criteria are not executable, or realistic examples are replaced with vague placeholders.
+- **Evidence To Collect**: Story drafts, BDD scenarios, example sets, ambiguity lists, and reviewer feedback on whether the story drives implementation and testing cleanly.
+- **Safe Mutation Boundaries**: Refine story phrasing, scenario-shaping prompts, example guidance, and ambiguity-reporting rules without changing the core business-goal-first and BDD-first structure.
+- **Acceptance Criteria**: Accept revisions only if the story ties capability to business value, includes executable Given/When/Then criteria, covers both success and edge behavior, and avoids implementation-coupled `Then` clauses.
+- **Rejected Revision Handling**: Record technical-chore stories, UI-script scenarios, and placeholder-heavy example patterns so they are not reused blindly.
+- **Transfer Check**: Verify the workflow still works for greenfield feature stories and refinements of partially defined backlog items.
+- **Stop Rule**: If the request has no observable business behavior, stop and tell the user it is not a valid user-story candidate.
+
 ## Constraints (Logical Boundaries)
 - **RULE 1: BDD Executable Specifications First.** The absolute most important part of the story is the Acceptance Criteria. They MUST be written as strict BDD `Given/When/Then` scenarios that can be directly translated into automated tests (e.g., Cucumber).
 - **RULE 2: Goal Before Detail.** Derive scenario scope from business outcome first. Do not start from UI click paths.

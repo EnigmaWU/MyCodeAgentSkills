@@ -33,6 +33,15 @@ In Domain-Driven Design (DDD), the most critical failure point is the translatio
 - A strict **Ubiquitous Language Glossary** mapping Terms to Definitions.
 - A list of **Rejected Terms** (synonyms that must not be used).
 
+## Optimization Readiness
+- **Failure Signals**: Synonyms remain unresolved, approved terms overlap in meaning, definitions drift outside the target context, or code-facing terms no longer match the business language.
+- **Evidence To Collect**: Extracted noun and verb candidates, glossary drafts, rejected-term lists, and examples of terminology conflicts found in code or documents.
+- **Safe Mutation Boundaries**: Refine elicitation prompts, glossary formatting, synonym-resolution guidance, and validation examples without changing the core one-term-one-meaning rule inside a bounded context.
+- **Acceptance Criteria**: Accept revisions only if the glossary defines distinct approved terms, rejects conflicting synonyms, and keeps the language aligned with the specified bounded context.
+- **Rejected Revision Handling**: Record discarded synonyms, ambiguous definitions, and context-crossing term usages so they are not reintroduced.
+- **Transfer Check**: Verify the workflow still works for both greenfield glossary creation and cleanup of an already drifting vocabulary.
+- **Stop Rule**: If the target context is not clearly defined, stop and ask before standardizing terms that may belong to multiple contexts.
+
 ## Constraints (Logical Boundaries)
 - **RULE 1: One Meaning Per Context.** Inside a single Bounded Context, a term can have only one meaning. If a term means two different things, you have missed a Bounded Context boundary.
 - **RULE 2: No Synonyms.** If "User", "Client", and "Account" all mean the same thing, pick ONE. The others must be actively rejected.

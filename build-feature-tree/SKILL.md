@@ -38,6 +38,15 @@ A backlog with 150 items is impossible to review for completeness. By organizing
 - A list of "Potential Missing Features" discovered by analyzing the visual gaps.
 - A short "Visualization Quality Notes" section documenting readability and labeling decisions.
 
+## Optimization Readiness
+- **Failure Signals**: Technical tasks are mistaken for business features, hierarchy depth becomes unreadable, labels stay verbose, or missing-feature suggestions are arbitrary rather than driven by structural gaps.
+- **Evidence To Collect**: Normalized feature lists, generated trees, visualization notes, and examples of sparse or asymmetric branches that led to meaningful gap discovery.
+- **Safe Mutation Boundaries**: Refine normalization rules, grouping heuristics, Mermaid guidance, and readability checks without changing the core business-feature hierarchy workflow.
+- **Acceptance Criteria**: Accept revisions only if the output stays feature-focused, readable in text form, structurally coherent, and useful for spotting missing siblings or scope gaps.
+- **Rejected Revision Handling**: Record poor grouping patterns, over-deep trees, and misleading visualization choices so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for PRDs, backlogs, and story collections with or without Mermaid rendering available.
+- **Stop Rule**: If the input is primarily technical implementation work rather than business functionality, stop and redirect before drawing the tree.
+
 ## Constraints (Logical Boundaries)
 - Features should be brief noun phrases (e.g., "Shopping Cart," not "The system shall allow the user to add items to a cart").
 - Limit the depth to 3 or 4 levels to maintain readability.
