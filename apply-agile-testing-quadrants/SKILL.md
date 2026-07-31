@@ -31,6 +31,15 @@ Focusing solely on one type of testing (e.g., automated unit tests) leaves blind
 - A categorized list of proposed tests mapped to the four Agile Testing Quadrants.
 - Identified testing gaps and recommendations.
 
+## Optimization Readiness
+- **Failure Signals**: The plan collapses into only one or two quadrants, exploratory or non-functional testing is omitted, or the quadrants are misused as a delivery timeline instead of a coverage taxonomy.
+- **Evidence To Collect**: Proposed quadrant mappings, identified gaps, automation versus manual choices, and review feedback about missing coverage or quadrant confusion.
+- **Safe Mutation Boundaries**: Refine quadrant prompts, coverage-review structure, and capability-mapping guidance without changing the core four-quadrant planning model.
+- **Acceptance Criteria**: Accept revisions only if the strategy distinguishes Q1/Q2 from Q3/Q4 clearly, covers the relevant quadrants for the feature, and surfaces both exploratory and technical-quality risks.
+- **Rejected Revision Handling**: Record automation-only plans, timeline-style quadrant misuse, and recurring blind spots so they are not reintroduced.
+- **Transfer Check**: Verify the workflow still works for small feature stories and larger cross-cutting test strategy exercises.
+- **Stop Rule**: If the feature or system context is too thin to reason about testing intent across quadrants, stop and ask before proposing the strategy.
+
 ## Constraints (Logical Boundaries)
 - Do not assume all tests must be automated (Quadrant 3 is typically manual/exploratory).
 - Do not treat the quadrants as sequential phases; they are a taxonomy, not a timeline.

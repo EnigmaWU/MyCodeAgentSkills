@@ -38,6 +38,15 @@ Applies to the local git repository in the workspace.
   - **WHY**: The rationale behind the chosen approach or design decisions.
 - Execution of the git commit (if approved).
 
+## Optimization Readiness
+- **Failure Signals**: Commit prompts trigger too early, unrelated files are mixed in, commit messages lose the WHAT/HOW/WHY structure, or the rationale becomes a restatement of the diff.
+- **Evidence To Collect**: Diff summaries, drafted commit messages, approval responses, and examples where the commit prompt aligned with a completed logical unit of work.
+- **Safe Mutation Boundaries**: Refine trigger wording, diff-review guidance, message formatting, and approval steps without changing the core post-completion commit flow.
+- **Acceptance Criteria**: Accept revisions only if the skill still asks at the right time, keeps changes scoped, and produces a concise WHAT/HOW/WHY commit rationale.
+- **Rejected Revision Handling**: Record premature prompts, unrelated diff bundles, and vague commit rationales so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for small tasks and larger multi-file completions.
+- **Stop Rule**: If the completed task or changed-files scope is unclear, stop and ask before drafting a commit.
+
 ## Constraints (Logical Boundaries)
 - Do not commit changes unrelated to the completed task.
 - Keep the commit message concise but informative.

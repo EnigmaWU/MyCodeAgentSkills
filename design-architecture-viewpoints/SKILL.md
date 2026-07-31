@@ -36,6 +36,15 @@ Ensures that system documentation is comprehensive, targets all relevant stakeho
 - **Perspective Checksheets**: Validation logs for cross-cutting perspectives (Security, Performance, Availability, Evolution).
 - **Consistency Log**: Alignment verification between views.
 
+## Optimization Readiness
+- **Failure Signals**: Stakeholders are omitted, viewpoint selection is incomplete, cross-view inconsistencies are unresolved, or the document treats one view as sufficient for the whole architecture.
+- **Evidence To Collect**: Stakeholder matrices, viewpoint catalogs, perspective checksheets, and consistency logs that show where views aligned or conflicted.
+- **Safe Mutation Boundaries**: Refine stakeholder-classification prompts, viewpoint-selection guidance, perspective checks, and consistency rules without changing the core view-based architecture workflow.
+- **Acceptance Criteria**: Accept revisions only if the architecture covers the relevant stakeholder concerns, drafts multiple views, and documents consistency checks between them.
+- **Rejected Revision Handling**: Record missing-view mistakes, skipped perspectives, and inconsistent mapping patterns so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for both compact systems and systems with several stakeholder groups and cross-cutting concerns.
+- **Stop Rule**: If the primary stakeholders are unknown, stop and ask before drafting viewpoints.
+
 ## Constraints (Logical Boundaries)
 - Every drafted view must specify which stakeholder concern it addresses.
 - Logical components must be explicitly mapped to physical deployment nodes in the Deployment view.

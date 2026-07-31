@@ -57,6 +57,15 @@ The result is a self-contained design document that is readable by humans, parse
 - A TODO tracking section showing the planned implementation order (⚪ TODO for all new TCs).
 - Guidance on which TCs to implement first based on the priority framework.
 
+## Optimization Readiness
+- **Failure Signals**: Test design is skipped in favor of direct implementation, US/AC/TC traceability breaks, naming conventions drift, or the comment structure stops reflecting the true verification intent.
+- **Evidence To Collect**: OVERVIEW drafts, coverage matrices, US/AC/TC mappings, TODO states, and examples where the structured comments improved or failed to guide implementation.
+- **Safe Mutation Boundaries**: Refine comment templates, traceability prompts, coverage-matrix guidance, and prioritization advice without changing the core design-before-implementation discipline.
+- **Acceptance Criteria**: Accept revisions only if the file preserves explicit design sections, maintains traceability from user value to test case, and keeps implementation order visible through the TODO lifecycle.
+- **Rejected Revision Handling**: Record stale comment patterns, traceability gaps, and naming failures so they are not reused.
+- **Transfer Check**: Verify the workflow still works across UnitTesting, SysTesting, and UserTesting levels.
+- **Stop Rule**: If the feature description or target testing context is too unclear to derive responsible US, AC, and TC design, stop and ask before generating the CaTDD file.
+
 ## Constraints (Logical Boundaries)
 - Write TC specifications (the design) before writing test code (the implementation).
 - Follow the US → AC → TC traceability chain; every TC must trace to an AC and US.

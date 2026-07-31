@@ -30,6 +30,15 @@ Keeping the BDD acceptance criteria perfectly aligned with the latest conversati
 ## Output (Logical Evidence)
 - An updated User Story that strictly follows the `write-user-story` formatting rules.
 
+## Optimization Readiness
+- **Failure Signals**: Unaffected scenarios are rewritten unnecessarily, new edge cases are dropped, the story loses its original intent, or the update introduces implementation coupling.
+- **Evidence To Collect**: Original and updated stories, added or removed scenarios, and examples where the modification addressed the new improvement without damaging unaffected behavior.
+- **Safe Mutation Boundaries**: Refine scenario-editing guidance, edge-case prompting, and format-preservation rules without changing the core requirement to keep the existing story alive.
+- **Acceptance Criteria**: Accept revisions only if the updated story preserves unaffected scenarios, adds the new behavior precisely, and keeps BDD acceptance criteria executable.
+- **Rejected Revision Handling**: Record accidental deletions, over-broad rewrites, and implementation-coupled scenario drafts so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for both minor edge-case additions and meaningful feature shifts.
+- **Stop Rule**: If it is unclear which story to update or the new improvement conflicts with a core requirement, stop and ask before editing.
+
 ## Constraints (Logical Boundaries)
 - **RULE 1: BDD Executable Specifications First.** Acceptance Criteria MUST be written as strict BDD `Given/When/Then` scenarios.
 - **Primary Story Format:** Use the traditional `As a <role>, I want <capability>, So that <value>` format by default.

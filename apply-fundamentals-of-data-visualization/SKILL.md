@@ -57,6 +57,15 @@ Good visualizations reduce interpretation effort and improve decision quality. B
 - Validation checklist results (accuracy, readability, accessibility, and storytelling)
 - Risk notes (known tradeoffs and residual ambiguity)
 
+## Optimization Readiness
+- **Failure Signals**: Chart choice is driven by aesthetics instead of analytical intent, encodings mislead magnitude or order, accessibility is ignored, or the figure tries to communicate too many messages at once.
+- **Evidence To Collect**: Visualization specs, design decisions, validation checklist results, accessibility notes, and examples where a chart choice improved or obscured the question.
+- **Safe Mutation Boundaries**: Refine chart-selection guidance, encoding rules, accessibility checks, and storytelling prompts without changing the core perception-safe visualization workflow.
+- **Acceptance Criteria**: Accept revisions only if the figure type answers the stated analytical question, encodings stay truthful, and readability/accessibility checks are explicit.
+- **Rejected Revision Handling**: Record misleading encoding patterns, decorative chartjunk, and unreadable label choices so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for exploratory charts, presentation figures, and publication-ready visuals.
+- **Stop Rule**: If the analysis question, audience, or medium is unclear, stop and ask before finalizing the recommendation.
+
 ## Constraints (Logical Boundaries)
 - Choose chart type from analytical intent, not aesthetics preference.
 - Preserve proportional encoding for magnitude charts (bars on linear scales start at zero).

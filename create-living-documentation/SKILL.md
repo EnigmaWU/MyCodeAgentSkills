@@ -38,6 +38,15 @@ Applies to source code directories (Java, Python, C#, etc.), AST parsing scripts
 - **Living Diagram**: Generated SVG/PNG/Text diagrams (PlantUML or Graphviz DOT) rendering class topologies or package relationships.
 - **Reconciliation Test Suite**: Automated unit tests (e.g., Python `unittest` or JUnit tests) that assert the consistency of source structures with generated documentation or metadata.
 
+## Optimization Readiness
+- **Failure Signals**: Extraction becomes manual copy-paste, documentation drifts from code, reconciliation tests do not fail on mismatches, or the output omits a buildable source-of-truth pipeline.
+- **Evidence To Collect**: Generated docs, extraction scripts, reconciliation tests, and examples where source changes did or did not trigger the expected verification failure.
+- **Safe Mutation Boundaries**: Refine extraction conventions, diagram-generation guidance, validation scripting, and glossary formatting without changing the core live-extraction and consistency-check workflow.
+- **Acceptance Criteria**: Accept revisions only if the generated docs are sourced programmatically, diagrams stay tied to code, and reconciliation tests fail on divergence instead of silently passing.
+- **Rejected Revision Handling**: Record hand-transcribed summaries, missing-failure cases, and weak extraction boundaries so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for glossary generation, diagram generation, and contract checks across multiple languages or frameworks.
+- **Stop Rule**: If the scope, annotations, or output directories are ambiguous, stop and ask before wiring extraction scripts.
+
 ## Constraints (Logical Boundaries)
 - **Zero Manual Copy-Paste**: Never manually transcribe business properties or structural rules from code to documentation files. All structured summaries must be extracted programmatically.
 - **No Silent Extraction Failures**: If an AST parsing script or custom Doclet fails to parse a code file, it must abort the build or fail the test, rather than generating an empty or partial output.

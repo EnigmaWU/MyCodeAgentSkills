@@ -64,6 +64,15 @@ Demo tests are P4 Addons: they are for documentation, onboarding, and workflow v
 - Manual instructions with prerequisites, setup, run, expected result, troubleshooting, cleanup, and evidence to capture.
 - Validation evidence showing which scripts or tests were run.
 
+## Optimization Readiness
+- **Failure Signals**: The demo invents behavior not supported by the implementation, traceability to UserGuide or acceptance criteria is missing, scripts are non-idempotent, or the package cannot be reproduced from a clean checkout.
+- **Evidence To Collect**: Demo manifests, setup and run logs, traceability mappings, manual-instruction drafts, and examples where the demo matched or drifted from the documented workflow.
+- **Safe Mutation Boundaries**: Refine package structure, traceability rules, script guidance, and manual-instruction templates without changing the core requirement to prove real user-visible workflows reproducibly.
+- **Acceptance Criteria**: Accept revisions only if the demo package stays deterministic, maps to real UserGuide and story evidence, runs from a clean environment, and remains understandable without the original conversation.
+- **Rejected Revision Handling**: Record invented workflow steps, brittle script patterns, and traceability gaps so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for automated demos, manual-first demos, and intentionally blocked or RED demos when implementation is incomplete.
+- **Stop Rule**: If the documented workflow, linked acceptance criteria, or implemented behavior is too unclear to demonstrate faithfully, stop and ask before generating the demo package.
+
 ## Constraints (Logical Boundaries)
 - Do not invent CLI flags, files, outputs, or product behavior. Read the UserGuide, UserStories, and existing implementation before writing the demo.
 - Do not treat a UserGuide-only usage example as sufficient when UserStories/AC exist. The demo must show both how to use the workflow and which user-facing requirement it satisfies.

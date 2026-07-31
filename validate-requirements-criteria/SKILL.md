@@ -30,6 +30,15 @@ Words like "fast," "seamless," and "robust" mean different things to different p
 - A list of Ambiguity Warnings and clarifying questions.
 - Formalized Acceptance Criteria in BDD format.
 
+## Optimization Readiness
+- **Failure Signals**: Ambiguous words remain unchallenged, exception paths are omitted, scenarios contain multiple behaviors, or the criteria drift into implementation details.
+- **Evidence To Collect**: Ambiguity warnings, clarifying questions, drafted BDD scenarios, and examples where a vague claim was converted into a testable expectation.
+- **Safe Mutation Boundaries**: Refine ambiguity-check prompts, exception-path analysis, and BDD wording guidance without changing the core requirements-validation workflow.
+- **Acceptance Criteria**: Accept revisions only if every scenario has one behavior, at least one exception path is included when relevant, and untestable words are removed from the final `Then` clauses.
+- **Rejected Revision Handling**: Record guessed thresholds, multi-behavior scenarios, and implementation-style phrasing so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for PRDs, backlog items, and story refinements with missing clarity.
+- **Stop Rule**: If the input is a technical implementation detail rather than a user requirement, stop and redirect before drafting acceptance criteria.
+
 ## Constraints (Logical Boundaries)
 - Do not make up thresholds for ambiguous words; flag them so the stakeholder can decide. (e.g., If the text says "timeout quickly," ask "Is 'quickly' 5 seconds or 30 seconds?")
 - Ensure every `Given / When / Then` scenario tests exactly one behavior.

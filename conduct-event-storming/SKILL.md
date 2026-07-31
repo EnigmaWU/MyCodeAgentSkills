@@ -33,6 +33,15 @@ Focusing on data structures (ERDs) early leads to tight coupling and "CRUD-heavy
 - A chronological timeline of **Domain Events**, **Commands**, **Actors**, **Policies**, and **Aggregates**.
 - A Mermaid.js flowchart visualizing the Event Storming timeline.
 
+## Optimization Readiness
+- **Failure Signals**: Events are not written in past tense, triggers are missing, business behavior is replaced by UI or data-model discussion, or the timeline fails to expose boundaries and bottlenecks.
+- **Evidence To Collect**: Event timelines, command-event trigger chains, actor assignments, aggregate clusters, and examples of branching or parallel paths that were discovered.
+- **Safe Mutation Boundaries**: Refine facilitation prompts, legend guidance, timeline formatting, and aggregate-clustering cues without changing the core events-first exploration model.
+- **Acceptance Criteria**: Accept revisions only if the resulting model starts with events, ties each event to a trigger, and identifies aggregates and possible bounded-context boundaries from the timeline.
+- **Rejected Revision Handling**: Record “magic” events, non-past-tense labels, and UI-first discussion patterns so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for simple business processes and for branching workflows with policies and external systems.
+- **Stop Rule**: If the business process is too vague to name events and triggers reliably, stop and ask before mapping the timeline.
+
 ## Constraints (Logical Boundaries)
 - **RULE 1: Events First.** Always start by identifying Domain Events. Do not discuss UI, databases, or classes until the timeline of events is complete.
 - **RULE 2: Past Tense.** Domain Events MUST be written as verbs in the past tense (e.g., `OrderPlaced`, not `PlaceOrder`).

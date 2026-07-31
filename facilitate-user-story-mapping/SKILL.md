@@ -32,6 +32,15 @@ Incremental delivery often fails because it delivers "parts of a car" rather tha
 - A structured User Story Map (Markdown or JSON).
 - Explicit identification of the "Functional Walking Skeleton" slice.
 
+## Optimization Readiness
+- **Failure Signals**: Activities and tasks are confused, slices are based on architecture instead of user outcomes, the walking skeleton is missing end-to-end coverage, or the map no longer preserves narrative flow.
+- **Evidence To Collect**: Story maps, slice decisions, activity/task breakdowns, and notes showing where the skeleton path was discovered or where it was blocked.
+- **Safe Mutation Boundaries**: Refine framing prompts, activity/task guidance, slice-selection questions, and formatting rules without changing the core outcome-first mapping model.
+- **Acceptance Criteria**: Accept revisions only if the map keeps a clear narrative flow, separates activities from tasks, and produces a functional walking skeleton that crosses every critical activity.
+- **Rejected Revision Handling**: Record architecture-slice shortcuts, passive phrasing, and missing-skeleton patterns so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for simple product ideas and for larger stories with many activities.
+- **Stop Rule**: If the target user or business outcome cannot be stated, stop and ask before mapping the story.
+
 ## Constraints (Logical Boundaries)
 - **Formatting**: Tasks MUST be written as short, active verb phrases (e.g., "Check email", "Reset password").
 - **Goal-Levels**: Differentiate strictly between "Activities" (high-level goals) and "Tasks" (sea-level actions).

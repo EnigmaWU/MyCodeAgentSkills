@@ -33,6 +33,15 @@ Without strict rules, object graphs grow infinitely. If `Order` has a list of `O
 - A refined domain model with clear boundaries between **Aggregate Roots**, **Entities**, and **Value Objects**.
 - Adherence to the 4 rules of Aggregate Design.
 
+## Optimization Readiness
+- **Failure Signals**: Aggregates are too large, cross-aggregate object references remain, invariants are diluted, or eventual consistency is ignored in favor of giant transactions.
+- **Evidence To Collect**: Proposed aggregates, invariant lists, identity references, domain events, and examples where shrinking the aggregate reduced coupling.
+- **Safe Mutation Boundaries**: Refine invariant-hunting prompts, aggregate-shrinking guidance, identity-reference rules, and event-planning cues without changing the core aggregate design constraints.
+- **Acceptance Criteria**: Accept revisions only if every aggregate is small, invariants are explicit, cross-aggregate references use IDs, and cross-boundary updates rely on events.
+- **Rejected Revision Handling**: Record object-graph sprawl, direct aggregate references, and monolithic transaction patterns so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for entity-heavy domains and for systems that require eventual consistency across multiple aggregates.
+- **Stop Rule**: If the proposed entities or invariants are unclear, stop and ask before shaping aggregates.
+
 ## Constraints (Logical Boundaries)
 - **RULE 1: Model True Invariants.** An aggregate is a transaction boundary. Only data that must be strictly, transactionally consistent at the exact same millisecond should be inside the same aggregate.
 - **RULE 2: Design Small Aggregates.** An aggregate should contain only the Root Entity and the minimal number of nested Entities/Value Objects needed to enforce the invariants.

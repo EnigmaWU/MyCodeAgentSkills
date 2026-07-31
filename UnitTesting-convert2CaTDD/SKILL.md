@@ -55,6 +55,15 @@ The converted file is a self-contained design document that is readable by human
 - A TODO tracking section showing the status of each test case.
 - Recommendations for additional tests to fill coverage gaps.
 
+## Optimization Readiness
+- **Failure Signals**: Existing test behavior changes during conversion, extracted stories or criteria are unsupported by the source tests, CaTDD structure is added mechanically without clarifying intent, or multi-assert legacy risks remain invisible.
+- **Evidence To Collect**: Original and converted test files, extracted US/AC/TC summaries, preserved test-group mappings, and notes about coverage gaps or oversized assertions.
+- **Safe Mutation Boundaries**: Refine extraction prompts, grouping heuristics, overview structure, and TODO guidance without changing the core requirement to preserve existing logic while surfacing design intent.
+- **Acceptance Criteria**: Accept revisions only if the converted file preserves all original test behavior, adds clear CaTDD structure, and grounds every extracted story or criterion in real test or interface evidence.
+- **Rejected Revision Handling**: Record unsupported inferred stories, destructive restructures, and fake coverage improvements so they are not repeated.
+- **Transfer Check**: Verify the workflow still works across different test frameworks and for both well-commented and comment-poor legacy test suites.
+- **Stop Rule**: If the source tests or production interfaces are too unclear to infer design intent responsibly, stop and ask before converting the file.
+
 ## Constraints (Logical Boundaries)
 - Preserve all existing test logic. Do not remove or break any passing test.
 - Do not invent User Stories or Acceptance Criteria that are not supported by the existing tests or production code.

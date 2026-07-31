@@ -79,6 +79,15 @@ Planned / Draft
 3. Run with `pytest test_payment_gateway.py -v`.
 ```
 
+## Optimization Readiness
+- **Failure Signals**: The companion file is misnamed, the readme invents purpose or coverage not supported by the test, lifecycle status is inaccurate, or manual steps become generic filler rather than useful guidance.
+- **Evidence To Collect**: Source test files, generated readmes, inferred-purpose notes, and examples where coverage or manual details were accurate versus guessed.
+- **Safe Mutation Boundaries**: Refine filename derivation, section prompts, inference guidance, and placeholder policy without changing the core one-readme-per-test documentation workflow.
+- **Acceptance Criteria**: Accept revisions only if the generated file name is exact, the content reflects the real or planned test intent faithfully, and any inferred details remain clearly grounded in available context.
+- **Rejected Revision Handling**: Record bad filename patterns, invented-purpose drafts, and low-value manual-step templates so they are not reused.
+- **Transfer Check**: Verify the workflow still works for both planned tests and already-implemented tests across multiple languages.
+- **Stop Rule**: If the available test context is too thin to describe purpose or coverage responsibly, stop and ask instead of fabricating details.
+
 ## Constraints (Logical Boundaries)
 - Do not modify the original test code file.
 - Ensure the generated file uses the exact base name of the test file, appending `_readme.md` to it (e.g. `test_login.cxx` -> `test_login_readme.md`).

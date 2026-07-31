@@ -32,6 +32,15 @@ Ad hoc architecture design often ignores non-functional requirements until it's 
 - Sketches of architectural views (Logical, Deployment, etc.).
 - Recorded design decisions.
 
+## Optimization Readiness
+- **Failure Signals**: Design choices ignore the selected drivers, iterations become a one-pass architecture dump, or recorded decisions are not traceable back to measurable quality goals.
+- **Evidence To Collect**: Prioritized drivers, allocation sketches, view drafts, ADR notes, and iteration reviews showing whether the selected drivers were satisfied.
+- **Safe Mutation Boundaries**: Refine iteration prompts, design-allocation guidance, and documentation structure without changing the core driver-led, iterative ADD workflow.
+- **Acceptance Criteria**: Accept revisions only if every design decision traces to an explicit driver and each iteration has a bounded goal, clear allocation, and recorded rationale.
+- **Rejected Revision Handling**: Record preference-driven design choices, unbounded redesign loops, and driverless decisions so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for a single subsystem iteration and for larger architecture redesigns that require several passes.
+- **Stop Rule**: If the architectural drivers are vague or absent, stop and ask before allocating responsibilities or choosing patterns.
+
 ## Constraints (Logical Boundaries)
 - Do not attempt to design the entire system in one pass; use iterations.
 - Base design choices on the drivers, not just preference.

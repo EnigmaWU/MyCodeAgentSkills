@@ -30,6 +30,15 @@ When teams focus only on the features they are building, they forget the systems
 - A Mermaid.js graph diagram (Ecosystem Map).
 - A list of defined interfaces.
 
+## Optimization Readiness
+- **Failure Signals**: Internal components leak into the map, arrows lack data labels, the SUD is not treated as a black box, or externals are missed because the scope was not bounded.
+- **Evidence To Collect**: External-entity lists, labeled adjacency definitions, Mermaid drafts, and examples showing whether each interface was correctly treated as upstream, downstream, or human.
+- **Safe Mutation Boundaries**: Refine entity-scanning prompts, interface labeling guidance, and graph-format advice without changing the core black-box ecosystem mapping model.
+- **Acceptance Criteria**: Accept revisions only if the map shows the SUD at the center, all externals are truly external, and every arrow carries a meaningful label.
+- **Rejected Revision Handling**: Record internal-component leaks, unlabeled arrows, and missing external entities so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for both text-only adjacency lists and Mermaid graph outputs.
+- **Stop Rule**: If the system appears standalone with no real external interactions, stop and tell the user the map is trivial.
+
 ## Constraints (Logical Boundaries)
 - Do not map the internal components of the System Under Design. The SUD is a black box in this model. Only map *external* interactions.
 - Differentiate between human actors and software systems.

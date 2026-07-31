@@ -34,6 +34,15 @@ If a user story says, "The system shall charge 7% tax for state residents," the 
 ## Output (Logical Evidence)
 - A catalog of extracted Business Rules, tagged by taxonomy type.
 
+## Optimization Readiness
+- **Failure Signals**: Software behavior is mistaken for a business rule, implied calculations stay unflagged, taxonomy labels are missing, or the extraction invents policy details.
+- **Evidence To Collect**: Rule catalogs, taxonomy assignments, implied-functional-requirement notes, and examples where the extracted rule clearly separated business logic from software behavior.
+- **Safe Mutation Boundaries**: Refine extraction prompts, taxonomy guidance, implied-requirement notes, and output formatting without changing the core rule-extraction workflow.
+- **Acceptance Criteria**: Accept revisions only if each rule is categorized correctly, no software implementation details leak into the rule list, and uncertain calculations are surfaced as questions.
+- **Rejected Revision Handling**: Record implementation-style statements, unsupported rule inferences, and ambiguous taxonomies so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for user stories, PRDs, and legacy-code reverse engineering.
+- **Stop Rule**: If the input is purely technical or non-functional, stop and redirect before extracting business rules.
+
 ## Constraints (Logical Boundaries)
 - Business rules are NOT software functions. "The system shall display a warning" is a functional requirement, not a business rule.
 - Do not invent rules. If a calculation is implied but not stated, flag it as a question.

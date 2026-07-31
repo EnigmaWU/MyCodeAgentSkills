@@ -31,6 +31,15 @@ Human language is inherently ambiguous and linear. When describing a system, sta
 - A Mermaid.js diagram block representing the logic.
 - A list of "Missing Requirements" discovered by analyzing the model.
 
+## Optimization Readiness
+- **Failure Signals**: The wrong model type is chosen, artifacts stay too abstract, clarifying questions are not surfaced, or the analysis drifts into solution design before the problem is understood.
+- **Evidence To Collect**: Model drafts, missing-requirement lists, clarification questions, and examples showing which model type fit the input best.
+- **Safe Mutation Boundaries**: Refine model-selection prompts, question-asking guidance, notation cues, and output framing without changing the core requirement-elicitation objective.
+- **Acceptance Criteria**: Accept revisions only if the selected model matches the problem shape, unanswered questions are explicit, and the output remains understandable without additional explanation.
+- **Rejected Revision Handling**: Record over-specific models, premature solutions, and weak question-handling patterns so they are not reused.
+- **Transfer Check**: Verify the workflow still works across feature discovery, analysis, and clarification-heavy stakeholder sessions.
+- **Stop Rule**: If the business domain or requirement signal is too unclear to model safely, stop and ask before choosing a technique.
+
 ## Constraints (Logical Boundaries)
 - Do not invent logic to fill gaps; explicitly highlight the gaps as questions for the stakeholder.
 - Keep models scoped to the provided text to avoid diagram bloat.

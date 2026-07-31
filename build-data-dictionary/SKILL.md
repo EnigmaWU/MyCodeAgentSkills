@@ -34,6 +34,15 @@ A requirement that says "The user shall enter their address" is incomplete. A de
 ## Output (Logical Evidence)
 - A markdown table representing the Data Dictionary.
 
+## Optimization Readiness
+- **Failure Signals**: Complex data structures remain undecomposed, primitive fields are left without definitions, guessed storage details sneak into the table, or unknown lengths are invented instead of flagged.
+- **Evidence To Collect**: Extracted nouns, structure breakdowns, dictionary tables, and examples where TBD markers or assumptions were used appropriately.
+- **Safe Mutation Boundaries**: Refine noun-extraction guidance, decomposition rules, table formatting, and assumption-marking policy without changing the core dictionary-building workflow.
+- **Acceptance Criteria**: Accept revisions only if every complex structure is decomposed, every field has a clear definition, and unknown values are marked `TBD` instead of guessed.
+- **Rejected Revision Handling**: Record schema-specific guesses, empty-field patterns, and incomplete decompositions so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for forms, reports, API specs, and user-story-driven data analysis.
+- **Stop Rule**: If the input contains no specific data fields, stop and ask before drafting the dictionary.
+
 ## Constraints (Logical Boundaries)
 - Distinguish between **Primitive Data Elements** (e.g., `FirstName`) and **Data Structures** (e.g., `Address = Street + City + State + ZipCode`).
 - If a data type or length is unknown, mark it as `TBD` (To Be Determined). Do not guess database-specific implementations (like `VARCHAR(255)`) unless explicitly stated; use logical types like `String (Max 50)`.

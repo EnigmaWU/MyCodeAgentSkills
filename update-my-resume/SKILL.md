@@ -49,6 +49,15 @@ Analyze the current conversation to extract a resume-worthy accomplishment, then
 - A brief summary shown to the user: what was appended, where, and why it qualifies.
 - A recommendation to skip the update when the conversation does not meet the bar, with a clear reason.
 
+## Optimization Readiness
+- **Failure Signals**: The conversation is inflated into a resume entry, the verified outcome is weak or missing, the narrative drops one of the three required parts, or the entry is not clearly repeatable.
+- **Evidence To Collect**: Conversation logs, verification results, drafted resume entries, and examples showing which outcome was strong enough to be reusable.
+- **Safe Mutation Boundaries**: Refine evaluation questions, narrative framing, and bilingual formatting without changing the core problem→approach→outcome structure.
+- **Acceptance Criteria**: Accept revisions only if the entry is grounded in the conversation, includes verification evidence, and mirrors the same facts in English and Chinese.
+- **Rejected Revision Handling**: Record inflated accomplishments, unsupported outcomes, and weak repeatability claims so they are not reused.
+- **Transfer Check**: Verify the workflow still works for debugging sessions, architecture decisions, and other non-trivial solved problems.
+- **Stop Rule**: If the conversation does not clearly meet the bar for a resume entry, stop and skip the update.
+
 ## Constraints (Logical Boundaries)
 - Only record what the conversation actually demonstrates. Do not inflate scope.
 - Each entry must include all three parts: the problem, the step-by-step approach, and the verified outcome.

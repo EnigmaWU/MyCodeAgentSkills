@@ -38,6 +38,15 @@ A document section set that includes:
 - 5W1H coverage: **Who, What, When, Where, Why, How**.
 - A dedicated `## Usage Example` section with copy-exec snippets.
 
+## Optimization Readiness
+- **Failure Signals**: The document lacks a usage example, examples are not executable, 5W1H coverage is incomplete, or the example drifts away from the documented environment.
+- **Evidence To Collect**: Draft docs, usage snippets, consistency checks, and examples showing how the copy-exec section improved comprehension or execution readiness.
+- **Safe Mutation Boundaries**: Refine 5W1H prompts, usage-example structure, and validation guidance without changing the core requirement to include an executable example.
+- **Acceptance Criteria**: Accept revisions only if the final document includes a clear Usage Example, keeps the narrative aligned with the example commands, and remains executable as written.
+- **Rejected Revision Handling**: Record non-executable examples, placeholder-only commands, and missing-5W1H drafts so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for READMEs, runbooks, and operational guides.
+- **Stop Rule**: If the environment, expected result, or command details are unclear, stop and ask before drafting the document.
+
 ## Constraints (Logical Boundaries)
 - Always include a section titled exactly `## Usage Example`.
 - Ensure examples are executable as written (no placeholder-only commands unless explicitly labeled).

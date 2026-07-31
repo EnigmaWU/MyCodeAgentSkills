@@ -47,6 +47,15 @@ Teams often fail not because coding is hard, but because understanding is incons
 - Living documentation that reflects current system behavior
 - A short risk list (ambiguities, unstable checks, missing examples)
 
+## Optimization Readiness
+- **Failure Signals**: The workflow starts from tool capabilities, examples stay abstract, unreliability is hidden instead of managed, or the documentation drifts away from the executable checks.
+- **Evidence To Collect**: Example sets, executable checks, documentation outputs, risk lists, and examples showing where stakeholder collaboration clarified behavior.
+- **Safe Mutation Boundaries**: Refine collaboration guidance, example-writing prompts, validation partitioning, and documentation structure without changing the core specification-by-example flow.
+- **Acceptance Criteria**: Accept revisions only if the specification remains business-first, examples are concrete and executable, and the resulting documentation stays aligned with the validated behavior.
+- **Rejected Revision Handling**: Record tool-first habits, flaky-check normalization, and overly technical example scripts so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for lightweight requirement reviews and for larger delivery processes with automation and reporting.
+- **Stop Rule**: If goals, stakeholders, or sign-off expectations are unclear, stop and ask before drafting or automating specifications.
+
 ## Constraints (Logical Boundaries)
 - Start from business goals and expected outcomes, not from tool capabilities.
 - Keep specifications in domain language; do not couple them to implementation details.

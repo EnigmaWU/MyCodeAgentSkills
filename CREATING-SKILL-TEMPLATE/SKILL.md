@@ -35,6 +35,15 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
 - `[skill-name]/README_ZH.md` (Chinese).
 - An optimization-ready section in the generated skill that defines failure signals, evidence sources, mutation boundaries, acceptance criteria, rejection handling, and stop rules.
 
+## Optimization Readiness
+- **Failure Signals**: Generated skills miss trigger accuracy, omit bilingual docs, exceed the token budget, or fail to include the optimization contract and validation block.
+- **Evidence To Collect**: Generated skill packages, validation results, trigger examples, and cases where the template had to be hardened after ambiguous routing.
+- **Safe Mutation Boundaries**: Refine template wording, tier-selection guidance, trigger hardening, and validation prompts without changing the core template-construction workflow.
+- **Acceptance Criteria**: Accept revisions only if the generated skill stays under the line budget, includes the required sections, and carries explicit routing and validation rules.
+- **Rejected Revision Handling**: Record weak trigger phrases, missing bilingual files, and invalid tier selections so they are not reused.
+- **Transfer Check**: Verify the workflow still works for SIMPLE, COMPLICATED, and COMPLEX skill generations.
+- **Stop Rule**: If the requested skill name, complexity, or purpose is missing or unclear, stop and ask before generating the template.
+
 ## Constraints
 - **RULE 1: Directory Naming.** The directory name MUST exactly match the `name:` value in the `SKILL.md` YAML frontmatter.
 - **RULE 2: Multi-line Frontmatter.** The YAML `description` must use the multi-line block scalar format (`>`) and explicitly include the `WHEN/WHERE/WHO`, `HOW`, and `WHY` prefixes.

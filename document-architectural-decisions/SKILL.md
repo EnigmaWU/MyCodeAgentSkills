@@ -37,6 +37,15 @@ Elicit design issues, catalog and compare design alternatives, and compile a str
 - **Architectural Decision Record (ADR)**: A markdown file containing the completed 12-field template.
 - **Alternatives Comparison Matrix**: A structured matrix comparing options against technical/business concerns.
 
+## Optimization Readiness
+- **Failure Signals**: Alternatives are weak or fake, implications are left blank, the decision type is unclear, or the rationale is too shallow to defend later.
+- **Evidence To Collect**: Issue context, alternatives matrix entries, decision fields, downstream implications, and examples of where the chosen alternative beat the others.
+- **Safe Mutation Boundaries**: Refine comparison criteria, ADR field prompts, alternative-generation guidance, and validation checks without changing the core decision-record workflow.
+- **Acceptance Criteria**: Accept revisions only if the ADR contains viable alternatives, no empty critical fields, a clear decision type, and downstream implications that match the selected option.
+- **Rejected Revision Handling**: Record placeholder alternatives, empty-field patterns, and thin rationales so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for low-risk local choices and for system-level architecture decisions.
+- **Stop Rule**: If the timing, budget, or hardware constraints are unclear or conflicting, stop and ask before documenting the decision.
+
 ## Constraints (Logical Boundaries)
 - **Viable Options Only**: Do not list weak placeholders as alternatives. All alternatives listed in the comparison matrix must be genuinely viable solutions.
 - **No Empty Fields**: The *Implications*, *Assumptions*, and *Argument* fields must never be blank or marked as "N/A."

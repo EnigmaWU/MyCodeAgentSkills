@@ -34,6 +34,15 @@ When teams start by defining inputs (e.g., "Given a user with ID 1234"), they of
 ## Output (Logical Evidence)
 - A completed OOPSI framework document.
 
+## Optimization Readiness
+- **Failure Signals**: The workflow starts from inputs instead of outcomes, scenarios do not map to outputs, or the business outcome becomes blurred by implementation details.
+- **Evidence To Collect**: Outcome statements, output lists, process steps, scenario sets, and example inputs showing where the model clarified business behavior.
+- **Safe Mutation Boundaries**: Refine framing prompts, outcome/output wording, scenario guidance, and input-definition cues without changing the core outcome-first modeling structure.
+- **Acceptance Criteria**: Accept revisions only if each scenario maps to tangible outputs and the chosen inputs are sufficient to execute the process.
+- **Rejected Revision Handling**: Record input-first framing, vague outcomes, and unsupported scenario expansions so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for planning sessions, requirement reviews, and workflow stabilization conversations.
+- **Stop Rule**: If the required outcome cannot be stated clearly, stop and ask before specifying scenarios or inputs.
+
 ## Constraints (Logical Boundaries)
 - Outputs must be tangible and verifiable (e.g., "A confirmation email is sent," "Database record is updated"). "The user feels happy" is an Outcome, not an Output.
 - Inputs should be specific data values required to execute the Scenarios.

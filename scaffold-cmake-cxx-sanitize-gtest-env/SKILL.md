@@ -34,6 +34,15 @@ Manually configuring CMake for cross-platform compilation, sanitizer flags, and 
 - A `README_BuildRunTest.md` explaining how to build and test the project.
 - A `.vscode/settings.json` file configuring CMake Tools and clangd.
 
+## Optimization Readiness
+- **Failure Signals**: The scaffold overwrites existing build files without consent, sanitizer branches are missing, test discovery is manual, or the generated environment fails on the target platform.
+- **Evidence To Collect**: Generated CMake files, build/run docs, VSCode settings, and examples where the scaffolded environment handled sanitizer and test setup correctly.
+- **Safe Mutation Boundaries**: Refine template substitution, test-directory scaffolding, build-guide generation, and VSCode settings merging without changing the core CMake-plus-sanitizer bootstrap.
+- **Acceptance Criteria**: Accept revisions only if the scaffolding is present, sanitizer flags are included, test discovery is automatic, and existing configuration is respected rather than overwritten blindly.
+- **Rejected Revision Handling**: Record overwrite attempts, missing sanitizer branches, and brittle test-name assumptions so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for empty projects and for projects with an existing complex `CMakeLists.txt` that require merge decisions.
+- **Stop Rule**: If the project layout or merge strategy is unclear, stop and ask before writing build files.
+
 ## Constraints (Logical Boundaries)
 - **Sanitizer Flags**: The `CMakeLists.txt` MUST include branches for `DiagASAN`, `DiagTSAN`, `DiagUBSAN`, `DiagMSAN`, and `DiagLSAN`.
 - **macOS Compatibility**: MUST include the `-Wno-availability` compiler option to suppress macOS system header warnings.

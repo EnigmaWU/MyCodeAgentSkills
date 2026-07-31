@@ -33,6 +33,15 @@ Traditional requirements sessions often dive too deep into a single edge case, i
 - A visual or structured text map of the Rules, Examples, and Questions.
 - A decision on whether the story is "Ready" for development.
 
+## Optimization Readiness
+- **Failure Signals**: The map drifts into technical tasks, examples are abstract, unresolved questions are ignored, or the readiness decision is made before the rule/example balance is understood.
+- **Evidence To Collect**: Rule/example/question cards, readiness decisions, ambiguity notes, and examples showing how counter-examples exposed hidden rules.
+- **Safe Mutation Boundaries**: Refine facilitation prompts, card-color guidance, readiness criteria, and question-handling rules without changing the core breadth-first discovery workflow.
+- **Acceptance Criteria**: Accept revisions only if every rule has concrete examples, uncertainty is surfaced as questions instead of debate, and the final readiness decision follows from the mapped cards.
+- **Rejected Revision Handling**: Record abstract examples, technical-task inputs, and ignored pink-card questions so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for both simple stories and larger stories with multiple hidden rules.
+- **Stop Rule**: If the input is a technical chore rather than business behavior, stop and redirect before building the map.
+
 ## Constraints (Logical Boundaries)
 - Keep it fast. Do not spend time debating the precise Given/When/Then Gherkin syntax during Example Mapping. Use "Friends episode" titles (e.g., "The one where the credit card is expired").
 - If there are unresolved Pink cards, the story cannot be moved to development.

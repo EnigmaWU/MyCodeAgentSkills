@@ -342,6 +342,16 @@ Before marking work complete:
 
 Can't check all boxes? You skipped TDD. Start over.
 
+## Optimization Readiness
+
+- **Failure Signals**: Production code appears before a failing test, tests pass immediately without proving behavior, red phases fail for the wrong reason, or refactors are treated as a place to add new behavior.
+- **Evidence To Collect**: Red and green test runs, examples of false-red failures, refactor checkpoints, and rationalizations that were used to bypass the cycle.
+- **Safe Mutation Boundaries**: Tighten examples, verification steps, rationalization rebuttals, and coaching language without weakening the core failing-test-first rule.
+- **Acceptance Criteria**: Accept revisions only if the skill still enforces true red-green-refactor discipline, requires watching tests fail for the expected reason, and keeps production changes downstream from tests.
+- **Rejected Revision Handling**: Record shortcuts, false-red patterns, and tests-after-code behaviors that were rejected so they are not normalized later.
+- **Transfer Check**: Verify the workflow still works for new features, bug fixes, and refactors rather than only one type of change.
+- **Stop Rule**: If the expected behavior cannot yet be expressed as a meaningful failing test, stop and clarify the behavior before writing production code.
+
 ## When Stuck
 
 | Problem | Solution |

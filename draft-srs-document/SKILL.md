@@ -37,6 +37,15 @@ A pile of 100 user stories is not a specification. Developers need to know the o
 ## Output (Logical Evidence)
 - A markdown document formatted using the SRS Template.
 
+## Optimization Readiness
+- **Failure Signals**: Requirements are invented, placeholders are left unmarked, hierarchical numbering breaks, or the draft omits major sections without flagging the gap.
+- **Evidence To Collect**: Input classification notes, drafted SRS sections, open-question lists, and examples where the wording was made verifiable instead of vague.
+- **Safe Mutation Boundaries**: Refine categorization prompts, section-filling guidance, numbering checks, and gap-analysis rules without changing the core template-driven drafting workflow.
+- **Acceptance Criteria**: Accept revisions only if the SRS stays grounded in the source material, uses hierarchical numbering correctly, and marks unrecoverable gaps as `TBD` instead of inventing content.
+- **Rejected Revision Handling**: Record invented requirements, poor numbering patterns, and overly generic wording so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for partial documents, mixed requirement sources, and feature-heavy specs.
+- **Stop Rule**: If the input only contains visuals or missing functional logic, stop and ask before drafting the SRS.
+
 ## Constraints (Logical Boundaries)
 - Do not invent requirements. If a section of the SRS cannot be filled from the provided input, mark it as `TBD` (To Be Determined) and list it as an open question.
 - Write in verifiable, unambiguous language (e.g., replace "fast" with "sub-second response time").

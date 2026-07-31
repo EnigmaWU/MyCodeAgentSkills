@@ -29,6 +29,15 @@ When UI tests rely heavily on Page Objects, tests become tightly coupled to the 
 ## Output (Logical Evidence)
 - Refactored test code separated into Actors, Tasks, Interactions, and Questions.
 
+## Optimization Readiness
+- **Failure Signals**: Tasks contain low-level API code, questions become assertions inside tasks, abilities are over-shared, or the design falls back to page-object style coupling.
+- **Evidence To Collect**: Actor/ability maps, task definitions, interaction chains, questions, and examples of refactors that reduced UI coupling.
+- **Safe Mutation Boundaries**: Refine actor naming, task decomposition, interaction guidance, and question design without changing the core Screenplay separation of intent and mechanism.
+- **Acceptance Criteria**: Accept revisions only if tasks stay business-focused, interactions own framework-specific code, and questions are the assertion boundary.
+- **Rejected Revision Handling**: Record page-object spillover, direct WebDriver calls in tasks, and assertion placement mistakes so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for UI-heavy tests, API-driven tests, and mixed interaction suites.
+- **Stop Rule**: If the input is a pure unit test with no external interfaces, stop and redirect to a simpler testing approach.
+
 ## Constraints (Logical Boundaries)
 - **Tasks** should describe business intent (e.g., `LoginWithCredentials`) and should NOT contain WebDriver or API specific code.
 - **Interactions** handle the low-level execution (e.g., `Click.on`, `Enter.theValue`) and are the *only* place where framework-specific code lives.
