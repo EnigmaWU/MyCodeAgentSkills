@@ -33,6 +33,15 @@ Large Language Models excel at critiquing content. By explicitly asking an agent
 - **Reflective Orchestration Code**: LangGraph or ADK logic containing distinct `generate` and `reflect` nodes.
 - **State Schema**: A schema including a `critique` field and a `retry_count` integer.
 
+## Optimization Readiness
+- **Failure Signals**: Reflection loops become open-ended, critique prompts collapse into generic feedback, generator and reflector share the same role framing, or revisions do not measurably improve output quality.
+- **Evidence To Collect**: Critique logs, retry counts, before/after drafts, rubric results, and examples where reflection caught or missed specific defects.
+- **Safe Mutation Boundaries**: Refine rubric prompts, retry policy wording, state-schema details, and validation examples without changing the core generator-plus-reflector loop.
+- **Acceptance Criteria**: Accept revisions only if the workflow enforces a hard iteration limit, uses distinct prompts, and produces drafts that improve against explicit evaluation criteria.
+- **Rejected Revision Handling**: Record vague critique styles, ineffective retry behaviors, and rubric gaps so they are not reused blindly.
+- **Transfer Check**: Confirm the workflow still works for both formatting corrections and deeper factual or logical critique scenarios.
+- **Stop Rule**: If the evaluation rubric or retry ceiling is missing, stop and ask before building a reflection loop.
+
 ## Constraints (Logical Boundaries)
 - **Hard Iteration Limit**: The workflow MUST include a strictly enforced loop limit. If the `retry_count` hits the limit, the loop must break and return the best effort.
 - **Separate Prompts**: The generation and reflection phases must use explicitly different system prompts.

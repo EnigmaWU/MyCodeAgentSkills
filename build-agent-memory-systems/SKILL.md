@@ -32,6 +32,15 @@ LLMs are stateless. The "context window" is too small to fit an entire user's hi
 - **Memory Architecture Design**: A mapping of data types to short-term or long-term storage mechanisms.
 - **RAG & Summarization Logic**: The code logic that manages when to write to memory and when/how to retrieve from it.
 
+## Optimization Readiness
+- **Failure Signals**: The design overfills the context window, mixes memory namespaces, retrieves irrelevant history, or lacks a clear rule for when to summarize versus retrieve.
+- **Evidence To Collect**: Retrieval traces, summarization outputs, latency measurements, token-usage trends, and examples of useful versus noisy recalled memories.
+- **Safe Mutation Boundaries**: Refine storage partitioning, retrieval heuristics, summarization thresholds, and memory examples without changing the core short-term, episodic, and long-term memory split.
+- **Acceptance Criteria**: Accept revisions only if the design preserves token budget, isolates tenant state correctly, and retrieves relevant memory with clear write and recall rules.
+- **Rejected Revision Handling**: Record failed chunking strategies, noisy retrieval patterns, and unsafe namespace designs so they are not retried blindly.
+- **Transfer Check**: Confirm the workflow still works for both lightweight conversation persistence and larger semantic-memory architectures.
+- **Stop Rule**: If the required retrieval scale, latency target, or memory type is still unclear, stop and ask before choosing storage and summarization strategy.
+
 ## Constraints (Logical Boundaries)
 - **Token Budget Protection**: Never blindly append all past messages into the context window. Old messages MUST be summarized or evicted to maintain a safe token buffer.
 - **State Partitioning**: Strictly partition memory namespaces (e.g., `user_123` vs `system_global`) to prevent cross-tenant data leakage.

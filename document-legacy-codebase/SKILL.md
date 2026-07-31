@@ -39,6 +39,15 @@ Applies to legacy directories, brownfield code files, integration APIs, database
 - **Superimposed Metadata Layer**: Decorators, sidecars, or external JSON/YAML mappings documenting legacy functions without modifying original codebase lines.
 - **Biodegradable Deprecation Plan**: Code annotations and retirement timelines designating strangler paths.
 
+## Optimization Readiness
+- **Failure Signals**: The workflow proposes invasive legacy changes, misses critical boundary mappings, mixes modern and legacy models directly, or produces documentation that cannot guide safe strangler work.
+- **Evidence To Collect**: Archaeology notes, boundary maps, adapter examples, validation tests, and review feedback on whether legacy behavior remained isolated and preserved.
+- **Safe Mutation Boundaries**: Refine discovery questions, adapter guidance, metadata examples, and validation checkpoints without changing the core bubble-context and superimposed-structure strategy.
+- **Acceptance Criteria**: Accept revisions only if the skill produces isolated wrapper boundaries, documents legacy flows clearly, and preserves legacy execution while enabling modernization planning.
+- **Rejected Revision Handling**: Record unsafe direct-modification proposals, weak boundary definitions, and failed isolation patterns so they are not retried blindly.
+- **Transfer Check**: Verify the workflow still applies to both documentation-only legacy analysis and adapter-based modernization paths.
+- **Stop Rule**: If the legacy boundaries, schemas, or input/output behavior remain too unclear to isolate safely, stop and ask before proposing wrappers or deprecation steps.
+
 ## Constraints (Logical Boundaries)
 - **Do Not Break Legacy Execution**: Never modify original legacy code lines unless establishing biodegradable annotations or hooks explicitly agreed upon with the user.
 - **No In-Place Contamination**: Modern design structures must not be mixed directly with legacy logic; they must remain isolated behind anticontamination adapters (Bubble Contexts).

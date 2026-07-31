@@ -31,6 +31,15 @@ Without a strict framework, stakeholders tend to label every requirement as "Cri
 - A markdown table displaying the scores for each requirement.
 - A sorted list of requirements from highest priority to lowest.
 
+## Optimization Readiness
+- **Failure Signals**: Scores are inconsistent, the matrix falls back to vague High/Medium/Low labels, unknown effort is guessed instead of flagged, or the ranking does not separate quick wins from high-risk investments.
+- **Evidence To Collect**: Scoring tables, weighting choices, stakeholder adjustments, and examples where the ranking was challenged or revised after review.
+- **Safe Mutation Boundaries**: Refine scoring instructions, weighting guidance, output formatting, and review prompts without changing the core numeric prioritization workflow.
+- **Acceptance Criteria**: Accept revisions only if the skill yields a clear numeric ranking, documents weights when used, and calls out unknown estimates instead of masking uncertainty.
+- **Rejected Revision Handling**: Record misleading scoring heuristics, non-numeric fallback patterns, and weak explanations of tradeoffs so they are not reused blindly.
+- **Transfer Check**: Verify the workflow still works for features, requirements, and user stories with and without stakeholder weighting.
+- **Stop Rule**: If there are too few items or too little estimation data to produce a meaningful matrix, stop and tell the user to simplify or gather estimates first.
+
 ## Constraints (Logical Boundaries)
 - Do not use High/Medium/Low. You must use numerical scores (e.g., 1 to 9).
 - Do not guess wildly; if a cost is completely unknown, flag it for estimation rather than giving it a random score.

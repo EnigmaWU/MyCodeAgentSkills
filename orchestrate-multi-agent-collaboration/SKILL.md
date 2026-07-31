@@ -32,6 +32,15 @@ Generalist agents degrade in performance when given too many tools and too many 
 - **Topology Map**: A visual or structured definition of how agents communicate.
 - **Orchestration Code**: The implementation of the Supervisor router and the Specialist nodes.
 
+## Optimization Readiness
+- **Failure Signals**: Specialists overlap responsibilities, routing loops repeat without progress, shared state becomes inconsistent, or the team design grows flat and unmanageable.
+- **Evidence To Collect**: Routing traces, agent prompts, state transitions, loop counts, and examples of handoffs that succeeded or caused debate cycles.
+- **Safe Mutation Boundaries**: Refine role definitions, supervisor options, state-schema details, and escalation rules without changing the core supervisor-plus-specialist collaboration model.
+- **Acceptance Criteria**: Accept revisions only if the design yields clear role boundaries, finite collaboration loops, and a shared state that supports predictable handoffs.
+- **Rejected Revision Handling**: Record duplicate role designs, weak router choices, and failed debate-loop controls so they are not reused blindly.
+- **Transfer Check**: Confirm the workflow still supports both small specialist teams and hierarchical multi-supervisor designs.
+- **Stop Rule**: If the roster, state ownership, or finish conditions are unclear, stop and resolve them before adding more agents.
+
 ## Constraints (Logical Boundaries)
 - **No Infinite Debates**: Peer-to-peer or reflection loops between agents MUST have a strict turn limit (e.g., max 3 rounds of back-and-forth).
 - **Single Source of Truth**: There must be a shared state object that tracks the conversation history and the current artifacts.

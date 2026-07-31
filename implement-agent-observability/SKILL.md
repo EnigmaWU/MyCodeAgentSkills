@@ -32,6 +32,15 @@ When a traditional app crashes, you get a stack trace. When an agent fails, it m
 - **Instrumentation Code**: Wrappers, callbacks, or decorators injected into the agent graph.
 - **Telemetry Schema**: The specific metadata logged per event (Trace ID, Step, Token Usage, Tool Status).
 
+## Optimization Readiness
+- **Failure Signals**: Traces cannot reconstruct a full run, telemetry leaks secrets, tool and sub-agent events lose the root trace ID, or observability is added without loop limits and simply records runaway behavior.
+- **Evidence To Collect**: Sample traces, scrubbed payloads, parent-child run graphs, cost logs, and examples of failures that observability did or did not explain.
+- **Safe Mutation Boundaries**: Refine event schemas, logging wrappers, scrubbing rules, and dashboard/reporting examples without changing the core trace propagation and instrumentation requirements.
+- **Acceptance Criteria**: Accept revisions only if a single request can be reconstructed end to end, sensitive fields are masked, and loop or cost anomalies become observable quickly.
+- **Rejected Revision Handling**: Record telemetry fields that exposed too much data, tracing gaps, and noisy logging patterns so they are not repeated.
+- **Transfer Check**: Verify the workflow still works across local logs, tracing backends, and mixed sub-agent/tool execution paths.
+- **Stop Rule**: If loop limits, trace propagation, or PII scrubbing cannot be guaranteed, stop and fix those boundaries before broadening telemetry.
+
 ## Constraints (Logical Boundaries)
 - **PII Scrubbing**: Ensure sensitive user prompts or environment variables (like API keys) are masked before they are sent to the telemetry backend.
 - **Strict Parent-Child Tracing**: Every sub-agent call or tool execution MUST carry the `trace_id` of the root user request to allow full waterfall reconstruction.

@@ -45,6 +45,15 @@ Update the repository's spec context after a conversation produces new requireme
 - A concise summary of what changed, what remains open, and which files were updated.
 - Validation evidence such as a diff review, checklist update, or relevant test/docs command when available.
 
+## Optimization Readiness
+- **Failure Signals**: Spec artifacts drift from implementation, open questions are written as facts, the skill updates too many files for a small change, or decisions and task status become mixed together.
+- **Evidence To Collect**: Update plans, edited artifact diffs, validation output, and examples of context that was accepted, deferred, or left open.
+- **Safe Mutation Boundaries**: Refine planning prompts, artifact-selection rules, section wording, and validation checks without changing the core requirement to keep durable spec context aligned with evidence.
+- **Acceptance Criteria**: Accept revisions only if the skill updates the smallest correct artifact set, preserves the repository's existing context structure, and distinguishes facts, decisions, tasks, and open questions clearly.
+- **Rejected Revision Handling**: Record over-broad edit patterns, unsupported context additions, and structure drift so they are not repeated in later revisions.
+- **Transfer Check**: Confirm the workflow still works for requirement changes, decision updates, and task-progress updates rather than only one artifact type.
+- **Stop Rule**: If the durable value or factual basis of a proposed context update is unclear, stop and ask before editing project files.
+
 ## Constraints (Logical Boundaries)
 - Plan first. Do not edit spec-context files until the user has seen the proposed update plan, unless the user explicitly asked for direct editing.
 - Preserve the existing artifact structure and terminology. Do not introduce a Spec Kit layout into a repository that uses a different convention unless the user asks.

@@ -36,6 +36,15 @@ Ensures that architectural design is systematic, driven by measurable quality go
 - **ATAM Evaluation Report**: Sensitivity points, tradeoff points, risks, and non-risks.
 - **CBAM Economic Assessment**: Optional ROI ranking of design alternatives.
 
+## Optimization Readiness
+- **Failure Signals**: Quality scenarios remain vague, tactics are chosen before measurable goals exist, tradeoffs are undocumented, or design recommendations collapse into framework selection instead of architectural reasoning.
+- **Evidence To Collect**: Utility trees, tactic selections, ATAM findings, CBAM comparisons, and examples where quality goals were measurable or remained ambiguous.
+- **Safe Mutation Boundaries**: Refine elicitation prompts, tactic-selection guidance, report structure, and validation sequencing without changing the core ASR, ADD, ATAM, and CBAM workflow.
+- **Acceptance Criteria**: Accept revisions only if the skill leads to measurable quality scenarios, traceable tactic choices, and explicit tradeoff reporting before implementation technology is selected.
+- **Rejected Revision Handling**: Record discarded tactic heuristics, ambiguous scenario templates, and weak tradeoff-reporting patterns so they are not repeated.
+- **Transfer Check**: Confirm the revised workflow still supports multiple quality attributes such as availability, performance, and modifiability.
+- **Stop Rule**: If architecturally significant requirements or measurable response metrics are missing, stop and ask before recommending tactics.
+
 ## Constraints (Logical Boundaries)
 - Every Quality Attribute Scenario must have a quantitative, measurable response metric.
 - Architectural design must be completed prior to choosing specific frameworks, libraries, or cloud services.

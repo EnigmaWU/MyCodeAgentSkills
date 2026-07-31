@@ -44,6 +44,15 @@ Activate the user's personal working profile before doing the main task, then ke
 - A minimal update to the stored personal profile when the user provides new durable information.
 - A short note explaining what was added, changed, or left unchanged for future sessions.
 
+## Optimization Readiness
+- **Failure Signals**: The skill stores temporary instructions as durable profile data, misses reusable preferences that the user explicitly declared, or activates irrelevant profile details for the current task.
+- **Evidence To Collect**: Activation summaries, profile diffs, user corrections, and examples of statements that were accepted, rejected, or required clarification.
+- **Safe Mutation Boundaries**: Tighten trigger phrases, storage rules, activation summaries, and clarification prompts without changing the core boundary between durable profile data and task-specific instructions.
+- **Acceptance Criteria**: Accept revisions only if the skill consistently activates relevant personal context, updates the stored profile minimally, and avoids persisting unsafe or temporary information.
+- **Rejected Revision Handling**: Record rejected profile fields, ambiguous declarations, and storage anti-patterns so the same mistakes are not repeated blindly.
+- **Transfer Check**: Confirm the revised workflow still works for both profile activation and profile update scenarios, not only one of them.
+- **Stop Rule**: If durability, safety, or privacy is unclear after clarification, stop and ask the user instead of saving or activating uncertain profile data.
+
 ## Constraints (Logical Boundaries)
 - Only store durable user-provided information that is safe and appropriate to reuse. Do not invent expertise or preferences.
 - Do not treat temporary instructions such as "for this task" or "for now" as profile updates.

@@ -31,6 +31,15 @@ Free-form reviews often miss edge cases. Tactics-based questionnaires force the 
 - A gap analysis report highlighting missing tactics or unaddressed risks.
 - Recommendations for architectural improvements.
 
+## Optimization Readiness
+- **Failure Signals**: Reviews stay too generic, targeted tactics are skipped, unsupported findings lack evidence, or the analysis drifts across too many quality attributes at once.
+- **Evidence To Collect**: Completed questionnaire answers, gap reports, cited architecture evidence, and reviewer feedback on missed or overstated risks.
+- **Safe Mutation Boundaries**: Refine trigger phrases, reporting structure, questionnaire-loading guidance, and evidence requirements without changing the core tactic-driven review workflow.
+- **Acceptance Criteria**: Accept revisions only if the skill produces attribute-focused findings, ties each gap to design evidence, and yields recommendations that map back to the questionnaire.
+- **Rejected Revision Handling**: Record weak prompts, unsupported finding patterns, and over-broad review shapes so they are not reintroduced blindly.
+- **Transfer Check**: Verify the workflow still works for at least two different quality attributes, such as security and availability.
+- **Stop Rule**: If the target quality attribute or source architecture evidence is missing, stop and ask before broadening the review.
+
 ## Constraints (Logical Boundaries)
 - Do not attempt to evaluate every single quality attribute at once; focus on the top 1 or 2 highest priority ones.
 - Justify every identified gap with evidence (or lack of evidence) from the design document.

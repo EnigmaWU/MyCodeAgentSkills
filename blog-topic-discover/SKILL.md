@@ -63,6 +63,15 @@ Generate a complete, gracefully structured blog post draft using the following s
 （备注：问题是真的，过程也是真的，内容都是生成的）
 ```
 
+## Optimization Readiness
+- **Failure Signals**: The post invents struggles not supported by logs, reads like a changelog instead of a journey, omits the required artistic structure, or skips the visual explanation step.
+- **Evidence To Collect**: Git diffs, commit history, conversation logs, rejected draft directions, and reviewer feedback on whether the story stayed faithful to the real work.
+- **Safe Mutation Boundaries**: Refine outline prompts, narrative emphasis, diagram guidance, and evidence-selection rules without changing the core requirement to ground the post in real traces.
+- **Acceptance Criteria**: Accept revisions only if the draft follows the full section template, stays evidence-based, includes at least one Mermaid diagram, and explains both the technical path and the human lesson.
+- **Rejected Revision Handling**: Record fabricated narrative patterns, weak diagram choices, and dry changelog-like drafts so they are not repeated.
+- **Transfer Check**: Verify the workflow still works for both commit-history-driven and conversation-driven retrospectives.
+- **Stop Rule**: If the timeframe or source evidence is too thin to support an honest narrative, stop and ask for a clearer starting point.
+
 ## Constraints (Logical Boundaries)
 - Base the findings strictly on the provided git diffs, commits, and recent conversation logs. Do not fabricate challenges.
 - Focus on the *journey* (the "why" and "how") rather than just a dry changelog (the "what").
