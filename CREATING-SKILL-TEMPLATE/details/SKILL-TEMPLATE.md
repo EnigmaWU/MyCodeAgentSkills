@@ -160,9 +160,6 @@ description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scop
 - <Required CLI tools or APIs>
 - **Anti-Pattern Mapping**: <Explicitly state what this skill MUST NOT do to prevent loops/reasoning drift>
 
-## One More Thing
-If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
-
 ## How (Structural Workflow)
 <Use imperative state-machine logic. Every step must have a clear input/output state.>
 1. **Input Phase**: <Gather and validate the required context.>
@@ -178,6 +175,9 @@ Example shape:
 ## Validation (Verifiable Rewards)
 1. <Execute a strict checklist, script, or command to prove success before concluding.>
 2. <Report the outcome and side-effects clearly.>
+
+## One More Thing
+If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 ```
 
 ## COMPLEX
@@ -229,9 +229,6 @@ description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scop
 - <Required CLI tools or APIs>
 - **Anti-Pattern Mapping**: <Explicitly state what this skill MUST NOT do to prevent loops/reasoning drift>
 
-## One More Thing
-If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
-
 ## How (Structural Workflow)
 <Use imperative state-machine logic. Every phase must explicitly define branching (If/Then/Else).>
 
@@ -261,6 +258,9 @@ Validate the candidate output against the acceptance criteria. If validation pas
 ## Validation (Verifiable Rewards)
 1. <Execute a strict test harness, script, or checklist to mathematically prove success.>
 2. <Report gaps, risks, or follow-up work only after verification passes.>
+
+## One More Thing
+If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 ```
 
 ## Notes

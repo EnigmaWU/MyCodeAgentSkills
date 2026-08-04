@@ -113,11 +113,6 @@ fixable defects instead of vague impressions.
   - MUST NOT flag a diagram for missing component-level detail on a system context
     diagram; scope rules depend on the diagram type.
 
-## One More Thing
-If anything is unclear, missing, or conflicting — the file cannot be read, the diagram
-type is ambiguous, or the request mixes review with creation — stop and ask the user
-before proceeding.
-
 ## How (Structural Workflow)
 
 ### Phase 1: Input State
@@ -233,3 +228,8 @@ Run every applicable check. For each check, record PASS, FAIL, or N/A with evide
    MAJOR -> FAIL; only MINOR -> PASS WITH CONDITIONS; all PASS -> PASS).
 5. Confirm the review used only the diagram's visible content and no hallucinated
    elements or tools.
+
+## One More Thing
+If anything is unclear, missing, or conflicting — the file cannot be read, the diagram
+type is ambiguous, or the request mixes review with creation — stop and ask the user
+before proceeding.

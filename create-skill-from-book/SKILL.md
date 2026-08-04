@@ -55,11 +55,6 @@ Ingest chapters or sections of a technical book, identify the core engineering g
 - **Tier Honesty**: Choose the output tier by workflow depth and control structure, not by how important the topic sounds or how much text was extracted.
 - **Independent Acceptance Gate**: Do not treat the first complete draft as accepted only because all files exist. The generated skill must pass the validation gate defined below.
 
-## One More Thing
-If the reference material is missing, or if the safety-critical integrity levels (ASIL, SIL) are unspecified, stop and ask the user for clarification before drafting the skill.
-
----
-
 ## How (Structural Workflow)
 
 ### Phase 1: Ingest & Domain Mapping
@@ -120,3 +115,8 @@ If the reference material is missing, or if the safety-critical integrity levels
 5. Verify that all markdown links within the skill package are valid.
 6. Verify that the generated skill can be executed from natural language alone and does not depend on diagrams or direct access to the original book during normal use.
 7. Verify that the validation log records the chosen tier, the acceptance gate results, and any rejected drafting choices.
+
+---
+
+## One More Thing
+If the reference material is missing, or if the safety-critical integrity levels (ASIL, SIL) are unspecified, stop and ask the user for clarification before drafting the skill.
