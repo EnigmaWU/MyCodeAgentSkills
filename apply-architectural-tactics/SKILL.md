@@ -32,7 +32,6 @@ Ensures that architectural design is systematic, driven by measurable quality go
 - **Functional Requirements** (required): What the system needs to do.
 - **Quality Attribute goals** (required): Vague goals (e.g., "high availability", "fast response") that must be codified.
 - **Quality Attribute Tactics Reference** (required): Located at [quality-attribute-tactics-and-checklists](details/quality-attribute-tactics-and-checklists.md).
-- **Software Architecture in Practice PDF** (optional): Located at [Software_Architecture_in_Practice](references/Software_Architecture_in_Practice.pdf).
 
 ## Output (Logical Evidence)
 - **Utility Tree**: A hierarchical decomposition of quality attributes into concrete scenarios with prioritization.
@@ -72,7 +71,7 @@ For the system element to be designed:
 1. **Identify the design target**: Determine which subsystem or element is being decomposed.
 2. **Review design inputs**: Select the ASRs from the Utility Tree that apply to this target.
 3. **Generate design concepts**:
-   * Search the structured reference at [quality-attribute-tactics-and-checklists](details/quality-attribute-tactics-and-checklists.md) (or consult the original PDF at [Software_Architecture_in_Practice](references/Software_Architecture_in_Practice.pdf)) for appropriate tactics.
+   * Search the structured reference at [quality-attribute-tactics-and-checklists](details/quality-attribute-tactics-and-checklists.md) for appropriate tactics.
    * Apply the detailed design checklists from the corresponding Level-3 files:
      * *Availability (Ch 5)*: Search the checklist at [availability-checklist-details](details/availability-checklist-details.md).
      * *Performance (Ch 8)*: Search the checklist at [performance-checklist-details](details/performance-checklist-details.md).
@@ -100,7 +99,6 @@ If multiple design alternatives exist:
 
 ## Resources
 - [quality-attribute-tactics-and-checklists](details/quality-attribute-tactics-and-checklists.md) - Primary reference for tactics and design checklists.
-- [Software_Architecture_in_Practice](references/Software_Architecture_in_Practice.pdf) - Original textbook.
 - [availability-checklist-details](details/availability-checklist-details.md) - Level-3 Availability checklist.
 - [performance-checklist-details](details/performance-checklist-details.md) - Level-3 Performance checklist.
 - [security-checklist-details](details/security-checklist-details.md) - Level-3 Security checklist.

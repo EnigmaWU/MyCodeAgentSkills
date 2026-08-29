@@ -32,7 +32,6 @@ Ensures that system documentation is comprehensive, targets all relevant stakeho
 - **System Description** (required): Functional components and high-level goals.
 - **Stakeholder List** (optional): Users, developers, operators, or business sponsors.
 - **Viewpoints and Perspectives Reference** (required): Located at [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
-- **Software Systems Architecture PDF** (optional): Located at [Software_Systems_Architecture](references/Software_Systems_Architecture.pdf).
 
 ## Output (Logical Evidence)
 - **Stakeholder-to-Viewpoint Matrix**: Mapping stakeholders to their primary viewpoints of interest.
@@ -74,7 +73,7 @@ If anything is unclear, missing, or conflicting (especially if the primary stake
    * **Exploratory Scenarios**: Unexpected changes (e.g., loss of a supplier, major framework migration).
 
 ### Phase 2: Select and Draft Viewpoints (SSA Part III)
-Select and document the views required to describe the system structure. Refer to the structured reference at [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md) (or consult the original PDF at [Software_Systems_Architecture](references/Software_Systems_Architecture.pdf)) for the viewpoints. Apply the detailed models and checklists from the corresponding Level-3 files:
+Select and document the views required to describe the system structure. Refer to the structured reference at [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md) for the viewpoints. Apply the detailed models and checklists from the corresponding Level-3 files:
 * **Context View (Ch 16)**: Scope, boundaries, external interfaces. Details in [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
 * **Functional View (Ch 17)**: Component structures and behavioral interactions. Details in [functional-viewpoint-details](details/functional-viewpoint-details.md).
 * **Information View (Ch 18)**: Data models, lifecycle, flow. Details in [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
@@ -100,7 +99,6 @@ Perform pairwise checks between views to resolve conflicts:
 
 ## Resources
 - [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md) - Primary reference for viewpoints and perspectives.
-- [Software_Systems_Architecture](references/Software_Systems_Architecture.pdf) - Original textbook.
 - [functional-viewpoint-details](details/functional-viewpoint-details.md) - Level-3 Functional viewpoint details.
 - [deployment-viewpoint-details](details/deployment-viewpoint-details.md) - Level-3 Deployment viewpoint details.
 - [security-perspective-details](details/security-perspective-details.md) - Level-3 Security perspective details.
