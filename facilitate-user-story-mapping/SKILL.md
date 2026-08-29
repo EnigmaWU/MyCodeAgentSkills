@@ -57,7 +57,6 @@ Incremental delivery often fails because it delivers "parts of a car" rather tha
 If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 
 ## How (Structural Workflow)
-<Use imperative state-machine logic. Every phase must explicitly define branching (If/Then/Else).>
 
 ### Phase 1: Opportunity Framing
 **Input State**: User provides a raw idea.

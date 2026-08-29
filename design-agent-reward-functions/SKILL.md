@@ -55,7 +55,6 @@ In classic SE, Gherkin was a communication tool for humans. In Agentic SE, Gherk
 If the expected outcomes cannot be programmatically verified, stop and inform the user that the task lacks a Verifiable Reward and is unsafe for autonomous execution.
 
 ## How (The 4-Phase Refinement Protocol)
-<Use imperative state-machine logic. Every phase must explicitly define branching (If/Then/Else).>
 
 ### Phase 1: Define the Context (Given)
 **Input State**: An Agent Task.

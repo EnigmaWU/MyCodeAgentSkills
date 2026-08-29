@@ -56,7 +56,6 @@ In classic SE, Blended Testing speeds up test execution by using APIs to bypass 
 If the system under test does not expose backend APIs or databases and relies entirely on UI interaction, stop and inform the user that blended perception is impossible and execution will be slow.
 
 ## How (The 4-Phase Refinement Protocol)
-<Use imperative state-machine logic. Every phase must explicitly define branching (If/Then/Else).>
 
 ### Phase 1: Interface Discovery
 **Input State**: A list of available system interfaces.

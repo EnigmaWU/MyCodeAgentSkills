@@ -57,7 +57,6 @@ In classic SE, Screenplay was used to separate "what" from "how" in UI tests. In
 If the required tools (Abilities) are not well-defined, stop and ask the user to clarify the technical interfaces before designing the Screenplay model.
 
 ## How (The 4-Phase Refinement Protocol)
-<Use imperative state-machine logic. Every phase must explicitly define branching (If/Then/Else).>
 
 ### Phase 1: Actor and Ability Discovery
 **Input State**: A raw business goal and a list of available tools.

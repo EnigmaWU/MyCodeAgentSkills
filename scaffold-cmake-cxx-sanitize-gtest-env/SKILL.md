@@ -58,7 +58,6 @@ Manually configuring CMake for cross-platform compilation, sanitizer flags, and 
 If the project already has a complex `CMakeLists.txt`, stop and ask the user if they want to merge the sanitizer/GTest logic into the existing file or replace it entirely.
 
 ## How (The 4-Phase Refinement Protocol)
-<Use imperative state-machine logic. Every phase must explicitly define branching (If/Then/Else).>
 
 ### Phase 1: Environment Analysis
 **Input State**: A target directory and project name.
