@@ -82,6 +82,20 @@ If the input text is not a list of features but rather a list of technical tasks
 - [Feature Tree Examples](./details/feature-tree-examples.md)
 - [Visualization Quality Checklist](./details/visualization-quality-checklist.md)
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Is every input feature placed in exactly one L1/L2/L3 node?
+- Does the hierarchy reveal gaps or orphans instead of hiding them?
+- Is the Mermaid mindmap syntactically valid and readable?
+
 ## Validation
 1. Verify that the Mermaid syntax is valid (`mindmap` format).
 2. Ensure no feature from the original list was dropped; every item must have a home in the tree.

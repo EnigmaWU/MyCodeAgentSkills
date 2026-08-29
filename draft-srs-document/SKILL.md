@@ -68,6 +68,20 @@ If the input text only contains UI mockups, stop and inform the user that an SRS
 ## Resources
 - [SRS Template](./details/srs-template.md)
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Does the SRS cover all 8 required sections with traceable, testable requirements?
+- Are requirements free of ambiguous words and implementation-biased constraints?
+- Is every stakeholder need mapped to at least one requirement (or explicitly out of scope)?
+
 ## Validation
 1. Verify that the document uses hierarchical numbering (1.1, 1.2, 3.1.1).
 2. Ensure no placeholder text remains unless explicitly marked as `TBD`.

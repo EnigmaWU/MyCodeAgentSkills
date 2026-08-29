@@ -65,6 +65,20 @@ If the input text is purely technical (e.g., "The API must respond in 200ms"), s
 ## Resources
 - [Business Rules Taxonomy](./details/business-rules-taxonomy.md)
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Is each extracted rule classified correctly (fact/constraint/enabler/inference/computation)?
+- Does the rule text preserve the original business intent and scope?
+- Are software-implementation details excluded from business rules?
+
 ## Validation
 1. Verify that no extracted rule dictates a specific software implementation (e.g., "Must use a dropdown" is invalid).
 2. Ensure every rule has a defined taxonomy type.

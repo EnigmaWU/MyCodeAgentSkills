@@ -71,6 +71,20 @@ In Domain-Driven Design (DDD), the most critical failure point is the translatio
 ## Resources
 - [Eric Evans - Domain-Driven Design Reference](https://www.domainlanguage.com/ddd/reference/)
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Is each term defined exactly once with one meaning, and are synonyms explicitly rejected?
+- Is the glossary scoped to one bounded context and enforceable across code, tests, and docs?
+- Would reuse of a term in a new context be flagged rather than silently accepted?
+
 ## Validation
 1. Verify no two approved terms have the exact same definition.
 2. Verify that rejected synonyms are explicitly listed to prevent developers from accidentally using them.

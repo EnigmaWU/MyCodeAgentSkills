@@ -78,6 +78,20 @@ If the expected outcomes cannot be programmatically verified, stop and inform th
 2. Inject this script into the agent's evaluation loop as the hard exit condition.
 **Output State**: A hardened agent execution loop protected against reasoning drift.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Are reward functions strict Given/When/Then checks that can be evaluated deterministically?
+- Do they include stop conditions that prevent hallucinated success?
+- Is there an exit criterion for every terminal state (success, failure, retry)?
+
 ## Validation (Verifiable Rewards)
 1. Verify that all `Then` statements can be executed by a deterministic script without human or LLM intervention.
 2. If verification passes, output the Verifiable Reward Function definition.

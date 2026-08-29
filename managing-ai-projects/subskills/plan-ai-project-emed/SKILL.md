@@ -164,6 +164,20 @@ and ask the user before drafting the plan.
 3. Confirm the plan is executable without the book open.
 4. Deliver the plan to the user.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Do the four EMED phases cover strategy, data, infrastructure, team, ethics, execution, and delivery?
+- Is every deliverable owned, sequenced, and gated by an explicit decision?
+- Could a team execute the plan without inventing missing details?
+
 ## Validation (Verifiable Rewards)
 1. Confirm the plan contains all four EMED phases with their required outputs.
 2. Confirm the selected use case has a value/feasibility rationale and KPIs.

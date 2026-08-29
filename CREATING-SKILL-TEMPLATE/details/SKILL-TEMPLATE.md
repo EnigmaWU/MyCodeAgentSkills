@@ -53,6 +53,25 @@ Before finalizing any skill, check the discovery surface explicitly.
 5. If the skill is auto-invocable, prefer concrete user-language examples such as `save as skill`, `improve this skill`, or `create a skill from [book]` over abstract summaries like `preserve reusable knowledge`.
 6. If activation is weak in practice, fix the frontmatter first before widening the body content.
 
+## Review In Mind (ReviewInMindGenie)
+
+Every skill, regardless of tier, MUST include a `## Review In Mind (ReviewInMindGenie)` section. It is the skill's built-in review gene: after producing the artifact, the agent stops authoring, switches to a skeptical reviewer, and critiques the output as if someone else had produced it. The section MUST contain the four-step loop below plus a skill-specific "Review lens" derived from that skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Place it immediately before `## Validation` (or at the end of the file if the skill has no Validation section).
+
+```md
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- <Question 1 derived from this skill's What/Constraints/Validation>
+- <Question 2 derived from this skill's What/Constraints/Validation>
+```
+
 ## SIMPLE
 
 Use this when the skill is short, direct, and does not need bundled files.
@@ -103,6 +122,19 @@ Example shape:
 1. **Input State**: Read the user request and confirm the target artifact name.
 2. **Execution**: Generate the artifact in one pass using the required format.
 3. **Validation**: Check that the artifact exists and matches the requested shape.
+
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- <Question 1 derived from this skill's What/Constraints/Validation>
+- <Question 2 derived from this skill's What/Constraints/Validation>
 
 ## Validation (Verifiable Rewards)
 1. <Execute a strict checklist, schema validation, or harness command to prove success.>
@@ -171,6 +203,19 @@ Example shape:
 2. **Decision Phase**: Choose the correct output path based on the input type. If the request is a new artifact, use the creation path; if it is an existing artifact, use the revision path.
 3. **Execution Phase**: Produce or revise the artifact using the selected path.
 4. **Validation Phase**: Run the relevant checks and report whether the output satisfied the criteria.
+
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- <Question 1 derived from this skill's What/Constraints/Validation>
+- <Question 2 derived from this skill's What/Constraints/Validation>
 
 ## Validation (Verifiable Rewards)
 1. <Execute a strict checklist, script, or command to prove success before concluding.>
@@ -250,6 +295,19 @@ Execute the chosen path and produce the first candidate output. If execution fai
 Example:
 Validate the candidate output against the acceptance criteria. If validation passes, finalize the result. If validation fails and the retry budget remains, revise only the allowed sections and rerun validation. If the retry budget is exhausted, stop and escalate with the failed evidence.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- <Question 1 derived from this skill's What/Constraints/Validation>
+- <Question 2 derived from this skill's What/Constraints/Validation>
+
 ## Resources
 - <scripts/>
 - <references/>
@@ -270,6 +328,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 - Keep `name` aligned with the skill folder name.
 - Quote the `description` when it contains colons.
 - Keep the `One More Thing` section in every version.
+- Keep the `## Review In Mind (ReviewInMindGenie)` section in every version, placed before `## Validation` (or at the end if no Validation section exists).
 - Prefer real examples and real artifacts over abstract placeholders.
 - Keep operational instructions in natural language so the workflow is executable from text alone.
 - Treat diagrams, figures, and visual assets as optional references, not required execution steps.

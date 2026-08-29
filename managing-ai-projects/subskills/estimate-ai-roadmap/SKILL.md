@@ -116,6 +116,20 @@ If the backlog, team, or constraints are missing, stop and ask before estimating
 3. Confirm gates and decision points exist.
 4. Deliver the roadmap.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Are backlog items decomposed and estimable, with explicit spikes and buffers?
+- Are milestone gates and decision points placed where uncertainty is highest?
+- Is the roadmap framed as directional, with confidence ranges instead of false precision?
+
 ## Validation (Verifiable Rewards)
 1. Roadmap contains decomposed, estimable items with owners.
 2. At least one spike exists for every unvalidated assumption.

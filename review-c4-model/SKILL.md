@@ -218,6 +218,20 @@ Run every applicable check. For each check, record PASS, FAIL, or N/A with evide
 - [details/validation-log.md](details/validation-log.md) — tier choice, acceptance gate
   results, and rejected drafting choices.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Does the report classify the diagram type and check every applicable general/element/relationship/level rule?
+- Is every finding tied to a visible defect and rule, with severity and a concrete fix?
+- Does the verdict match the checklist results, and are unsupported formats flagged rather than guessed?
+
 ## Validation (Verifiable Rewards)
 1. Run the checklist from `details/review-checklist.md` against a real diagram and
    confirm every applicable item receives PASS/FAIL/N/A.

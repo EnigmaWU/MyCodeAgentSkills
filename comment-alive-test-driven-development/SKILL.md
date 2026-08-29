@@ -172,6 +172,20 @@ For each TC in priority order (P1 first):
 - `references/CaTDD_ImplTemplate.cxx` — C++ implementation template showing the complete CaTDD file structure (copy and adapt for any language).
 - `references/CaTDD-UserGuide-PPT.md` — Presentation-style overview of CaTDD covering all concepts with slides, diagrams, and examples.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Does the file contain OVERVIEW, US/AC/TC with metadata, and the four-phase test pattern?
+- Are acceptance criteria executable GIVEN/WHEN/THEN with P1-P4 priorities assigned?
+- Would the test file itself serve as a living design document for a new team member?
+
 ## Validation
 1. Verify the new test file contains all required sections: OVERVIEW, UNIT TESTING DESIGN, UNIT TESTING IMPLEMENTATION, TODO/TRACKING.
 2. Verify every TC has a traceability link to an AC and US.

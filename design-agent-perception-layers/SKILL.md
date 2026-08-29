@@ -79,6 +79,20 @@ If the system under test does not expose backend APIs or databases and relies en
 2. Inject this constraint into the agent's system prompt.
 **Output State**: An optimized, token-efficient agent architecture.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Does the design force fast, cheap perception before slow, expensive tools?
+- Are the routing rules deterministic (which input triggers which perception path)?
+- Is there a fallback when fast perception fails or is insufficient?
+
 ## Validation (Verifiable Rewards)
 1. Verify that all setup and teardown tasks are mapped to Fast Perception tools.
 2. Verify that the agent's system prompt explicitly enforces the Fast First constraint.

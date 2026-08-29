@@ -157,6 +157,20 @@ Keep the facts identical to the English entry. Adapt phrasing to feel natural in
   - `save-as-skill` — if the conversation also produced a reusable workflow worth preserving as a skill
   - `improve-existing-skill` — if an earlier resume entry needs correction after new evidence
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Does the entry follow WHAT/HOW/WHAT-was-gained with concrete evidence?
+- Is the accomplishment attributable to the user and free of exaggeration?
+- Are the English and Chinese sections consistent and formatted per the resume file?
+
 ## Validation
 1. Verify the resume file exists and was written to the correct path.
 2. Verify the English entry contains all four fields: `Problem`, `Approach`, `Outcome`, `Reuse`.

@@ -115,6 +115,20 @@ If the project boundary, review goal, or allowed evidence sources are unclear, s
 - [review-report-template.md](details/review-report-template.md) - Findings-first report structure.
 - [validation-checklist.md](details/validation-checklist.md) - Final validation gate for review quality.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Is every finding tied to a lifecycle stage/undercurrent and evidence (or labeled missing evidence)?
+- Does the report cover all lifecycle stages and undercurrents without inventing data flows?
+- Are severities, impacts, and next actions ranked and actionable?
+
 ## Validation (Verifiable Rewards)
 1. Verify every finding has severity, lifecycle stage, undercurrent, evidence or missing-evidence label, risk, impact, and advice.
 2. Verify the report covers generation, storage, ingestion, transformation, and serving, or explicitly marks stages as not applicable or missing evidence.

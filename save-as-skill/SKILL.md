@@ -253,6 +253,20 @@ After two or more self-play rounds, use the Ctx2Skill Cross-Time Replay mechanis
 - `assets/` for templates, configs, or boilerplate files.
 - [Ctx2Skill paper](https://arxiv.org/abs/2604.27660) — the self-evolving, multi-agent skill-discovery framework whose 5-agent self-play loop and Cross-Time Replay mechanism are embedded directly into Phase 6 and Phase 7 of this skill.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Is the generated SKILL.md complete (frontmatter, 5W1H, Optimization Readiness, Constraints, How, Validation, Review In Mind)?
+- Are scripts/references/assets recommended only when real reusable artifacts exist?
+- Would the skill be self-contained and executable from text alone?
+
 ## Validation
 1. Verify the frontmatter is valid and `name` matches the skill folder.
 2. Run the manual template checklist, and run `scripts/validate_skill.py` when it is available.

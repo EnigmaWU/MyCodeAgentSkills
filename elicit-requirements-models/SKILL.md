@@ -70,6 +70,20 @@ If the input text is purely cosmetic (e.g., "Change the button to blue") and con
 ## Resources
 - [Mermaid Modeling Templates](./details/mermaid-modeling-templates.md)
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Does each generated model match the source requirements and reveal missing arrows/edge cases?
+- Is the Mermaid syntax valid and the model readable by the intended audience?
+- Are gaps reported as findings rather than silently filled?
+
 ## Validation
 1. Verify the Mermaid diagram renders correctly without syntax errors.
 2. Ensure the gap analysis explicitly references specific missing transitions or unhandled states from the diagram.

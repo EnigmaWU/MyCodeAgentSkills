@@ -68,6 +68,20 @@ If the provided list has fewer than 3 items, inform the user that a matrix is un
 ## Resources
 - [Analytical Matrix Guide](./details/analytical-matrix-guide.md)
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Is every requirement scored on business value, user value, cost, and risk with a calculated priority?
+- Are scores traceable to stated criteria rather than hidden judgment?
+- Would the sorted backlog be defensible to stakeholders?
+
 ## Validation
 1. Verify that all items in the list were scored.
 2. Check the math: ensure the final sorted order matches the calculated Priority Scores.

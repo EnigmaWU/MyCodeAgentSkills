@@ -71,3 +71,17 @@ If the user hasn't specified whether they need Semantic Search (Vector DB) or ju
 ### 5. Validate the Memory Lifecycle
 - Ensure the extraction tool actually runs (test it).
 - Verify that the Summarizer successfully truncates the history without losing the core user intent.
+
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Do short-term, long-term, and episodic memories have distinct stores, triggers, and retrieval paths?
+- Is there a validation step proving extraction and retrieval actually work?
+- Are privacy, retention, and eviction rules explicit?

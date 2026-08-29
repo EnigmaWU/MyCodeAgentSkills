@@ -14,6 +14,8 @@ AI Agents acting as meta-engineers to expand the repository's capabilities, or u
 ## What
 Scaffolds a perfectly formatted, standard-compliant skill directory. This includes the `SKILL.md` based on the Hybrid 5W1H + SSL (Scheduling-Structural-Logical) `details/SKILL-TEMPLATE.md`, the automated generation of both English and Chinese `README.md` files, and an optimization-ready quality spine so the new skill can be revised safely over time.
 
+Every generated skill also receives a mandatory `## Review In Mind (ReviewInMindGenie)` section: a built-in review gene that forces the agent to switch from author to skeptical reviewer, critique its own output against the skill's rules, fix or escalate findings, and deliver a short review note instead of an unreviewed artifact.
+
 ## When
 Invoke this skill when the user asks to "create a skill template", "scaffold a new skill", "generate the boilerplate for skill X", or similar phrases.
 
@@ -34,9 +36,10 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
 - `[skill-name]/README.md` (English).
 - `[skill-name]/README_ZH.md` (Chinese).
 - An optimization-ready section in the generated skill that defines failure signals, evidence sources, mutation boundaries, acceptance criteria, rejection handling, and stop rules.
+- A mandatory `## Review In Mind (ReviewInMindGenie)` section with a skill-specific review lens.
 
 ## Optimization Readiness
-- **Failure Signals**: Generated skills miss trigger accuracy, omit bilingual docs, exceed the token budget, or fail to include the optimization contract and validation block.
+- **Failure Signals**: Generated skills miss trigger accuracy, omit bilingual docs, exceed the token budget, fail to include the optimization contract and validation block, or omit the Review In Mind gene.
 - **Evidence To Collect**: Generated skill packages, validation results, trigger examples, and cases where the template had to be hardened after ambiguous routing.
 - **Safe Mutation Boundaries**: Refine template wording, tier-selection guidance, trigger hardening, and validation prompts without changing the core template-construction workflow.
 - **Acceptance Criteria**: Accept revisions only if the generated skill stays under the line budget, includes the required sections, and carries explicit routing and validation rules.
@@ -52,6 +55,7 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
 - **RULE 5: Trigger Accuracy.** The `description` block MUST explicitly define both exact trigger phrases AND "near-misses" (when NOT to use the skill) to prevent accidental executions by the agent.
 - **RULE 6: Optimization Readiness.** Every generated skill MUST state how it will detect failure, what evidence can justify revision, what parts are safe to mutate, how acceptance is validated independently, how rejected revisions are recorded, and when iteration must stop.
 - **RULE 7: Natural-Language Execution.** Paper-inspired optimization logic may shape the workflow, but the generated skill MUST remain fully executable from text alone. Diagrams and figures are optional references only.
+- **RULE 8: Review In Mind (ReviewInMindGenie).** Every generated skill MUST include a `## Review In Mind (ReviewInMindGenie)` section before its `## Validation` block (or at the end of the file if the skill has no Validation section). The section MUST contain the review loop (critique against own rules, classify findings, fix or escalate, deliver with a review note) and at least two skill-specific review lens questions derived from the skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria.
 
 ## How (The 5-Phase Refinement Protocol)
 
@@ -72,6 +76,7 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
 ### Phase 2: Execution Logic & State Machine Conversion
 4. **Determinism Linting**: Scaffold the core sections (Who, What, When, Where, Why) using `details/SKILL-TEMPLATE.md`. Eliminate all ambiguous prose (e.g., "try to", "use judgment", "if possible") from the instructions.
 5. **Branching Control**: Rewrite the `## How` execution steps into an imperative state machine using strict If-Then-Else conditional branching logic. Every phase must have an explicit input expectation and an expected state output.
+6. **Review Gene Injection**: Add the `## Review In Mind (ReviewInMindGenie)` section using the tier shape in `details/SKILL-TEMPLATE.md`. Derive the review lens from the skill's own `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria so the review is domain-specific rather than generic boilerplate.
 
 ### Phase 3: Optimization-Ready Contract Injection
 6. **Failure Signal Design**: Add an `## Optimization Readiness` section using the template tier in `details/SKILL-TEMPLATE.md`. It MUST declare concrete failure signals, the evidence to collect from repeated usage, and the safe mutation boundaries for future revisions.
@@ -87,9 +92,24 @@ Consistency is critical for agents. If frontmatter is missing or structured diff
 12. **Test-Driven Evaluation**: Simulate the skill's routing accuracy against mock prompts. If trigger accuracy is ambiguous, harden the frontmatter again.
 13. If the user asked for version control actions, stage the new directory and prepare a commit. Otherwise stop after validation and report the generated artifacts.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Does the generated skill include every required section (frontmatter, 5W1H, Optimization Readiness, Constraints, How, Validation, Review In Mind)?
+- Is the frontmatter `description` a precise trigger with near-misses, and does the directory name match the `name:` field?
+- Do both READMEs exist, and is the generated SKILL.md within the line budget?
+
 ## Validation
 1. Verify the frontmatter uses the `>` multi-line format and does not have surrounding quotes.
 2. Verify both `README.md` and `README_ZH.md` exist and contain the description text.
 3. Verify the directory name exactly matches the `name:` field in the frontmatter.
 4. Verify the generated `SKILL.md` contains an `## Optimization Readiness` section with failure signals, evidence, mutation boundaries, acceptance criteria, rejection handling, and a stop rule.
 5. Verify the `## Validation` section checks execution quality or routing quality, not only file presence.
+6. Verify the generated `SKILL.md` contains a `## Review In Mind (ReviewInMindGenie)` section with the four-step review loop and at least two skill-specific review lens questions.

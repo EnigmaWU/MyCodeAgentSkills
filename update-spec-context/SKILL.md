@@ -131,6 +131,20 @@ Ask for confirmation when the target files, scope, or facts are ambiguous.
 - `save-as-skill/SKILL.md` for turning a solved workflow into a reusable skill instead of a project-context update.
 - `improve-existing-skill/SKILL.md` for folding lessons back into an existing skill.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Is the update focused on new requirements, decisions, progress, risks, or lessons, without rewriting unrelated history?
+- Does it keep existing spec artifacts consistent (no contradictory status)?
+- Is every change traceable to a conversation event?
+
 ## Validation
 1. Verify the frontmatter `name` matches the folder name.
 2. Verify the section layout matches the COMPLEX template.

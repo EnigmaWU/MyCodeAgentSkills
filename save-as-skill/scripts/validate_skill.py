@@ -21,6 +21,7 @@ TIER_SECTIONS = {
         "Where",
         "Why",
         "How",
+        "Review In Mind",
         "One More Thing",
     ],
     "complicated": [
@@ -34,6 +35,7 @@ TIER_SECTIONS = {
         "Constraints",
         "One More Thing",
         "How",
+        "Review In Mind",
     ],
     "complex": [
         "Who",
@@ -47,6 +49,7 @@ TIER_SECTIONS = {
         "One More Thing",
         "How",
         "Resources",
+        "Review In Mind",
         "Validation",
     ],
 }
@@ -57,7 +60,8 @@ FRONTMATTER_RE = re.compile(r"^([A-Za-z0-9_-]+):\s*(.+?)\s*$")
 
 
 def normalize_heading(text: str) -> str:
-    return re.sub(r"\s+", " ", text.strip()).lower()
+    stripped = re.sub(r"\s*\(.*?\)\s*$", "", text.strip())
+    return re.sub(r"\s+", " ", stripped).lower()
 
 
 def split_frontmatter(text: str) -> tuple[dict[str, str], dict[str, str], list[str], list[str]]:

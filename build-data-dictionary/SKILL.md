@@ -66,6 +66,20 @@ If the input text contains no specific data fields (e.g., "The system shall be f
 ## Resources
 - [Data Dictionary Format](./details/data-dictionary-format.md)
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Are all domain nouns extracted, and is each defined with type, length, and allowed values?
+- Are ambiguous definitions flagged rather than guessed?
+- Is the dictionary internally consistent (no duplicate names with conflicting types)?
+
 ## Validation
 1. Verify that complex data structures are fully decomposed into primitives.
 2. Ensure no fields are left entirely blank (use `TBD` if unknown).

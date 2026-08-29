@@ -89,6 +89,20 @@ If the project already has a complex `CMakeLists.txt`, stop and ask the user if 
 3. Write the configuration to `.vscode/settings.json` (merging with existing settings if necessary).
 **Output State**: VSCode environment fully configured for CMake and Sanitizers.
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Do the generated files enforce C11/CXX17, compiler fallbacks, sanitizers, and GTest auto-discovery as claimed?
+- Does the build/run guide match the actual generated CMake behavior?
+- Would a fresh checkout build and run the tests successfully?
+
 ## Validation (Verifiable Rewards)
 1. Verify that `CMakeLists.txt` exists and contains the string `DiagASAN`.
 2. Verify that the `Test/` directory exists.

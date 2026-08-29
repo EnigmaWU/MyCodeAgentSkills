@@ -83,6 +83,20 @@ If the legacy codebase has zero unit tests, or if its original domain terms are 
 
 ---
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Are mental models and data flows extracted from code evidence, not folklore?
+- Do Bubble Contexts and boundary interfaces define clean seams with scheduled strangler patterns?
+- Would the documentation allow future work to retire or replace legacy parts safely?
+
 ## Validation
 1. Verify that the skill configuration aligns with the `document-legacy-codebase` folder.
 2. Verify that all relative links to checklists and code examples are valid and clickable.

@@ -85,6 +85,20 @@ If the input is purely a technical chore (e.g., "Update dependency X to version 
 - [BDD Story Format](./details/bdd-story-format.md)
 - [Specification by Example Enhancements](./details/specification-by-example-enhancements.md)
 
+## Review In Mind (ReviewInMindGenie)
+
+Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
+
+1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
+2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
+3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
+4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+
+Review lens for this skill:
+- Does the story state role, capability, and business value with executable Given/When/Then scenarios?
+- Is there at least one error/edge path with concrete examples and no implementation-coupled `Then` clauses?
+- Would a skeptical PO/QA accept it as testable without further clarification?
+
 ## Validation
 1. Verify that every scenario has at least one Given, one When, and one Then.
 2. Verify that the story includes a clear business value statement.
