@@ -1,0 +1,4 @@
+interface:
+  display_name: "Managing AI Projects"
+  short_description: "Plan, review, and run AI projects"
+  default_prompt: "Use $managing-ai-projects to plan or review an AI project."
