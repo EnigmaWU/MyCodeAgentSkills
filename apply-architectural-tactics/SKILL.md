@@ -8,6 +8,10 @@ description: >
 
 # Apply Architectural Tactics
 
+## Common Contract (Load First)
+
+When this skill is activated, first load [skill-common](../skill-common/SKILL.md) and apply the shared conventions it defines: canonical section order, frontmatter rules, anti-pattern guidance, and the Review In Mind loop in [review-in-mind](../skill-common/details/review-in-mind.md). This skill adds only domain-specific rules below.
+
 ## Who
 Architects, principal engineers, or agents designing systems where quality attributes (Availability, Performance, Security, Modifiability, Testability, Usability, etc.) drive the design choices.
 
@@ -27,8 +31,8 @@ Ensures that architectural design is systematic, driven by measurable quality go
 ## Inputs
 - **Functional Requirements** (required): What the system needs to do.
 - **Quality Attribute goals** (required): Vague goals (e.g., "high availability", "fast response") that must be codified.
-- **Quality Attribute Tactics Reference** (required): Located at [quality-attribute-tactics-and-checklists.md](details/quality-attribute-tactics-and-checklists.md).
-- **Software Architecture in Practice PDF** (optional): Located at [references/Software_Architecture_in_Practice.pdf](references/Software_Architecture_in_Practice.pdf).
+- **Quality Attribute Tactics Reference** (required): Located at [quality-attribute-tactics-and-checklists](details/quality-attribute-tactics-and-checklists.md).
+- **Software Architecture in Practice PDF** (optional): Located at [Software_Architecture_in_Practice](references/Software_Architecture_in_Practice.pdf).
 
 ## Output (Logical Evidence)
 - **Utility Tree**: A hierarchical decomposition of quality attributes into concrete scenarios with prioritization.
@@ -68,13 +72,13 @@ For the system element to be designed:
 1. **Identify the design target**: Determine which subsystem or element is being decomposed.
 2. **Review design inputs**: Select the ASRs from the Utility Tree that apply to this target.
 3. **Generate design concepts**:
-   * Search the structured reference at [quality-attribute-tactics-and-checklists.md](details/quality-attribute-tactics-and-checklists.md) (or consult the original PDF at [references/Software_Architecture_in_Practice.pdf](references/Software_Architecture_in_Practice.pdf)) for appropriate tactics.
+   * Search the structured reference at [quality-attribute-tactics-and-checklists](details/quality-attribute-tactics-and-checklists.md) (or consult the original PDF at [Software_Architecture_in_Practice](references/Software_Architecture_in_Practice.pdf)) for appropriate tactics.
    * Apply the detailed design checklists from the corresponding Level-3 files:
-     * *Availability (Ch 5)*: Search the checklist at [availability-checklist-details.md](details/availability-checklist-details.md).
-     * *Performance (Ch 8)*: Search the checklist at [performance-checklist-details.md](details/performance-checklist-details.md).
-     * *Security (Ch 9)*: Search the checklist at [security-checklist-details.md](details/security-checklist-details.md).
-     * *Modifiability (Ch 7)*: Search the checklist at [modifiability-checklist-details.md](details/modifiability-checklist-details.md).
-     * *Interoperability, Testability, Usability*: See the summary reference at [quality-attribute-tactics-and-checklists.md](details/quality-attribute-tactics-and-checklists.md).
+     * *Availability (Ch 5)*: Search the checklist at [availability-checklist-details](details/availability-checklist-details.md).
+     * *Performance (Ch 8)*: Search the checklist at [performance-checklist-details](details/performance-checklist-details.md).
+     * *Security (Ch 9)*: Search the checklist at [security-checklist-details](details/security-checklist-details.md).
+     * *Modifiability (Ch 7)*: Search the checklist at [modifiability-checklist-details](details/modifiability-checklist-details.md).
+     * *Interoperability, Testability, Usability*: See the summary reference at [quality-attribute-tactics-and-checklists](details/quality-attribute-tactics-and-checklists.md).
    * Select architectural patterns (e.g., Microservices, Layers, Publish-Subscribe) that bundle these tactics.
 4. **Instantiate elements**: Allocate functional responsibilities to the components.
 5. **Define interfaces**: Specify communication protocols, APIs, and data structures.
@@ -95,21 +99,16 @@ If multiple design alternatives exist:
 4. Recommend the design alternative with the highest ROI.
 
 ## Resources
-- [quality-attribute-tactics-and-checklists.md](details/quality-attribute-tactics-and-checklists.md) - Primary reference for tactics and design checklists.
-- [Software_Architecture_in_Practice.pdf](references/Software_Architecture_in_Practice.pdf) - Original textbook.
-- [availability-checklist-details.md](details/availability-checklist-details.md) - Level-3 Availability checklist.
-- [performance-checklist-details.md](details/performance-checklist-details.md) - Level-3 Performance checklist.
-- [security-checklist-details.md](details/security-checklist-details.md) - Level-3 Security checklist.
-- [modifiability-checklist-details.md](details/modifiability-checklist-details.md) - Level-3 Modifiability checklist.
+- [quality-attribute-tactics-and-checklists](details/quality-attribute-tactics-and-checklists.md) - Primary reference for tactics and design checklists.
+- [Software_Architecture_in_Practice](references/Software_Architecture_in_Practice.pdf) - Original textbook.
+- [availability-checklist-details](details/availability-checklist-details.md) - Level-3 Availability checklist.
+- [performance-checklist-details](details/performance-checklist-details.md) - Level-3 Performance checklist.
+- [security-checklist-details](details/security-checklist-details.md) - Level-3 Security checklist.
+- [modifiability-checklist-details](details/modifiability-checklist-details.md) - Level-3 Modifiability checklist.
 
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - Are ASRs traceable to quality attribute scenarios, utility tree nodes, and selected tactics?

@@ -8,6 +8,10 @@ description: >
 
 # Design Architecture Viewpoints
 
+## Common Contract (Load First)
+
+When this skill is activated, first load [skill-common](../skill-common/SKILL.md) and apply the shared conventions it defines: canonical section order, frontmatter rules, anti-pattern guidance, and the Review In Mind loop in [review-in-mind](../skill-common/details/review-in-mind.md). This skill adds only domain-specific rules below.
+
 ## Who
 Architects, system designers, or agents responsible for documenting and verifying system-level designs for diverse stakeholders.
 
@@ -27,8 +31,8 @@ Ensures that system documentation is comprehensive, targets all relevant stakeho
 ## Inputs
 - **System Description** (required): Functional components and high-level goals.
 - **Stakeholder List** (optional): Users, developers, operators, or business sponsors.
-- **Viewpoints and Perspectives Reference** (required): Located at [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md).
-- **Software Systems Architecture PDF** (optional): Located at [references/Software_Systems_Architecture.pdf](references/Software_Systems_Architecture.pdf).
+- **Viewpoints and Perspectives Reference** (required): Located at [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
+- **Software Systems Architecture PDF** (optional): Located at [Software_Systems_Architecture](references/Software_Systems_Architecture.pdf).
 
 ## Output (Logical Evidence)
 - **Stakeholder-to-Viewpoint Matrix**: Mapping stakeholders to their primary viewpoints of interest.
@@ -70,21 +74,21 @@ If anything is unclear, missing, or conflicting (especially if the primary stake
    * **Exploratory Scenarios**: Unexpected changes (e.g., loss of a supplier, major framework migration).
 
 ### Phase 2: Select and Draft Viewpoints (SSA Part III)
-Select and document the views required to describe the system structure. Refer to the structured reference at [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md) (or consult the original PDF at [references/Software_Systems_Architecture.pdf](references/Software_Systems_Architecture.pdf)) for the viewpoints. Apply the detailed models and checklists from the corresponding Level-3 files:
-* **Context View (Ch 16)**: Scope, boundaries, external interfaces. Details in [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md).
-* **Functional View (Ch 17)**: Component structures and behavioral interactions. Details in [functional-viewpoint-details.md](details/functional-viewpoint-details.md).
-* **Information View (Ch 18)**: Data models, lifecycle, flow. Details in [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md).
-* **Concurrency View (Ch 19)**: Process/thread mappings, synchronization primitives. Details in [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md).
-* **Development View (Ch 20)**: Package structure, module layout, build processes. Details in [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md).
-* **Deployment View (Ch 21)**: Physical infrastructure, hardware nodes, network topologies. Details in [deployment-viewpoint-details.md](details/deployment-viewpoint-details.md).
-* **Operational View (Ch 22)**: Installation, backup, monitoring. Details in [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md).
+Select and document the views required to describe the system structure. Refer to the structured reference at [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md) (or consult the original PDF at [Software_Systems_Architecture](references/Software_Systems_Architecture.pdf)) for the viewpoints. Apply the detailed models and checklists from the corresponding Level-3 files:
+* **Context View (Ch 16)**: Scope, boundaries, external interfaces. Details in [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
+* **Functional View (Ch 17)**: Component structures and behavioral interactions. Details in [functional-viewpoint-details](details/functional-viewpoint-details.md).
+* **Information View (Ch 18)**: Data models, lifecycle, flow. Details in [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
+* **Concurrency View (Ch 19)**: Process/thread mappings, synchronization primitives. Details in [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
+* **Development View (Ch 20)**: Package structure, module layout, build processes. Details in [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
+* **Deployment View (Ch 21)**: Physical infrastructure, hardware nodes, network topologies. Details in [deployment-viewpoint-details](details/deployment-viewpoint-details.md).
+* **Operational View (Ch 22)**: Installation, backup, monitoring. Details in [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
 
 ### Phase 3: Apply Architectural Perspectives (SSA Part IV)
 Refine the views by applying cross-cutting quality perspectives. Refer to the corresponding Level-3 guides:
-* **Security (Ch 25)**: Threat modeling, access control, encryption. Details in [security-perspective-details.md](details/security-perspective-details.md).
-* **Performance & Scalability (Ch 26)**: Latency budgets, load modeling. Details in [performance-perspective-details.md](details/performance-perspective-details.md).
-* **Availability & Resilience (Ch 27)**: Single points of failure, recovery times. Details in [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md).
-* **Evolution (Ch 28)**: Extensibility, backward compatibility. Details in [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md).
+* **Security (Ch 25)**: Threat modeling, access control, encryption. Details in [security-perspective-details](details/security-perspective-details.md).
+* **Performance & Scalability (Ch 26)**: Latency budgets, load modeling. Details in [performance-perspective-details](details/performance-perspective-details.md).
+* **Availability & Resilience (Ch 27)**: Single points of failure, recovery times. Details in [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
+* **Evolution (Ch 28)**: Extensibility, backward compatibility. Details in [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md).
 
 ### Phase 4: Check Inter-View Consistency (SSA Ch 23)
 Perform pairwise checks between views to resolve conflicts:
@@ -95,21 +99,16 @@ Perform pairwise checks between views to resolve conflicts:
 5. **Deployment vs Operational**: Verify physical configurations in the Deployment view have monitoring and administration procedures in the Operational view.
 
 ## Resources
-- [viewpoints-and-perspectives-reference.md](details/viewpoints-and-perspectives-reference.md) - Primary reference for viewpoints and perspectives.
-- [Software_Systems_Architecture.pdf](references/Software_Systems_Architecture.pdf) - Original textbook.
-- [functional-viewpoint-details.md](details/functional-viewpoint-details.md) - Level-3 Functional viewpoint details.
-- [deployment-viewpoint-details.md](details/deployment-viewpoint-details.md) - Level-3 Deployment viewpoint details.
-- [security-perspective-details.md](details/security-perspective-details.md) - Level-3 Security perspective details.
-- [performance-perspective-details.md](details/performance-perspective-details.md) - Level-3 Performance perspective details.
+- [viewpoints-and-perspectives-reference](details/viewpoints-and-perspectives-reference.md) - Primary reference for viewpoints and perspectives.
+- [Software_Systems_Architecture](references/Software_Systems_Architecture.pdf) - Original textbook.
+- [functional-viewpoint-details](details/functional-viewpoint-details.md) - Level-3 Functional viewpoint details.
+- [deployment-viewpoint-details](details/deployment-viewpoint-details.md) - Level-3 Deployment viewpoint details.
+- [security-perspective-details](details/security-perspective-details.md) - Level-3 Security perspective details.
+- [performance-perspective-details](details/performance-perspective-details.md) - Level-3 Performance perspective details.
 
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - Are viewpoints selected for real stakeholders and concerns, with cross-cutting perspectives applied?

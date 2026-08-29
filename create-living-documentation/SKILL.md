@@ -8,6 +8,10 @@ description: >
 
 # Create Living Documentation
 
+## Common Contract (Load First)
+
+When this skill is activated, first load [skill-common](../skill-common/SKILL.md) and apply the shared conventions it defines: canonical section order, frontmatter rules, anti-pattern guidance, and the Review In Mind loop in [review-in-mind](../skill-common/details/review-in-mind.md). This skill adds only domain-specific rules below.
+
 ## Who
 Architects, system developers, or coding agents who need to automate, extract, and verify architectural diagrams, domain glossaries, and system specifications from the live codebase to eliminate documentation drift.
 
@@ -29,9 +33,9 @@ Applies to source code directories (Java, Python, C#, etc.), AST parsing scripts
 ## Inputs
 - **Codebase Source Path** (required): The folder containing classes, types, and annotations to be documented.
 - **Extraction Target** (required): The type of living document to create (e.g., glossary, system diagram, decision log, or contract specifications).
-- **Reconciliation Checklists Reference** (required): Located at [reconciliation-checklists.md](details/reconciliation-checklists.md).
-- **Code Examples Reference** (required): Located at [code-examples.md](details/code-examples.md).
-- **Textbook PDF**: Cyrille Martraire's *Living Documentation* book located at [ Living Documentation.pdf](../TMP/%20Living%20Documentation.pdf).
+- **Reconciliation Checklists Reference** (required): Located at [reconciliation-checklists](details/reconciliation-checklists.md).
+- **Code Examples Reference** (required): Located at [code-examples](details/code-examples.md).
+- **Textbook PDF**: Cyrille Martraire's *Living Documentation* book located at [Living Documentation](../TMP/%20Living%20Documentation.pdf).
 
 ## Output (Logical Evidence)
 - **Living Glossary/Specification**: Dynamically generated Markdown files documenting system terms, roles, and rules.
@@ -60,36 +64,31 @@ If target annotations, package names, or document output directories are ambiguo
 ## How (Structural Workflow)
 ### Phase 1: Curation & Curation Scoping (Chapter 5)
 1. **Identify the Core**: Determine what parts of the system represent the core domain knowledge (e.g., domain models, business policies, external API contracts). Do not waste time extracting boilerplate (e.g., getters/setters, frameworks).
-2. **Define Conventions and Annotations**: Select or create clear annotations (e.g., `@Concept`, `@DomainService`, or specific Python decorators) to mark authoritative knowledge in source code. Refer to [reconciliation-checklists.md](details/reconciliation-checklists.md#section-1-knowledge-curation-checklists) for details.
+2. **Define Conventions and Annotations**: Select or create clear annotations (e.g., `@Concept`, `@DomainService`, or specific Python decorators) to mark authoritative knowledge in source code. Refer to [reconciliation-checklists](details/reconciliation-checklists.md#section-1-knowledge-curation-checklists) for details.
 3. **Plan Guided Tours**: Map out structural entry points (sightseeing maps) to guide new developers through the codebase.
 
 ### Phase 2: Automation & Documentation Generation (Chapter 6)
 1. **Build a Single-Source Publisher**: Set up code extraction scripts using Python's `ast` module or Java's custom Doclet/annotation processors.
 2. **Generate Living Glossaries**: Extract terms, descriptions, and types from docstrings and custom annotations. Format the output as a readable Markdown table or document.
-3. **Generate Living Diagrams**: Parse dependency paths, classes, and packages to output PlantUML (`.puml`) or Graphviz (`.dot`) diagrams. Integrate these generations into the build or pre-commit workflow. Refer to templates in [code-examples.md](details/code-examples.md#section-2-living-diagram-generator-examples).
+3. **Generate Living Diagrams**: Parse dependency paths, classes, and packages to output PlantUML (`.puml`) or Graphviz (`.dot`) diagrams. Integrate these generations into the build or pre-commit workflow. Refer to templates in [code-examples](details/code-examples.md#section-2-living-diagram-generator-examples).
 
 ### Phase 3: Reconciliation & Continuous Verification (Chapter 3)
 1. **Implement Reconciliation Tests**: Write unit tests that dynamically parse both the source code and the generated documentation files to assert that every marked entity is documented, and that no outdated entries exist.
-2. **Write Published Contract Checks**: For external APIs or database schemas, write verification tests comparing code-declared DTOs/models against the active specification schema. Refer to templates in [code-examples.md](details/code-examples.md#section-3-reconciliation-test-examples).
+2. **Write Published Contract Checks**: For external APIs or database schemas, write verification tests comparing code-declared DTOs/models against the active specification schema. Refer to templates in [code-examples](details/code-examples.md#section-3-reconciliation-test-examples).
 3. **Establish Red Flags Checks**: Verify that compilation or test runs fail if any part of the extracted specs deviates from the code.
 
 ---
 
 ## Resources
-- [reconciliation-checklists.md](details/reconciliation-checklists.md) - Checklists for glossaries, BDD specifications, and diagrams.
-- [code-examples.md](details/code-examples.md) - Parse code scripts, PlantUML templates, and reconciliation test samples.
-- [ Living Documentation.pdf](../TMP/%20Living%20Documentation.pdf) - Original textbook.
+- [reconciliation-checklists](details/reconciliation-checklists.md) - Checklists for glossaries, BDD specifications, and diagrams.
+- [code-examples](details/code-examples.md) - Parse code scripts, PlantUML templates, and reconciliation test samples.
+- [Living Documentation](../TMP/%20Living%20Documentation.pdf) - Original textbook.
 
 ---
 
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - Does each generated artifact trace to real source code or tests rather than assumptions?

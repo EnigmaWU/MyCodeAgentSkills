@@ -8,6 +8,10 @@ description: >
 
 # Design Agents Using Patterns
 
+## Common Contract (Load First)
+
+When this skill is activated, first load [skill-common](../skill-common/SKILL.md) and apply the shared conventions it defines: canonical section order, frontmatter rules, anti-pattern guidance, and the Review In Mind loop in [review-in-mind](../skill-common/details/review-in-mind.md). This skill adds only domain-specific rules below.
+
 > [!IMPORTANT]
 > **TOP-3 Golden Rules of Agentic Design (Must be followed by all invoking agents):**
 > 1. **Loop Safety Boundaries**: Never configure an agent loop (Reflection, Planning, or Exception Recovery) without a hard-coded maximum iteration limit (e.g., max 3 or 5 retries).
@@ -38,9 +42,9 @@ Applies to orchestration files, state graphs, system architecture documents, and
 ## Inputs
 - **System Goal & Requirements** (required): The specific tasks or workflow the agentic system must complete.
 - **Tools & API Specs** (optional): Capabilities and functions the agents can invoke.
-- **Pattern Checklists Reference** (required): Located at [pattern-checklists.md](details/pattern-checklists.md).
+- **Pattern Checklists Reference** (required): Located at [pattern-checklists](details/pattern-checklists.md).
 - **Framework Target** (optional): The target framework (e.g., LangChain/LangGraph, Google ADK, or raw Python).
-- **Agentic Design Patterns Book** (optional): Reference book unpacked at [Agentic Design Patterns.epub](../TMP/Agentic%20Design%20Patterns.epub).
+- **Agentic Design Patterns Book** (optional): Reference book unpacked at [Agentic Design Patterns](../TMP/Agentic%20Design%20Patterns.epub).
 
 ## Output (Logical Evidence)
 - **Agentic System Architecture Specification**: Visual/textual mapping of agent nodes, state schema, routing rules, and fallback paths.
@@ -74,7 +78,7 @@ If the primary model options, tool schemas, or maximum token/cost budgets are un
    * **Resource / Time Intensive**: Select *Parallelization* (fork-join execution).
    * **Quality-Critical**: Select *Reflection & Self-Correction* (evaluator-generator loop).
    * **Complex, Multi-step / Multi-Domain**: Select *Multi-Agent Collaboration* (Coordinator-Specialist or Supervisor architecture) or *Planning*.
-2. Review the detailed pattern guidelines and checklist details in [pattern-checklists.md](details/pattern-checklists.md).
+2. Review the detailed pattern guidelines and checklist details in [pattern-checklists](details/pattern-checklists.md).
 3. Draft a conceptual design mapping the workflow.
 
 ### Phase 2: Define State Schema & Node Topology
@@ -93,7 +97,7 @@ If the primary model options, tool schemas, or maximum token/cost budgets are un
 2. Define loop exit conditions: enforce a hard limit on `retry_count` or `iteration_limit`.
 
 ### Phase 4: Implement & Verify Orchestration
-1. Select the template implementation from [code-examples.md](details/code-examples.md) that matches your framework (Google ADK or LangChain/LangGraph).
+1. Select the template implementation from [code-examples](details/code-examples.md) that matches your framework (Google ADK or LangChain/LangGraph).
 2. Write the orchestration code, ensuring the system state is updated cleanly at each node.
 3. Validate the implementation:
    * **Common Rationalization Check**: If you think "this tool will never fail, so I don't need a try-except block," stop and remember: *In real-world settings, APIs time out and tools return unexpected schemas. Wrap all tool executions in a try-except structure and handle the failure gracefully.*
@@ -102,20 +106,15 @@ If the primary model options, tool schemas, or maximum token/cost budgets are un
 ---
 
 ## Resources
-- [pattern-checklists.md](details/pattern-checklists.md) - Actionable checklists for each design pattern.
-- [code-examples.md](details/code-examples.md) - Framework templates for Google ADK and LangChain/LangGraph.
-- [Agentic Design Patterns.epub](../TMP/Agentic%20Design%20Patterns.epub) - Original reference textbook.
+- [pattern-checklists](details/pattern-checklists.md) - Actionable checklists for each design pattern.
+- [code-examples](details/code-examples.md) - Framework templates for Google ADK and LangChain/LangGraph.
+- [Agentic Design Patterns](../TMP/Agentic%20Design%20Patterns.epub) - Original reference textbook.
 
 ---
 
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - Is the chosen pattern justified by the goal and state topology rather than a default preference?

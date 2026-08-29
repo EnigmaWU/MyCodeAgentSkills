@@ -8,6 +8,10 @@ description: >
 
 # Document Architectural Decisions
 
+## Common Contract (Load First)
+
+When this skill is activated, first load [skill-common](../skill-common/SKILL.md) and apply the shared conventions it defines: canonical section order, frontmatter rules, anti-pattern guidance, and the Review In Mind loop in [review-in-mind](../skill-common/details/review-in-mind.md). This skill adds only domain-specific rules below.
+
 ## Who
 Architects, system designers, or coding agents responsible for capturing the reasoning behind major design choices to ensure long-term traceablity, compliance, and developer alignment.
 
@@ -30,8 +34,8 @@ Elicit design issues, catalog and compare design alternatives, and compile a str
 ## Inputs
 - **Design Issue Context** (required): The specific problem or requirement being addressed.
 - **Proposed Alternatives** (optional): Options under consideration. If missing, the agent must identify at least two viable options.
-- **Decision Template Details** (required): Located at [decision-template-details.md](details/decision-template-details.md).
-- **Documenting Software Architectures PDF** (optional): Reference book located at [references/Documenting Software Architectures.pdf](../TMP/Documenting%20Software%20Architectures.pdf).
+- **Decision Template Details** (required): Located at [decision-template-details](details/decision-template-details.md).
+- **Documenting Software Architectures PDF** (optional): Reference book located at [Documenting Software Architectures](../TMP/Documenting%20Software%20Architectures.pdf).
 
 ## Output (Logical Evidence)
 - **Architectural Decision Record (ADR)**: A markdown file containing the completed 12-field template.
@@ -63,12 +67,12 @@ If the primary business goals, timing budgets, or physical hardware constraints 
 *   Verify what software/hardware artifacts will be affected.
 
 ### 2. Compare Alternatives
-*   Search the reference at [decision-template-details.md](details/decision-template-details.md) to understand the format.
+*   Search the reference at [decision-template-details](details/decision-template-details.md) to understand the format.
 *   Identify at least two viable design options.
 *   Build an **Alternatives Comparison Matrix** mapping the options to the relevant concerns. Use clear evaluations (`Yes`, `No`, `Partial`) and summarize the key tradeoffs (e.g., choosing Option A improves latency but increases RAM consumption).
 
 ### 3. Draft the Decision Record
-*   Write the decision record using the **12-field template** defined in [decision-template-details.md](details/decision-template-details.md).
+*   Write the decision record using the **12-field template** defined in [decision-template-details](details/decision-template-details.md).
 *   Clearly describe the chosen solution and detail the *Argument* (the core logic/tradeoffs driving the choice).
 *   Explicitly list the *Implications* (e.g., "requires additional RTOS task configuration", "requires developer training on atomic lock usage").
 *   Classify the decision type (Existence, Ban, Property, or Executive) and set its initial state (`Decided` or `Tentative`).
@@ -84,12 +88,7 @@ If the primary business goals, timing budgets, or physical hardware constraints 
 
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - Does each ADR fill the 12 fields and record type, state, and downstream implications?

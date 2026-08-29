@@ -15,6 +15,7 @@ from pathlib import Path
 
 TIER_SECTIONS = {
     "simple": [
+        "Common Contract (Load First)",
         "Who",
         "What",
         "When",
@@ -25,6 +26,7 @@ TIER_SECTIONS = {
         "One More Thing",
     ],
     "complicated": [
+        "Common Contract (Load First)",
         "Who",
         "What",
         "When",
@@ -38,6 +40,7 @@ TIER_SECTIONS = {
         "Review In Mind",
     ],
     "complex": [
+        "Common Contract (Load First)",
         "Who",
         "What",
         "When",

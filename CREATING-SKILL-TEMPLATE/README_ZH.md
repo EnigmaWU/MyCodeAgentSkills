@@ -3,7 +3,7 @@
 ## 概述 (Overview)
 
 使用时间/地点/人员: AI代理或用户在为存储库生成新技能时。
-方法: 使用此技能自动搭建新的技能目录，使用正确的层级模板格式化 `SKILL.md`，应用标准化的 YAML 前言，自动生成双语自述文件，注入一个面向后续修订的轻量级优化准备区段，并注入强制的 `## Review In Mind (ReviewInMindGenie)` 评审基因。它强制执行令牌效率（少于500行），并使用基于验证的评估来确保技能触发准确且具备明确的验收门。
+方法: 使用此技能自动搭建新的技能目录，使用正确的层级模板格式化 `SKILL.md`，应用标准化的 YAML 前言，自动生成双语自述文件，注入一个面向后续修订的轻量级优化准备区段，注入强制的 `## Review In Mind (ReviewInMindGenie)` 评审基因，并添加指向 `skill-common` 的 `## Common Contract (Load First)` 引用，使共享契约在激活时加载。它强制执行令牌效率（少于500行），并使用基于验证的评估来确保技能触发准确且具备明确的验收门。
 原因: 从头开始手动创建技能会导致文件夹结构不一致、前言损坏以及缺少自述文件。将此过程自动化可确保每项新技能都严格遵守存储库的高质量标准，保持“仅靠自然语言即可执行”，并保留来自可控技能演化工作流的论文启发线索，而不把图示或TMP产物变成操作依赖。
 
 ## 使用方法 (Usage)
@@ -13,4 +13,4 @@
 ## 结构 (Structure)
 
 - [SKILL.md](./SKILL.md): 技能的核心工作流和定义。
-- [details/SKILL-TEMPLATE.md](./details/SKILL-TEMPLATE.md): 分层编写模板，包含 SIMPLE、COMPLICATED、COMPLEX 三种技能的“优化准备”区段形态及 ReviewInMindGenie 评审基因。
+- [details/SKILL-TEMPLATE.md](./details/SKILL-TEMPLATE.md): 分层编写模板，包含 SIMPLE、COMPLICATED、COMPLEX 三种技能的“优化准备”区段形态、ReviewInMindGenie 评审基因及 Common Contract 引用。

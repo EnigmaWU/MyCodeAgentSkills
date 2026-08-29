@@ -55,17 +55,12 @@ Before finalizing any skill, check the discovery surface explicitly.
 
 ## Review In Mind (ReviewInMindGenie)
 
-Every skill, regardless of tier, MUST include a `## Review In Mind (ReviewInMindGenie)` section. It is the skill's built-in review gene: after producing the artifact, the agent stops authoring, switches to a skeptical reviewer, and critiques the output as if someone else had produced it. The section MUST contain the four-step loop below plus a skill-specific "Review lens" derived from that skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Place it immediately before `## Validation` (or at the end of the file if the skill has no Validation section).
+Every skill, regardless of tier, MUST include a `## Common Contract (Load First)` section immediately after the title, referencing `../skill-common/SKILL.md` (or `../../../skill-common/SKILL.md` for nested subskills), so the shared contract is loaded at activation. Every skill MUST also include a `## Review In Mind (ReviewInMindGenie)` heading before `## Validation` (or at the end of the file if the skill has no Validation section). The common loop lives in `skill-common/details/review-in-mind.md`; each skill keeps only its own review lens. The loop is deterministic-first: run every check that can be automated (schema, required fields, syntax, links, build/test/lint commands) before using the reviewer persona, and reserve LLM judgment for what cannot be verified objectively — this prevents the false-pass bias of an agent approving its own output.
 
 ```md
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - <Question 1 derived from this skill's What/Constraints/Validation>
@@ -88,6 +83,9 @@ description:
 ---
 
 # <Skill Title>
+
+## Common Contract (Load First)
+When this skill is activated, first load [skill-common](../skill-common/SKILL.md) and apply the shared conventions it defines: canonical section order, frontmatter rules, anti-pattern guidance, and the Review In Mind loop in [review-in-mind](../skill-common/details/review-in-mind.md). This skill adds only domain-specific rules below.
 
 ## Who
 <Who should use this skill or who the task is for.>
@@ -125,12 +123,7 @@ Example shape:
 
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - <Question 1 derived from this skill's What/Constraints/Validation>
@@ -154,6 +147,9 @@ description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scop
 ---
 
 # <Skill Title>
+
+## Common Contract (Load First)
+When this skill is activated, first load [skill-common](../skill-common/SKILL.md) and apply the shared conventions it defines: canonical section order, frontmatter rules, anti-pattern guidance, and the Review In Mind loop in [review-in-mind](../skill-common/details/review-in-mind.md). This skill adds only domain-specific rules below.
 
 ## Who
 <Who should use this skill or who the task is for.>
@@ -206,12 +202,7 @@ Example shape:
 
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - <Question 1 derived from this skill's What/Constraints/Validation>
@@ -236,6 +227,9 @@ description: 'Use when: <trigger phrases>. Helps with: <task>. Applies to: <scop
 ---
 
 # <Skill Title>
+
+## Common Contract (Load First)
+When this skill is activated, first load [skill-common](../skill-common/SKILL.md) and apply the shared conventions it defines: canonical section order, frontmatter rules, anti-pattern guidance, and the Review In Mind loop in [review-in-mind](../skill-common/details/review-in-mind.md). This skill adds only domain-specific rules below.
 
 ## Who
 <Who should use this skill or who the task is for.>
@@ -297,12 +291,7 @@ Validate the candidate output against the acceptance criteria. If validation pas
 
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - <Question 1 derived from this skill's What/Constraints/Validation>
@@ -329,6 +318,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 - Quote the `description` when it contains colons.
 - Keep the `One More Thing` section in every version.
 - Keep the `## Review In Mind (ReviewInMindGenie)` section in every version, placed before `## Validation` (or at the end if no Validation section exists).
+- Keep the `## Common Contract (Load First)` section in every version, placed immediately after the title and referencing `../skill-common/SKILL.md`.
 - Prefer real examples and real artifacts over abstract placeholders.
 - Keep operational instructions in natural language so the workflow is executable from text alone.
 - Treat diagrams, figures, and visual assets as optional references, not required execution steps.

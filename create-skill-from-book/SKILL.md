@@ -8,6 +8,10 @@ description: >
 
 # Create Skill from Book
 
+## Common Contract (Load First)
+
+When this skill is activated, first load [skill-common](../skill-common/SKILL.md) and apply the shared conventions it defines: canonical section order, frontmatter rules, anti-pattern guidance, and the Review In Mind loop in [review-in-mind](../skill-common/details/review-in-mind.md). This skill adds only domain-specific rules below.
+
 ## Who
 Architects, principal developers, or coding agents who want to translate passive technical reference books or standards into executable, repeatable, and verified agent skills (`SKILL.md` packages).
 
@@ -67,7 +71,7 @@ Ingest chapters or sections of a technical book, identify the core engineering g
 4. If the source text is too broad, split it into a bounded extraction target such as one chapter, one pattern family, or one operational theme before drafting the skill.
 
 ### Phase 2: Extract Rules & Proceduralize
-1. Review the detailed guidelines in [extraction-guidelines.md](details/extraction-guidelines.md).
+1. Review the detailed guidelines in [extraction-guidelines](details/extraction-guidelines.md).
 2. Translate the textbook's passive theory into **imperative directives** (using verbs like *Verify*, *Configure*, *Implement*, *Check*).
 3. Identify the **Constraints**: What *must not* happen under this methodology? (e.g., "Do not use dynamic allocation after initialization", "Do not write nested interrupts without priority configuration").
 4. Define the **Verification Procedures**: How does the agent verify that the generated code conforms to the book's guidelines? (e.g., checking compiler warning flags, static analysis steps, unit test coverage targets).
@@ -76,7 +80,7 @@ Ingest chapters or sections of a technical book, identify the core engineering g
 7. Extract candidate **failure signals**, **acceptance criteria**, and **transfer checks** for the future skill so the draft is optimization-ready from the first version.
 
 ### Phase 3: Choose Tier & Draft SKILL.md
-1. Choose the template tier from [SKILL-TEMPLATE.md](../CREATING-SKILL-TEMPLATE/details/SKILL-TEMPLATE.md):
+1. Choose the template tier from [SKILL-TEMPLATE](../CREATING-SKILL-TEMPLATE/details/SKILL-TEMPLATE.md):
    * **SIMPLE**: A single straight-line checklist (e.g., a MISRA C helper for pointers).
    * **COMPLICATED**: Multi-step workflows requiring inputs, outputs, and clear constraints (e.g., configuring an RTOS task pool).
   * **COMPLEX**: Branching workflows, review loops, multi-phase control logic, or multiple supporting artifacts (e.g., design viewpoints, architectural tactics, or book-derived meta-skills).
@@ -102,19 +106,14 @@ Ingest chapters or sections of a technical book, identify the core engineering g
 ---
 
 ## Resources
-- [extraction-guidelines.md](details/extraction-guidelines.md) - Deep-dive guidelines on extracting procedural checklists for embedded/systems architectures.
-- [SKILL-TEMPLATE.md](../CREATING-SKILL-TEMPLATE/details/SKILL-TEMPLATE.md) - The workspace templates for SIMPLE, COMPLICATED, and COMPLEX skills.
+- [extraction-guidelines](details/extraction-guidelines.md) - Deep-dive guidelines on extracting procedural checklists for embedded/systems architectures.
+- [SKILL-TEMPLATE](../CREATING-SKILL-TEMPLATE/details/SKILL-TEMPLATE.md) - The workspace templates for SIMPLE, COMPLICATED, and COMPLEX skills.
 
 ---
 
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - Are guidelines faithful to the book and traceable to specific sections, not paraphrased inventions?

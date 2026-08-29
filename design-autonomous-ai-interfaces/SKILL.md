@@ -8,6 +8,10 @@ description: >
 
 # Design Autonomous AI Interfaces
 
+## Common Contract (Load First)
+
+When this skill is activated, first load [skill-common](../skill-common/SKILL.md) and apply the shared conventions it defines: canonical section order, frontmatter rules, anti-pattern guidance, and the Review In Mind loop in [review-in-mind](../skill-common/details/review-in-mind.md). This skill adds only domain-specific rules below.
+
 ## Who
 Product designers, UX researchers, AI product managers, architects, and coding agents designing user-facing AI systems that capture intent, compute or plan behind the scenes, produce outputs, and may act autonomously through tools, agents, or workflows.
 
@@ -122,29 +126,24 @@ If the target user, task stakes, tool permissions, or expected AI autonomy are u
 
 ### Phase 7: Validate with Scenarios and Iterate
 **Input State**: A candidate autonomous AI interface design.
-1. Run the checklist in [validation-checklist.md](details/validation-checklist.md) against the candidate design.
+1. Run the checklist in [validation-checklist](details/validation-checklist.md) against the candidate design.
 2. Walk through at least four scenarios: happy path, ambiguous input, tool/permission failure, and high-risk or irreversible action.
 3. If validation fails and the failure is local, revise the corresponding phase and rerun the same checklist.
 4. If two validation loops fail for the same missing capability, unclear risk boundary, or impossible recovery path, stop and ask for product or technical clarification.
 **Output State**: A validated design brief or a clearly stated blocker with the missing decision.
 
 ## Resources
-- [principles.md](details/principles.md) - Core principles and the input-computation-output control loop.
-- [intent-capability-orchestration.md](details/intent-capability-orchestration.md) - Capability discovery, orchestration, and configuration guidance.
-- [input-patterns.md](details/input-patterns.md) - Implicit context, explicit prompting, direct manipulation, and CARE prompts.
-- [agentic-workflow-patterns.md](details/agentic-workflow-patterns.md) - Planning, delegation, branching, and autonomy-level patterns.
-- [progress-checkpoints-permissions.md](details/progress-checkpoints-permissions.md) - Latency, progress, checkpoints, rollback, and permissions.
-- [output-validation-and-recovery.md](details/output-validation-and-recovery.md) - Output design, grounding, verification, action, and recovery.
-- [validation-checklist.md](details/validation-checklist.md) - Operational checklist for scenario review.
+- [principles](details/principles.md) - Core principles and the input-computation-output control loop.
+- [intent-capability-orchestration](details/intent-capability-orchestration.md) - Capability discovery, orchestration, and configuration guidance.
+- [input-patterns](details/input-patterns.md) - Implicit context, explicit prompting, direct manipulation, and CARE prompts.
+- [agentic-workflow-patterns](details/agentic-workflow-patterns.md) - Planning, delegation, branching, and autonomy-level patterns.
+- [progress-checkpoints-permissions](details/progress-checkpoints-permissions.md) - Latency, progress, checkpoints, rollback, and permissions.
+- [output-validation-and-recovery](details/output-validation-and-recovery.md) - Output design, grounding, verification, action, and recovery.
+- [validation-checklist](details/validation-checklist.md) - Operational checklist for scenario review.
 
 ## Review In Mind (ReviewInMindGenie)
 
-Before delivering, activate the ReviewInMindGenie: stop authoring, switch to a skeptical reviewer, and critique the artifact as if someone else had produced it.
-
-1. **Review Against Own Rules**: Re-read the output against this skill's `What`, `Constraints (Logical Boundaries)`, and `Validation` criteria. Check each rule explicitly; do not assume it passed because it was easy to write.
-2. **Classify Findings**: Label each defect as BLOCKER (output unusable), MAJOR (violates a core rule), or MINOR (polish/consistency).
-3. **Fix or Escalate**: Fix BLOCKER and MAJOR findings immediately when the fix is unambiguous. After each fix, re-check the affected criteria. If a finding cannot be fixed without new input (missing evidence, conflicting requirements, or a user decision), do not guess — report it as an open question or known gap.
-4. **Deliver with a Review Note**: Present the output with a short note: what was checked, what was fixed, and what remains as a known gap. Never present an unreviewed artifact as final.
+Execute the common review loop in [review-in-mind](../skill-common/details/review-in-mind.md) before delivering.
 
 Review lens for this skill:
 - Does the design close the full loop: input, computation, output, planning, permissions, checkpoints, recovery, onward action?
