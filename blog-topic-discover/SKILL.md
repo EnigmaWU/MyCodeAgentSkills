@@ -3,7 +3,7 @@ name: blog-topic-discover
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: a task is completed, a goal is met, or the user asks to review recent work for blog ideas. Applies to: post-task reflection and developer branding]
   HOW: [Structural: Helps with: extracting insights, mistakes, new methods, and topics from recent git commits and chat logs to brainstorm blog posts]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Captures fresh insights from commits and chat logs before decision context goes stale.]
 ---
 
 # Blog Topic Discover

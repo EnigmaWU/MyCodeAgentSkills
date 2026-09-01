@@ -3,7 +3,7 @@ name: apply-architectural-tactics
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: designing a system architecture, conducting structural design reviews, or mapping quality goals to design decisions. Applies to: architecture design documents, RFCs, and system design specifications]
   HOW: [Structural: Helps with: defining Architecturally Significant Requirements (ASRs), building Quality Attribute Utility Trees, applying Attribute-Driven Design (ADD) steps, selecting SAiP tactics, and executing ATAM tradeoff analysis]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Prevents ad-hoc architecture decisions by forcing measurable quality goals and proven engineering tactics.]
 ---
 
 # Apply Architectural Tactics

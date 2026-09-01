@@ -3,7 +3,7 @@ name: doc-with-usage-example
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: the user asks to create or update documentation. Applies to: markdown documents, READMEs, guides, and runbooks]
   HOW: [Structural: Helps with: producing docs that always include 5W1H context and a copy-exec Usage Example]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Prevents ambiguous docs by requiring 5W1H context and a copy-exec Usage Example.]
 ---
 
 # Document with Usage Example

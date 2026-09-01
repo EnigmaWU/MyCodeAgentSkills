@@ -3,7 +3,7 @@ name: test-case-with-demo
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: the user asks to create a demo test case, example test, UserGuide demo, UserStories demo, manual demo, setup-backed test case, or explicitly invokes test-case-with-demo. Applies to: documentation-oriented P4 demo/example tests for CLIs, APIs, tools, workflows, repository user guides, and user story specifications]
   HOW: [Structural: Helps with: building an end-to-end demonstration test package that shows how to use a feature according to the UserGuide and how it satisfies UserStories/acceptance criteria, including setup scripts, manual instructions, fixtures, expected outputs, and traceability]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Keeps the UserGuide verifiable through repeatable, traceable demo tests.]
 ---
 
 # Test Case with Demo

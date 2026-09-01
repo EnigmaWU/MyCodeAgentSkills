@@ -3,7 +3,7 @@ name: design-agents-using-patterns
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: designing a multi-agent system, creating routing logic, building self-correcting prompt chains, or adding tool-use and planning capabilities. Applies to: orchestration scripts, agent system designs, and prompt chain configurations in the workspace]
   HOW: [Structural: Helps with: selecting appropriate agentic patterns, structuring coordinator-specialist teams, implementing exception handling, and preventing runaway LLM loops]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Prevents fragile, runaway agent orchestration by enforcing proven patterns and loop limits.]
 ---
 
 # Design Agents Using Patterns

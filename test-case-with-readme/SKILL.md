@@ -3,7 +3,7 @@ name: test-case-with-readme
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: the user creates a new test case, plans to write a test, or asks to generate a readme for an existing test. Applies to: any test creation workflow or existing test files like ]
   HOW: [Structural: Helps with: planning and documenting test files with structured purpose, status, coverage, and manual steps]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Makes test intent, scope, and coverage explicit before implementation.]
 ---
 
 # Test Case with Readme

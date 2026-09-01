@@ -3,7 +3,7 @@ name: apply-agile-testing-quadrants
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: defining a test strategy or planning tests for a feature. Applies to: test planning, feature review, acceptance criteria]
   HOW: [Structural: Helps with: balancing test coverage across business/technology and support/critique dimensions]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Prevents test blind spots by structuring coverage across business/technology and support/critique dimensions.]
 ---
 
 # Apply Agile Testing Quadrants

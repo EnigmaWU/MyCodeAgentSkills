@@ -3,7 +3,7 @@ name: comment-alive-test-driven-development
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: writing new tests from scratch, designing verification for a new feature or module, applying CaTDD, starting a new test file with comment-alive design. Applies to: new test files for UnitTesting, SysTesting, and UserTesting in any language]
   HOW: [Structural: Helps with: creating structured test files using CaTDD (Comment-alive Test-Driven Development) methodology with US/AC/TC design, priority-based test categories, and LLM-friendly verification comments]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Ensures verification intent is designed before code exists, keeping US/AC/TC priorities LLM-verifiable.]
 ---
 
 # Comment-alive Test-Driven Development (CaTDD)

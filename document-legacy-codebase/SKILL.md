@@ -3,7 +3,7 @@ name: document-legacy-codebase
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: reverse-engineering brownfield systems, mapping legacy code structures, establishing bubble context boundaries, or applying strangler migration patterns. Applies to: legacy libraries, brownfield codebases, boundary interfaces, and migration configurations in the workspace]
   HOW: [Structural: Helps with: extracting fossilized knowledge, superimposing metadata structures via sidecars/decorators, wrapping legacy code in anticontamination layers, and marking deprecated code]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Preserves fossilized knowledge without risking regressions by editing legacy code in place.]
 ---
 
 # Document Legacy Codebase

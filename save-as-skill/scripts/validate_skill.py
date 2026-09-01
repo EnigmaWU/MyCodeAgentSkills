@@ -184,6 +184,10 @@ def validate_skill(skill_path: Path, requested_tier: str) -> tuple[str, list[str
     if raw_description and ":" in raw_description and raw_description[:1] not in {"'", '"'}:
         errors.append("Frontmatter description should be quoted when it contains colons")
 
+    generic_why = "provides structured workflow execution to prevent errors and ensure standards"
+    if generic_why in fields.get("WHY", "").lower():
+        errors.append("Frontmatter WHY uses generic boilerplate; write a skill-specific WHY")
+
     if skill_path.name == "SKILL.md" and "name" in fields:
         expected_name = skill_path.parent.name
         if fields["name"] != expected_name:

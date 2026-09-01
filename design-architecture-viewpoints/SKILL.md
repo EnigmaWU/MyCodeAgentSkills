@@ -3,7 +3,7 @@ name: design-architecture-viewpoints
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: defining the structural views of a system, documenting system architecture, or aligning stakeholder expectations. Applies to: software architecture descriptions, system design documents, and RFCs]
   HOW: [Structural: Helps with: identifying stakeholders and scenarios, selecting viewpoints, drafting views (Context, Functional, Information, Concurrency, Development, Deployment, Operational), applying perspectives, and checking inter-view consistency]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Prevents inconsistent architecture documentation that misses stakeholder concerns.]
 ---
 
 # Design Architecture Viewpoints

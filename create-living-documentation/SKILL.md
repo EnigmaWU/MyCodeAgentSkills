@@ -3,7 +3,7 @@ name: create-living-documentation
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: automating specifications, extracting domain glossaries, generating PlantUML/Graphviz architecture diagrams, or creating BDD reconciliation tests. Applies to: codebase architecture, glossary generators, API schemas, and build validation scripts in the workspace]
   HOW: [Structural: Helps with: establishing a single source of truth, avoiding documentation drift, extracting code metadata via AST/annotations, and validating documentation via unit tests]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Prevents documentation drift by validating specs, glossaries, and diagrams against code.]
 ---
 
 # Create Living Documentation

@@ -18,3 +18,4 @@ description: >
 - Quote the description value when it contains colons.
 - Keep `## When` aligned with the description; they must reinforce, not contradict, each other.
 - Prefer concrete user-language triggers (e.g., "review this diagram", "save as skill") over abstract summaries.
+- `WHY` MUST be skill-specific: name the concrete failure this skill prevents or the value it delivers. The generic sentence "Provides structured workflow execution to prevent errors and ensure standards." is banned boilerplate; the validator rejects any skill that uses it.

@@ -3,7 +3,7 @@ name: update-spec-context
 description: >
   WHEN/WHERE/WHO: [Scheduling: Use when: a vibe-coding or AI-assisted coding conversation changes requirements, design decisions, plans, task status, or implementation context. Applies to: GitHub Spec Kit-style specs, plans, tasks, constitutions, and repository planning docs]
   HOW: [Structural: Helps with: updating spec-driven-development context files before the details are lost]
-  WHY: [Scheduling: Provides structured workflow execution to prevent errors and ensure standards.]
+  WHY: [Scheduling: Keeps specs, plans, and tasks aligned before implementation details go stale.]
 ---
 
 # Update Spec Context
