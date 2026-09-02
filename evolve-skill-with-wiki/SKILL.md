@@ -62,7 +62,7 @@ Single-shot improvement passes discard most of the learning signal. The WikiSkil
 - **Anti-Pattern Mapping**: MUST NOT expose the wiki to the inference agent; MUST NOT reset the wiki on rejection; MUST NOT accept a proposal without a validation rollout; MUST NOT let the proposer rewrite multiple skills in one iteration; MUST NOT prune the wiki automatically without a user decision (the paper flags pruning as open work).
 
 ## One More Thing
-If the task set, scoring function, validation split, or iteration budget is missing or unclear, stop and ask the user before running an evolution loop.
+This section is a pre-flight checkpoint placed **before** `## How` on purpose: it is the last place an agent can stop and ask before taking any real action. If the task set, scoring function, validation split, or iteration budget is missing or unclear, stop and ask the user before running the evolution loop; do not start Phase 0 with unresolved assumptions.
 
 ## How (Structural Workflow)
 

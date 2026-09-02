@@ -110,6 +110,11 @@ When this skill is activated, first load [skill-common](../skill-common/SKILL.md
 - **Rejected Revision Rule**: <How to record a failed rewrite or anti-pattern.>
 - **Stop Rule**: <When to stop iterating and ask for more evidence or user input.>
 
+## One More Thing
+If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
+
+> **Why this section sits here**: `One More Thing` is a pre-flight checkpoint placed right before `## How` on purpose — it is the last place an agent can stop and ask before taking any real action.
+
 ## How (Structural Workflow)
 <Use strict, deterministic instructions. No ambiguous prose (e.g., 'try to').>
 1. **Input State**: <Gather the explicit context needed.>
@@ -131,9 +136,6 @@ Review lens for this skill:
 
 ## Validation (Verifiable Rewards)
 1. <Execute a strict checklist, schema validation, or harness command to prove success.>
-
-## One More Thing
-If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 ```
 
 ## COMPLICATED
@@ -188,6 +190,11 @@ When this skill is activated, first load [skill-common](../skill-common/SKILL.md
 - <Required CLI tools or APIs>
 - **Anti-Pattern Mapping**: <Explicitly state what this skill MUST NOT do to prevent loops/reasoning drift>
 
+## One More Thing
+If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
+
+> **Why this section sits here**: `One More Thing` is a pre-flight checkpoint placed after `## Constraints` and right before `## How` on purpose — it is the last place an agent can stop and ask before taking any real action.
+
 ## How (Structural Workflow)
 <Use imperative state-machine logic. Every step must have a clear input/output state.>
 1. **Input Phase**: <Gather and validate the required context.>
@@ -211,9 +218,6 @@ Review lens for this skill:
 ## Validation (Verifiable Rewards)
 1. <Execute a strict checklist, script, or command to prove success before concluding.>
 2. <Report the outcome and side-effects clearly.>
-
-## One More Thing
-If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 ```
 
 ## COMPLEX
@@ -268,6 +272,11 @@ When this skill is activated, first load [skill-common](../skill-common/SKILL.md
 - <Required CLI tools or APIs>
 - **Anti-Pattern Mapping**: <Explicitly state what this skill MUST NOT do to prevent loops/reasoning drift>
 
+## One More Thing
+If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
+
+> **Why this section sits here**: `One More Thing` is a pre-flight checkpoint placed after `## Constraints` and right before `## How` on purpose — it is the last place an agent can stop and ask before taking any real action.
+
 ## How (Structural Workflow)
 <Use imperative state-machine logic. Every phase must explicitly define branching (If/Then/Else).>
 
@@ -305,9 +314,6 @@ Review lens for this skill:
 ## Validation (Verifiable Rewards)
 1. <Execute a strict test harness, script, or checklist to mathematically prove success.>
 2. <Report gaps, risks, or follow-up work only after verification passes.>
-
-## One More Thing
-If anything is unclear, missing, or conflicting, stop and ask the user before proceeding.
 ```
 
 ## Notes
@@ -317,6 +323,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 - Keep `name` aligned with the skill folder name.
 - Quote the `description` when it contains colons.
 - Keep the `One More Thing` section in every version.
+- Place `## One More Thing` after `## Constraints` and before `## How` so it acts as a pre-flight checkpoint: the agent asks about anything unclear, missing, or conflicting before it starts executing the workflow.
 - Keep the `## Review In Mind (ReviewInMindGenie)` section in every version, placed before `## Validation` (or at the end if no Validation section exists).
 - Keep the `## Common Contract (Load First)` section in every version, placed immediately after the title and referencing `../skill-common/SKILL.md`.
 - Prefer real examples and real artifacts over abstract placeholders.
