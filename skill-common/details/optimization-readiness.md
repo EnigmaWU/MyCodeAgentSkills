@@ -13,4 +13,5 @@ Every skill MUST include an `## Optimization Readiness` section with the followi
 Rules:
 - The stop rule MUST be explicit; iteration must never run forever.
 - Rejected revisions belong in the skill's `details/validation-log.md` (or the common `validation-log.md` if the skill has no details folder).
+- For multi-iteration skill evolution, rejected revisions also belong in a persistent evolution wiki (`wiki/skill-impact.md`) that outlives any single revision cycle; see `evolve-skill-with-wiki` for the full workflow.
 - A revision cannot be accepted because it "reads better"; it must pass the skill's independent acceptance criteria.

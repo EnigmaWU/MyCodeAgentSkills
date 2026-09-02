@@ -25,6 +25,7 @@ Update an existing `SKILL.md` so it reflects what actually worked. The deliverab
 - The conversation produced new artifacts, constraints, or edge cases that the original skill did not cover.
 - Do **not** use this skill when the conversation solved a brand-new problem with no prior skill. Use `save-as-skill` instead.
 - Do **not** use this skill for cosmetic or formatting-only edits. Edit the file directly instead.
+- Do **not** use this skill when the goal is multi-iteration evolution across many rollout runs (or a persistent knowledge wiki is required). Use `evolve-skill-with-wiki` instead; this skill is the single-iteration fallback of that workflow.
 
 ## Where
 - The source skill lives in a skill directory such as `.github/skills/<name>/SKILL.md`, `.cline/skills/<name>/SKILL.md`, `.continue/prompts/<name>.prompt`, or `.claude/skills/<name>/SKILL.md`.
@@ -140,6 +141,7 @@ If anything is unclear, missing, or conflicting, stop and ask the user before pr
 4. If the skill is deployed to multiple platforms (Copilot, Cline, Continue, Claude Code), remind the user to sync copies.
 
 ## Resources
+- `evolve-skill-with-wiki/SKILL.md` — the companion meta-skill for multi-iteration, wiki-backed skill evolution across many rollouts. Use this skill when you need more than one evidence cycle.
 - `save-as-skill/SKILL.md` — the companion skill for creating new skills from scratch.
 - `save-as-skill/scripts/validate_skill.py` — validator for checking `SKILL.md` files against template tiers.
 - `../CREATING-SKILL-TEMPLATE/details/SKILL-TEMPLATE.md` — the master template reference for SIMPLE, COMPLICATED, and COMPLEX tiers.
