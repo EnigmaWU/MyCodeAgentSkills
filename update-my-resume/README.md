@@ -93,6 +93,19 @@ Reuse:    Applicable to any Go service with shared mutable state accessed by mul
 复用性：适用于所有存在多 goroutine 共享可变状态的 Go 服务。
 ```
 
+## Verification
+
+After appending, the skill validates the file deterministically:
+
+```bash
+python3 update-my-resume/scripts/validate_resume_entry.py --resume .resume --date YYYY-MM-DD
+```
+
+The validator exits 0 only when both sections exist in order, every entry uses a valid
+`--- [YYYY-MM-DD] ---` marker with all four required fields in canonical order, and an entry
+with the given date exists in both the EN and ZH sections. It prints WARNING lines for numeric
+or date-set differences between the two languages so translation drift is caught before delivery.
+
 ## Porting to Other Agents
 
 The core skill content is identical across agents. Only the file location and frontmatter differ.

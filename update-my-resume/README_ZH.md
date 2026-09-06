@@ -8,3 +8,4 @@
 
 ## 结构 (Structure)
 - [SKILL.md](./SKILL.md): 技能的核心工作流和定义。
+- [scripts/validate_resume_entry.py](./scripts/validate_resume_entry.py): 确定性校验脚本，检查条目日期、字段完整性与顺序、EN/ZH 双区段配对，校验通过（exit 0）才可交付。

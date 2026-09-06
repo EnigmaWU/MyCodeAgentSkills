@@ -55,9 +55,9 @@ Analyze the current conversation to extract a resume-worthy accomplishment, then
 
 ## Optimization Readiness
 - **Failure Signals**: The conversation is inflated into a resume entry, the verified outcome is weak or missing, the narrative drops one of the three required parts, or the entry is not clearly repeatable.
-- **Evidence To Collect**: Conversation logs, verification results, drafted resume entries, and examples showing which outcome was strong enough to be reusable.
+- **Evidence To Collect**: Conversation logs, verification results, drafted resume entries, validator failures (missing fields, out-of-order fields, invalid dates, EN/ZH date imbalance), and examples showing which outcome was strong enough to be reusable.
 - **Safe Mutation Boundaries**: Refine evaluation questions, narrative framing, and bilingual formatting without changing the core problem→approach→outcome structure.
-- **Acceptance Criteria**: Accept revisions only if the entry is grounded in the conversation, includes verification evidence, and mirrors the same facts in English and Chinese.
+- **Acceptance Criteria**: Accept revisions only if the entry is grounded in the conversation, includes verification evidence, mirrors the same facts in English and Chinese, and `scripts/validate_resume_entry.py` exits 0 on the written file.
 - **Rejected Revision Handling**: Record inflated accomplishments, unsupported outcomes, and weak repeatability claims so they are not reused.
 - **Transfer Check**: Verify the workflow still works for debugging sessions, architecture decisions, and other non-trivial solved problems.
 - **Stop Rule**: If the conversation does not clearly meet the bar for a resume entry, stop and skip the update.
@@ -135,10 +135,15 @@ Translate and culturally adapt the English entry. Append it to the Chinese (`[ZH
 Keep the facts identical to the English entry. Adapt phrasing to feel natural in Chinese rather than literally translated.
 
 ### Phase 6: Verify and Report
-1. Read back the appended entries to the user.
-2. Confirm the file path where they were written.
-3. Ask: "Does this accurately capture what you accomplished? Would you like to adjust any part before we finish?"
-4. Apply any requested adjustments.
+1. Run the deterministic validator from the repository root:
+
+   `python3 update-my-resume/scripts/validate_resume_entry.py --resume <path-to-.resume> --date YYYY-MM-DD`
+
+   Do not report success until it exits 0. If it reports FAIL lines, fix the entry and re-run.
+2. Read back the appended entries to the user.
+3. Confirm the file path where they were written.
+4. Ask: "Does this accurately capture what you accomplished? Would you like to adjust any part before we finish?"
+5. Apply any requested adjustments, then re-run the validator.
 
 ## Resources
 - Minimal `.resume` skeleton to create if no file exists:
@@ -157,6 +162,7 @@ Keep the facts identical to the English entry. Adapt phrasing to feel natural in
 
 ```
 
+- Validator script: `scripts/validate_resume_entry.py` — deterministic checks for section presence and order, entry date validity, field completeness and canonical order, and EN/ZH date pairing. Run it in Phase 6 and in Validation below.
 - Related skills:
   - `save-as-skill` — if the conversation also produced a reusable workflow worth preserving as a skill
   - `improve-existing-skill` — if an earlier resume entry needs correction after new evidence
@@ -169,11 +175,19 @@ Review lens for this skill:
 - Does the entry follow WHAT/HOW/WHAT-was-gained with concrete evidence?
 - Is the accomplishment attributable to the user and free of exaggeration?
 - Are the English and Chinese sections consistent and formatted per the resume file?
+- Does `scripts/validate_resume_entry.py` exit 0 on the written file?
 
 ## Validation
-1. Verify the resume file exists and was written to the correct path.
-2. Verify the English entry contains all four fields: `Problem`, `Approach`, `Outcome`, `Reuse`.
-3. Verify the Chinese entry contains all four fields: `问题`, `过程`, `收获`, `复用性`.
-4. Verify no existing entries were modified or removed.
-5. Verify the facts in both entries are identical (same problem, same steps, same outcome).
-6. Verify the conversation actually supports the claims in the entry — no inflation.
+1. From the repository root, run:
+
+   `python3 update-my-resume/scripts/validate_resume_entry.py --resume <path-to-.resume> --date YYYY-MM-DD`
+
+2. The command exits 0 only when all of the following hold:
+   - The `[EN]`/`[English]` and `[ZH]`/`[中文]` sections both exist, in that order.
+   - Every entry uses a valid `--- [YYYY-MM-DD] ---` marker.
+   - Every EN entry contains non-empty `Problem` → `Approach` → `Outcome` → `Reuse` fields in that order.
+   - Every ZH entry contains non-empty `问题` → `过程` → `收获` → `复用性` fields in that order.
+   - An entry with the given date exists in both sections.
+3. Review any WARNING lines (numeric or date-set differences between EN and ZH) and resolve genuine translation drift before delivering.
+4. Confirm no existing entries were modified or removed — the validator checks the new entry's structure, not file history, so verify this by reading the file back.
+5. Verify the conversation actually supports the claims in the entry — no inflation.
